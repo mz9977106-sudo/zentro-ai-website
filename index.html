@@ -1,249 +1,376 @@
+# Complete AI Agency Website (Single HTML File)
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zentro AI Agency</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zentro AI Agency</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
-html{
-  scroll-behavior:smooth;
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
-    body{
-      background:#0f172a;
-      color:white;
-    }
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 60px;
-      background:#111827;
-    }
+body{
+background:#020c2b;
+color:white;
+}
 
-    .logo{
-      font-size:28px;
-      font-weight:bold;
-      color:#38bdf8;
-    }
+header{
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#06163f;
+position:sticky;
+top:0;
+z-index:1000;
+}
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin-left:25px;
-      transition:0.3s;
-    }
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#38bdf8;
+}
 
-    nav a:hover{
-      color:#38bdf8;
-    }
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:17px;
+}
 
-    .hero{
-      height:90vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:20px;
-    }
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
 
-    .hero h1{
-      font-size:60px;
-      margin-bottom:20px;
-    }
+.hero-content h1{
+font-size:60px;
+margin-bottom:20px;
+}
 
-    .hero p{
-      font-size:20px;
-      max-width:700px;
-      line-height:1.6;
-      margin-bottom:30px;
-      color:#cbd5e1;
-    }
+.hero-content span{
+color:#38bdf8;
+}
 
-    .btn{
-      background:#38bdf8;
-      color:black;
-      padding:15px 35px;
-      border:none;
-      border-radius:10px;
-      font-size:18px;
-      cursor:pointer;
-      transition:0.3s;
-      text-decoration:none;
-      font-weight:bold;
-  display:inline-block;
-margin-top:15px;
-    }
+.hero-content p{
+font-size:20px;
+max-width:700px;
+margin:auto;
+line-height:1.7;
+color:#cbd5e1;
+}
 
-    .btn:hover{
-      background:white;
-    }
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#38bdf8;
+color:black;
+text-decoration:none;
+border-radius:10px;
+font-weight:bold;
+margin-top:30px;
+transition:0.3s;
+}
 
-    .services{
-      padding:80px 60px;
-      text-align:center;
-    }
+.btn:hover{
+background:white;
+}
 
-    .services h2{
-      font-size:40px;
-      margin-bottom:50px;
-    }
+.services{
+padding:100px 8%;
+text-align:center;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-    }
+.services h2{
+font-size:50px;
+margin-bottom:60px;
+}
 
-    .card{
-      background:#1e293b;
-      padding:30px;
-      border-radius:15px;
-      transition:0.3s;
-    }
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#162544;
+padding:35px 25px;
+border-radius:20px;
+transition:0.4s;
+}
+
 .card:hover{
-    transform: translateY(-10px);
+transform:translateY(-10px);
 }
-    .card:hover{
-      transform:translateY(-10px);
-      background:#334155;
-    }
-.card:hover{
-    background:#334155;
-}
-    .card h3{
-      margin-bottom:15px;
-      color:#38bdf8;
-    }
 
-    footer{
-      text-align:center;
-      padding:25px;
-      background:#111827;
-      margin-top:50px;
-      color:#94a3b8;
-      .service-box{
-    transition: 0.3s;
-    cursor: pointer;
+.card h3{
+font-size:30px;
+margin-bottom:15px;
+color:#38bdf8;
 }
-    }
-  </style>
+
+.card p{
+line-height:1.7;
+color:#d1d5db;
+margin-bottom:20px;
+}
+
+.about{
+padding:100px 8%;
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+align-items:center;
+}
+
+.about-text{
+flex:1;
+}
+
+.about-text h2{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.about-text p{
+line-height:1.9;
+color:#cbd5e1;
+font-size:18px;
+}
+
+.contact{
+padding:100px 8%;
+text-align:center;
+}
+
+.contact h2{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.contact p{
+font-size:20px;
+margin-bottom:10px;
+}
+
+footer{
+background:#06163f;
+padding:25px;
+text-align:center;
+margin-top:50px;
+}
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:9999;
+}
+
+.popup-box{
+background:#111827;
+width:700px;
+max-height:90vh;
+overflow:auto;
+padding:40px;
+border-radius:20px;
+position:relative;
+}
+
+.popup-box h2{
+font-size:40px;
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+.popup-box p{
+line-height:1.8;
+margin-bottom:15px;
+color:#d1d5db;
+}
+
+.close-btn{
+position:absolute;
+right:20px;
+top:15px;
+font-size:35px;
+cursor:pointer;
+color:#38bdf8;
+}
+
+@media(max-width:768px){
+.hero-content h1{
+font-size:40px;
+}
+
+.services h2,
+.about-text h2,
+.contact h2{
+font-size:35px;
+}
+}
+</style>
 </head>
-
 <body>
 
-  <header>
-    <div class="logo">Zentro AI</div>
+<header>
+<div class="logo">Zentro AI</div>
 
-    <nav>
- <a href="#home">Home</a>
+<nav>
+<a href="#home">Home</a>
 <a href="#services">Services</a>
 <a href="#about">About</a>
-<a href="#contact">Contact</a> 
-    </nav>
-  </header>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-  <section class="hero">
-    <h1>We Build AI Powered Websites 🚀</h1>
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>Modern <span>AI Agency</span> Solutions</h1>
+<p>
+We create AI-powered websites, chatbots, automation systems, SEO growth strategies, and modern business solutions.
+</p>
 
-    <p>
-      Zentro AI helps businesses grow with modern AI websites,
-      automation, chatbots, and smart digital solutions.
-    </p>
+<a href="#services" class="btn">Explore Services</a>
+</div>
+</section>
 
-    <a href="#" class="btn">Get Started</a>
-  </section>
+<section class="services" id="services">
+<h2>Our Services</h2>
 
-  <section class="services">
+<div class="cards">
 
-    <h2>Our Services</h2>
+<div class="card">
+<h3>AI Websites</h3>
+<p>Modern responsive websites powered with AI tools.</p>
 
-    <div class="cards">
+<a href="#" class="btn" onclick="showAIWebsites()">Learn More</a>
+</div>
 
-      <div class="card">
-        
-        <h3>AI Websites</h3>
-        <p>Modern responsive websites powered with AI tools.</p>
-    <script>
+<div class="card">
+<h3>Chatbots</h3>
+<p>Smart AI assistants for customer support & automation.</p>
 
-function showAIWebsiteDetails(){
+<a href="#" class="btn" onclick="showChatbots()">Learn More</a>
+</div>
 
-alert(
-"AI Websites Services\n\n" +
+<div class="card">
+<h3>Automation</h3>
+<p>Automate repetitive tasks and save business time.</p>
 
-"Responsive Website Design → Website har device me perfectly work karegi.\n\n" +
+<a href="#" class="btn" onclick="showAutomation()">Learn More</a>
+</div>
 
-"AI Integration → Smart AI tools aur automation features add kiye jayenge.\n\n" +
+<div class="card">
+<h3>SEO Growth</h3>
+<p>Rank your business higher with smart optimization.</p>
 
-"Modern UI/UX → Clean aur professional design milega.\n\n" +
+<a href="#" class="btn" onclick="showSEO()">Learn More</a>
+</div>
 
-"Fast Loading Speed → Website fast load hogi.\n\n" +
+</div>
+</section>
 
-"SEO Friendly → Google ranking improve hogi.\n\n" +
+<section class="about" id="about">
+<div class="about-text">
+<h2>About Us</h2>
 
-"Mobile Optimized → Mobile users ko smooth experience milega.\n\n" +
+<p>
+Zentro AI Agency helps businesses grow with AI technology, modern web development, automation systems, SEO optimization, and premium digital solutions.
+</p>
+</div>
+</section>
 
-"Admin Dashboard → Aap website easily manage kar sakenge.\n\n" +
+<section class="contact" id="contact">
+<h2>Contact Us</h2>
 
-"Live Chat System → Customers instantly contact kar sakenge.\n\n" +
-
-"Professional Layout → Business ko premium look milega."
-
-);
-
-}
-
-</script>
-      </div>
-
-      <div class="card">
-        <h3>Chatbots</h3>
-        <p>Smart AI assistants for customer support & automation.</p>
-        <a href="#contact" class="btn">Learn More</a>
-      </div>
-
-      <div class="card">
-        <h3>Automation</h3>
-        <p>Automate repetitive tasks and save business time.</p>
-        <a href="#contact" class="btn">Learn More</a>
-      </div>
-
-      <div class="card">
-        <h3>SEO Growth</h3>
-        <p>Rank your business higher with smart optimization.</p>
-        <a href="#contact" class="btn">Learn More</a>
-      </div>
-
-    </div>
-  </section>
-  </section>
-
-<section style="text-align:center; padding:50px; color:white; background:#0b1020;">
-  <h2>Contact Us</h2>
-
-  <p>📞 Phone: 03238194763</p>
-
-  <p>
-    💬 WhatsApp:
-    <a href="https://wa.me/923238194763" style="color:#38bdf8;">
-      Chat on WhatsApp
-    </a>
-  </p>
+<p>Phone: 03238194763</p>
+<p>Email: info@zentroai.com</p>
+<p>Location: Pakistan</p>
 </section>
 
 <footer>
+© 2025 Zentro AI Agency. All Rights Reserved.
+</footer>
 
-  <footer>
-    © 2026 Zentro AI — All Rights Reserved
-  </footer>
+<div class="popup" id="popup">
+<div class="popup-box">
+
+<span class="close-btn" onclick="closePopup()">×</span>
+
+<h2 id="popupTitle"></h2>
+
+<p id="popupContent"></p>
+
+</div>
+</div>
+
+<script>
+
+function openPopup(title, content){
+
+document.getElementById('popup').style.display='flex';
+
+document.getElementById('popupTitle').innerHTML=title;
+
+document.getElementById('popupContent').innerHTML=content;
+
+}
+
+function closePopup(){
+document.getElementById('popup').style.display='none';
+}
+
+function showAIWebsites(){
+openPopup(
+'AI Websites',
+'Responsive Website Design → Works perfectly on all devices.<br><br>AI Integration → Smart AI tools and automation features.<br><br>Modern UI/UX → Premium and professional design.<br><br>Fast Loading Speed → Better user experience and performance.<br><br>SEO Friendly → Helps improve Google ranking.<br><br>Admin Dashboard → Easy website management system.<br><br>Live Chat Support → Customers can instantly contact you.'
+);
+}
+
+function showChatbots(){
+openPopup(
+'AI Chatbots',
+'24/7 Customer Support → Customers get instant replies anytime.<br><br>Automation → Saves business time and effort.<br><br>AI Responses → Smart and human-like conversations.<br><br>Lead Generation → Helps increase customers and sales.<br><br>Multi Platform Support → Works on websites and social media.'
+);
+}
+
+function showAutomation(){
+openPopup(
+'Business Automation',
+'Task Automation → Automates repetitive business work.<br><br>Email Automation → Sends automatic emails to clients.<br><br>Workflow Management → Improves business efficiency.<br><br>Time Saving → Reduces manual work and saves time.<br><br>Productivity Growth → Helps teams work faster.'
+);
+}
+
+function showSEO(){
+openPopup(
+'SEO Growth',
+'Google Ranking → Improve website visibility.<br><br>Keyword Optimization → Better search engine results.<br><br>Traffic Growth → Increase website visitors.<br><br>Business Growth → More leads and customers.<br><br>Performance Optimization → Faster and SEO-friendly website.'
+);
+}
+
+</script>
 
 </body>
 </html>
+```
+
+Replace your current `index.html` with this complete code.
