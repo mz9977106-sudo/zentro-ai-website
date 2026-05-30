@@ -332,19 +332,58 @@ Chat on WhatsApp
 <p>Email: <a href="mailto:Mz9977106@gmail.com">Mz9977106@gmail.com</a></p>
 <p>Location: Pakistan</p>
   <p>Response Time: Within 24 Hours</p>
-  <h2>Frequently Asked Questions</h2>
+<h2>Project Requirements</h2>
 
-<p><strong>Q: How much advance payment is required?</strong></p>
-<p>A: We require a 30% advance payment before starting any project.</p>
+<input type="email" id="email" placeholder="Your Email Address" style="width:80%;padding:15px;margin:10px;border-radius:8px;border:none;">
 
-<p><strong>Q: How long does a project take?</strong></p>
-<p>A: Delivery time depends on project size and requirements.</p>
+<select id="service" style="width:80%;padding:15px;margin:10px;border-radius:8px;">
+<option selected disabled>Select Service</option>
+<option>AI Website</option>
+<option>AI Chatbot</option>
+<option>Business Automation</option>
+<option>SEO Growth</option>
+</select>
 
-<p><strong>Q: Do you provide support after delivery?</strong></p>
-<p>A: Yes, we provide post-delivery support for our clients.</p>
+<select id="business" style="width:80%;padding:15px;margin:10px;border-radius:8px;">
+<option selected disabled>Select Business Type</option>
+<option>Restaurant</option>
+<option>Real Estate</option>
+<option>E-commerce</option>
+<option>Education</option>
+<option>Healthcare</option>
+<option>Other</option>
+</select>
 
-<p><strong>Q: Do you offer discounts?</strong></p>
-<p>A: Yes, repeat clients may receive special discounts.</p>
+<select id="website" style="width:80%;padding:15px;margin:10px;border-radius:8px;">
+<option selected disabled>Do You Already Have A Website?</option>
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<select id="budget" style="width:80%;padding:15px;margin:10px;border-radius:8px;">
+<option selected disabled>Select Budget Range</option>
+<option>$80 - $150</option>
+<option>$150 - $300</option>
+<option>$300 - $550</option>
+<option>$550+</option>
+</select>
+
+<select id="timeline" style="width:80%;padding:15px;margin:10px;border-radius:8px;">
+<option selected disabled>Select Timeline</option>
+<option>Urgent</option>
+<option>1 Week</option>
+<option>2 Weeks</option>
+<option>1 Month+</option>
+</select>
+
+<textarea id="details" placeholder="Describe Your Project Requirements..." style="width:80%;height:150px;padding:15px;margin:10px;border-radius:8px;"></textarea>
+
+<br>
+
+<button onclick="sendRequirements()" class="btn">
+Submit Requirements
+</button>
+
   <h2>Our Process</h2>
 
 <p>1. Submit Your Requirements</p>
@@ -546,6 +585,41 @@ openPopup(
 'Google Ranking → Improve website visibility.<br><br>Keyword Optimization → Better search engine results.<br><br>Traffic Growth → Increase website visitors.<br><br>Business Growth → More leads and customers.<br><br>Performance Optimization → Faster and SEO-friendly website.'
 );
 }
+  function sendRequirements(){
+
+let email = document.getElementById("email").value;
+let service = document.getElementById("service").value;
+let business = document.getElementById("business").value;
+let website = document.getElementById("website").value;
+let budget = document.getElementById("budget").value;
+let timeline = document.getElementById("timeline").value;
+let details = document.getElementById("details").value;
+
+let message =
+`🚀 NEW PROJECT INQUIRY
+
+📧 Email: ${email}
+
+💼 Service: ${service}
+
+🏢 Business Type: ${business}
+
+🌐 Existing Website: ${website}
+
+💰 Budget: ${budget}
+
+⏳ Timeline: ${timeline}
+
+📝 Project Details:
+${details}`;
+
+window.open(
+`https://wa.me/923238194763?text=${encodeURIComponent(message)}`,
+'_blank'
+);
+
+}
+
 
 </script>
 <a href="https://wa.me/923238194763" target="_blank" class="whatsapp-float">
