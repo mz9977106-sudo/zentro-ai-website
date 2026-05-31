@@ -380,8 +380,18 @@ Chat on WhatsApp
 
 <br>
 
+  <div id="errorBox" style="
+width:80%;
+margin:10px auto;
+padding:15px;
+background:#dc2626;
+color:white;
+border-radius:8px;
+display:none;">
+</div>
 <button onclick="sendRequirements()" class="btn">
 Submit Requirements
+  
 </button>
 
   <h2>Our Process</h2>
@@ -610,6 +620,38 @@ let website = document.getElementById("website").value;
 let budget = document.getElementById("budget").value;
 let timeline = document.getElementById("timeline").value;
 let details = document.getElementById("details").value;
+    let missingFields = [];
+
+if (!email) missingFields.push("Email");
+if (!service || service === "Select Service") missingFields.push("Service");
+
+if (!business || business === "Select Business Type")
+missingFields.push("Business Type");
+
+if (!website || website === "Do You Already Have A Website?")
+missingFields.push("Website Question");
+
+if (!budget || budget === "Select Budget Range")
+missingFields.push("Budget");
+
+if (!timeline || timeline === "Select Timeline")
+missingFields.push("Timeline");
+
+if (!details)
+missingFields.push("Project Details");
+
+if (missingFields.length > 0) {
+
+document.getElementById("errorBox").style.display = "block";
+
+document.getElementById("errorBox").innerHTML =
+"<strong>Please complete these fields:</strong><br><br>• " +
+missingFields.join("<br>• ");
+
+return;
+}
+
+document.getElementById("errorBox").style.display = "none";
 
 let message =
 `🚀 NEW PROJECT INQUIRY
