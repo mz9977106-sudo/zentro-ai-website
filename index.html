@@ -758,6 +758,104 @@ box.style.display = "block";
 
 }
 
+  const qa = {
+
+"hello":"Hello 👋 Welcome to Zentro AI. How can I help you today?",
+"hi":"Hi there! How can I assist you?",
+"who are you":"I am Zentro AI Assistant.",
+"what is zentro ai":"Zentro AI is an agency providing AI websites, chatbots, automation and SEO services.",
+"what services do you offer":"We offer AI Websites, Chatbots, Automation and SEO services.",
+"what is an ai website":"An AI website uses smart tools and automation to improve user experience.",
+"do you build websites":"Yes, we build modern responsive websites.",
+"how much does a website cost":"Website pricing starts from $80.",
+"how long does a website take":"Most websites are completed within 1-2 weeks.",
+"do you create landing pages":"Yes, we create professional landing pages.",
+"do you build ecommerce websites":"Yes, we build eCommerce websites.",
+"can you redesign my website":"Yes, we can redesign existing websites.",
+"do you provide hosting":"Hosting can be arranged upon request.",
+"do you provide domain registration":"Yes, we can help with domain registration.",
+"is the website mobile friendly":"Yes, all websites are mobile responsive.",
+"will my website be seo friendly":"Yes, websites are built with SEO best practices.",
+"do you build chatbots":"Yes, we create AI chatbots.",
+"what is an ai chatbot":"An AI chatbot automatically answers customer questions.",
+"can chatbots work 24 7":"Yes, chatbots work 24/7.",
+"can chatbot increase sales":"Yes, chatbots can help generate leads and sales.",
+"can chatbot work on websites":"Yes, chatbots can be integrated into websites.",
+"can chatbot work on whatsapp":"Yes, WhatsApp chatbot solutions are available.",
+"what is automation":"Automation reduces manual work using software and AI.",
+"what tasks can be automated":"Emails, forms, lead management and workflows.",
+"does automation save time":"Yes, automation saves significant time.",
+"can automation reduce costs":"Yes, it helps reduce operational costs.",
+"what is seo":"SEO improves visibility on search engines.",
+"how does seo help":"SEO increases website traffic and leads.",
+"how long does seo take":"SEO results usually take several weeks or months.",
+"do you offer local seo":"Yes, local SEO services are available.",
+"can you rank my website":"We use proven SEO strategies to improve rankings.",
+"how much is seo service":"Pricing depends on project requirements.",
+"what is your pricing":"Projects start from $80.",
+"what payment methods do you accept":"Payment details are provided during consultation.",
+"how much advance is required":"Only 30% advance payment is required.",
+"do you offer discounts":"Yes, repeat clients may receive discounts.",
+"do you provide invoices":"Yes, invoices can be provided.",
+"how can i contact you":"You can contact us on WhatsApp.",
+"what is your whatsapp number":"03238194763",
+"what is your email":"Email: Mz9977106@gmail.com",
+"where are you located":"We are based in Pakistan.",
+"what are your working hours":"We respond within 24 hours.",
+"how quickly do you reply":"Usually within 24 hours.",
+"do you provide support":"Yes, support is available after delivery.",
+"how long is support available":"Support duration depends on the package.",
+"do you fix website bugs":"Yes, bug fixing services are available.",
+"can you update my website":"Yes, website updates are available.",
+"what industries do you work with":"Restaurants, Real Estate, Education, Healthcare and more.",
+"do you work with startups":"Yes, we work with startups and businesses.",
+"can you help small businesses":"Yes, small businesses are welcome.",
+"can you build restaurant websites":"Yes, restaurant websites are available.",
+"can you build real estate websites":"Yes, real estate websites are available.",
+"can you build education websites":"Yes, education websites are available.",
+"can you build healthcare websites":"Yes, healthcare websites are available.",
+"what is your process":"Requirements, Quote, Advance, Development, Delivery.",
+"how do i start":"Send your requirements through the form or WhatsApp.",
+"do you offer consultations":"Yes, consultations are available.",
+"can i get a quote":"Yes, we provide custom quotes.",
+"is consultation free":"Basic consultation is free.",
+"can you build custom systems":"Yes, custom solutions are available.",
+"do you use ai tools":"Yes, we use modern AI technologies.",
+"can ai help my business":"Yes, AI can improve efficiency and customer experience.",
+"what technologies do you use":"We use modern web and AI technologies.",
+"do you provide analytics":"Yes, analytics integration is available.",
+"can you integrate google analytics":"Yes, Google Analytics can be integrated.",
+"can you add whatsapp chat":"Yes, WhatsApp chat integration is available.",
+"can you add contact forms":"Yes, contact forms can be added.",
+"can you add booking systems":"Yes, booking systems can be integrated.",
+"can you add payment gateways":"Yes, payment gateways can be integrated.",
+"can you improve website speed":"Yes, speed optimization is available.",
+"can you secure my website":"Yes, website security improvements are available.",
+"do you provide backups":"Backup solutions can be provided.",
+"can you migrate websites":"Yes, website migration services are available.",
+"do you create portfolios":"Yes, portfolio websites are available.",
+"do you create business websites":"Yes, professional business websites are available.",
+"can i request custom features":"Yes, custom features can be developed.",
+"how many revisions are included":"Revision limits depend on the package.",
+"do you sign contracts":"Yes, agreements can be arranged if required.",
+"can you create logos":"Basic branding services may be available.",
+"do you create content":"Content assistance can be provided.",
+"can you manage my website":"Website management services are available.",
+"can you improve conversions":"Yes, conversion-focused design strategies are used.",
+"what makes zentro ai different":"Affordable pricing, AI expertise and fast support.",
+"why should i choose you":"We provide modern solutions, fair pricing and reliable support.",
+"can i see your portfolio":"Portfolio examples are available on request.",
+"do you have client reviews":"Yes, client reviews are available.",
+"are there hidden charges":"No, pricing is discussed before project start.",
+"can i cancel my project":"Project terms are discussed before work begins.",
+"how do i send requirements":"Use the project requirements form.",
+"what happens after submission":"We review your request and provide a quote.",
+"how soon can work start":"Usually after approval and advance payment.",
+"can you deliver urgently":"Urgent projects may be possible depending on availability.",
+"thank you":"You're welcome 😊",
+"bye":"Goodbye 👋 Have a great day!"
+};
+
 function handleChat(event){
 
 if(event.key !== "Enter") return;
@@ -765,23 +863,9 @@ if(event.key !== "Enter") return;
 let input = document.getElementById("userMessage");
 let msg = input.value.toLowerCase();
 
-let reply = "Please contact us on WhatsApp for more details.";
+let reply = qa[msg] || "Please contact us on WhatsApp for more details.";
 
-if(msg.includes("website")){
-reply = "We create modern AI websites starting from $80.";
-}
-else if(msg.includes("chatbot")){
-reply = "We build AI chatbots for websites and businesses.";
-}
-else if(msg.includes("seo")){
-reply = "Our SEO services help improve Google rankings.";
-}
-else if(msg.includes("price") || msg.includes("pricing")){
-reply = "Our pricing starts from $80 depending on project requirements.";
-}
-else if(msg.includes("contact")){
-reply = "WhatsApp: 03238194763";
-}
+
 
 document.getElementById("chatMessages").innerHTML +=
 "<p><strong>You:</strong> " + input.value + "</p>" +
