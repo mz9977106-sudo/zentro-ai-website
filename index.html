@@ -316,6 +316,15 @@ We create AI-powered websites, chatbots, automation systems, SEO growth strategi
 &nbsp;&nbsp;|&nbsp;&nbsp;
 ✓ Repeat Client Discounts
 </p>
+  <div id="visitorLocation" style="
+margin-top:20px;
+padding:15px;
+background:#162544;
+border-radius:10px;
+display:inline-block;
+">
+📍 Detecting Location...
+</div>
 </div>
 </section>
 
@@ -697,11 +706,20 @@ return;
 }
 
 document.getElementById("errorBox").style.display = "none";
+    leadCounter++;
+
+localStorage.setItem("leadCounter", leadCounter);
+
+let leadID = "ZAI-" + String(leadCounter).padStart(3,"0");
 
 let message =
 `🚀 NEW PROJECT INQUIRY
 
+🆔 Lead ID: ${leadID}
+
 📧 Email: ${email}
+
+📍 Location: ${visitorCity}, ${visitorCountry}
 
 💼 Service: ${service}
 
@@ -874,6 +892,32 @@ document.getElementById("chatMessages").innerHTML +=
 input.value = "";
 
 }
+  let leadCounter = localStorage.getItem("leadCounter") || 0;
+  let visitorCity = "Unknown";
+let visitorCountry = "Unknown";
+
+async function getLocation(){
+
+try{
+
+let response = await fetch("https://ipapi.co/json/");
+let data = await response.json();
+
+visitorCity = data.city;
+visitorCountry = data.country_name;
+
+document.getElementById("visitorLocation").innerHTML =
+`📍 ${visitorCity}, ${visitorCountry}`;
+
+}catch(error){
+
+document.getElementById("visitorLocation").innerHTML =
+"📍 Location unavailable";
+}
+
+}
+
+getLocation();
 </script>
   <div class="chatbot-btn" onclick="toggleChat()">
 💬 Ask ZENTRO CHAT BOOT
