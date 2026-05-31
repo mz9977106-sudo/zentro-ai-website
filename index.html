@@ -239,6 +239,50 @@ text-decoration:none;
 font-weight:bold;
 z-index:9999;
 }
+  .chatbot-btn{
+position:fixed;
+bottom:90px;
+right:20px;
+background:#38bdf8;
+color:black;
+padding:15px 20px;
+border-radius:50px;
+cursor:pointer;
+font-weight:bold;
+z-index:9999;
+}
+
+.chatbot-box{
+position:fixed;
+bottom:150px;
+right:20px;
+width:350px;
+background:#111827;
+border-radius:15px;
+display:none;
+z-index:9999;
+overflow:hidden;
+}
+
+.chatbot-header{
+background:#38bdf8;
+color:black;
+padding:15px;
+font-weight:bold;
+}
+
+.chatbot-messages{
+height:300px;
+overflow-y:auto;
+padding:15px;
+}
+
+.chatbot-input{
+width:100%;
+padding:12px;
+border:none;
+outline:none;
+}
 </style>
 </head>
 <body>
@@ -328,6 +372,7 @@ Zentro AI Agency helps businesses grow with AI technology, modern web developmen
   <p><strong>Ready to start your project? Contact us today.</strong></p>
   <a href="https://wa.me/923238194763" target="_blank" class="btn">
 Chat on WhatsApp
+    
 </a>
 <p>Email: <a href="mailto:Mz9977106@gmail.com">Mz9977106@gmail.com</a></p>
 <p>Location: Pakistan</p>
@@ -701,7 +746,73 @@ document.getElementById("reviewName").value = "";
 document.getElementById("reviewText").value = "";
 
 }
+  function toggleChat(){
+
+let box = document.getElementById("chatbox");
+
+if(box.style.display === "block"){
+box.style.display = "none";
+}else{
+box.style.display = "block";
+}
+
+}
+
+function handleChat(event){
+
+if(event.key !== "Enter") return;
+
+let input = document.getElementById("userMessage");
+let msg = input.value.toLowerCase();
+
+let reply = "Please contact us on WhatsApp for more details.";
+
+if(msg.includes("website")){
+reply = "We create modern AI websites starting from $80.";
+}
+else if(msg.includes("chatbot")){
+reply = "We build AI chatbots for websites and businesses.";
+}
+else if(msg.includes("seo")){
+reply = "Our SEO services help improve Google rankings.";
+}
+else if(msg.includes("price") || msg.includes("pricing")){
+reply = "Our pricing starts from $80 depending on project requirements.";
+}
+else if(msg.includes("contact")){
+reply = "WhatsApp: 03238194763";
+}
+
+document.getElementById("chatMessages").innerHTML +=
+"<p><strong>You:</strong> " + input.value + "</p>" +
+"<p><strong>Zentro AI:</strong> " + reply + "</p>";
+
+input.value = "";
+
+}
 </script>
+  <div class="chatbot-btn" onclick="toggleChat()">
+💬 Ask Zentro AI
+</div>
+
+<div class="chatbot-box" id="chatbox">
+
+<div class="chatbot-header">
+Zentro AI Assistant
+</div>
+
+<div class="chatbot-messages" id="chatMessages">
+<p>Hello 👋<br>Ask me about websites, chatbots, automation, SEO, pricing or support.</p>
+</div>
+
+<input
+type="text"
+class="chatbot-input"
+id="userMessage"
+placeholder="Type your question..."
+onkeypress="handleChat(event)">
+
+</div>
 <a href="https://wa.me/923238194763" target="_blank" class="whatsapp-float">
 WhatsApp
 </a>
