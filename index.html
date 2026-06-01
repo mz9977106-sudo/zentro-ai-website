@@ -170,6 +170,17 @@ padding:25px;
 text-align:center;
 margin-top:50px;
 }
+  .clock-section{
+padding:20px;
+text-align:center;
+}
+
+#utcClock{
+font-size:32px;
+font-weight:bold;
+color:#38bdf8;
+margin-top:20px;
+}
 
 .popup{
 position:fixed;
@@ -304,6 +315,9 @@ outline:none;
 <p>
 We create AI-powered websites, chatbots, automation systems, SEO growth strategies, and modern business solutions.
 </p>
+  <div class="clock-section">
+  <div id="utcClock">UTC TIME: --:--:--</div>
+</div>
 
 <a href="#services" class="btn">Explore Services</a>
   <a href="#contact" class="btn">Get Started</a>
@@ -964,5 +978,25 @@ WhatsApp
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
+  </script>
+
+<script>
+function updateClock(){
+  const now = new Date();
+
+  const hours = String(now.getUTCHours()).padStart(2,'0');
+  const minutes = String(now.getUTCMinutes()).padStart(2,'0');
+  const seconds = String(now.getUTCSeconds()).padStart(2,'0');
+
+  document.getElementById("utcClock").innerText =
+    `UTC TIME: ${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>
 </body>
 </html>
