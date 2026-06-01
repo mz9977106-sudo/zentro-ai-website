@@ -904,30 +904,8 @@ input.value = "";
 
 }
   let leadCounter = localStorage.getItem("leadCounter") || 0;
-  let visitorCity = "Unknown";
-  let visitorCity = "Unknown";
-let visitorCountry = "Unknown";
+ 
 
-async function getLocation(){
-
-try{
-
-let response = await fetch("https://ipapi.co/json/");
-let data = await response.json();
-
-visitorCity = data.city || "Unknown";
-visitorCountry = data.country_name || "Unknown";
-
-}catch(error){
-
-visitorCity = "Unknown";
-visitorCountry = "Unknown";
-
-}
-
-}
-
-getLocation();
 let visitorCountry = "Unknown";
 
 async function getLocation(){
