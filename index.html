@@ -904,6 +904,16 @@ document.getElementById("chatMessages").innerHTML +=
 input.value = "";
 
 }
+  function resetChat(){
+
+document.getElementById("chatMessages").innerHTML =
+"<p>Hello 👋<br>Ask me about websites, chatbots, automation, SEO, pricing or support.</p>";
+
+document.getElementById("userMessage").value = "";
+
+location.reload();
+
+}
   let leadCounter = localStorage.getItem("leadCounter") || 0;
  let visitorCity = "Unknown";
 
@@ -941,7 +951,15 @@ getLocation();
 <div class="chatbot-header">
 Zentro AI Assistant
 </div>
-
+<button onclick="resetChat()" style="
+width:100%;
+padding:10px;
+border:none;
+background:#ef4444;
+color:white;
+cursor:pointer;">
+🗑 Clear Chat
+</button>
 <div class="chatbot-messages" id="chatMessages">
 <p>Hello 👋<br>Ask me about websites, chatbots, automation, SEO, pricing or support.</p>
 </div>
