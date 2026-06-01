@@ -391,6 +391,7 @@ Chat on WhatsApp
 </a>
 <p>Email: <a href="mailto:Mz9977106@gmail.com">Mz9977106@gmail.com</a></p>
 <p>Location: Pakistan</p>
+  <p id="visitorLocation">📍 Loading...</p>
   <p>Response Time: Within 24 Hours</p>
 <h2>Project Requirements</h2>
 
@@ -904,7 +905,7 @@ input.value = "";
 
 }
   let leadCounter = localStorage.getItem("leadCounter") || 0;
- 
+ let visitorCity = "Unknown";
 
 let visitorCountry = "Unknown";
 
@@ -997,7 +998,5 @@ setInterval(updateClock, 1000);
 updateClock();
 </script>
 
-</body>
-</html>
 </body>
 </html>
