@@ -554,14 +554,27 @@ Submit Requirements
 </div>
 
     <h2 style="margin-top:60px;">Leave Your Review</h2>
+    
 
 <input type="text" id="reviewName"
 placeholder="Your Name"
 style="width:80%;padding:15px;margin:10px;border-radius:8px;border:none;">
-    <textarea id="reviewText"
+<textarea id="reviewText"
 placeholder="Write Your Review..."
 style="width:80%;height:120px;padding:15px;margin:10px;border-radius:8px;">
 </textarea>
+
+<br>
+
+<select id="reviewRating"
+style="width:80%;padding:15px;margin:10px;border-radius:8px;">
+<option selected disabled>Select Rating</option>
+<option value="⭐">⭐ 1 Star</option>
+<option value="⭐⭐">⭐⭐ 2 Stars</option>
+<option value="⭐⭐⭐">⭐⭐⭐ 3 Stars</option>
+<option value="⭐⭐⭐⭐">⭐⭐⭐⭐ 4 Stars</option>
+<option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ 5 Stars</option>
+</select>
 
 <br>
 
@@ -752,30 +765,64 @@ window.open(
 );
 
 }
-
 function submitReview(){
 
 let name = document.getElementById("reviewName").value;
 let review = document.getElementById("reviewText").value;
+let rating = document.getElementById("reviewRating").value;
 
-if(name === "" || review === ""){
+if(name === "" || review === "" || !rating){
 alert("Please fill all fields");
 return;
 }
 
-let reviewBox = `
+let reviews =
+JSON.parse(localStorage.getItem("reviews")) || [];
+
+reviews.push({
+name:name,
+review:review,
+rating:rating
+});
+
+localStorage.setItem(
+"reviews",
+JSON.stringify(reviews)
+);
+
+loadReviews();
+
+document.getElementById("reviewName").value="";
+document.getElementById("reviewText").value="";
+document.getElementById("reviewRating").selectedIndex=0;
+}
+  function loadReviews(){
+
+let reviews =
+JSON.parse(localStorage.getItem("reviews")) || [];
+
+let html = "";
+
+reviews.forEach(r => {
+
+html += `
 <div class="card" style="margin-top:20px;">
-<h3>${name}</h3>
-<p>${review}</p>
+<h3>${r.name}</h3>
+<p style="font-size:22px;">${r.rating}</p>
+<p>${r.review}</p>
 </div>
 `;
 
-document.getElementById("reviewsContainer").innerHTML += reviewBox;
+});
 
-document.getElementById("reviewName").value = "";
-document.getElementById("reviewText").value = "";
+document.getElementById(
+"reviewsContainer"
+).innerHTML = html;
 
 }
+
+loadReviews();
+
   function toggleChat(){
 
 let box = document.getElementById("chatbox");
@@ -998,7 +1045,6 @@ WhatsApp
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 </script>
-  </script>
 
 <script>
 function updateClock(){
