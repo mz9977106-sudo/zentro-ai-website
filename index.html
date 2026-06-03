@@ -1,1089 +1,879 @@
-# Complete AI Agency Website (Single HTML File)
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zentro AI Agency</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zentro AI Agency</title>
   <meta name="description" content="Zentro AI Agency provides AI websites, chatbots, automation, SEO services and business solutions.">
-
-<meta name="keywords" content="AI Website, Chatbot, SEO, Automation, Web Design, Business Website, AI Agency">
-
-<meta name="author" content="Zentro AI Agency">
-
-<meta property="og:title" content="Zentro AI Agency">
-
-<meta property="og:description" content="AI Websites, Chatbots, SEO Growth and Automation Solutions">
-
-<meta property="og:type" content="website">
+  <meta name="keywords" content="AI Website, Chatbot, SEO, Automation, Web Design, Business Website, AI Agency">
+  <meta name="author" content="Zentro AI Agency">
+  <meta property="og:title" content="Zentro AI Agency">
+  <meta property="og:description" content="AI Websites, Chatbots, SEO Growth and Automation Solutions">
+  <meta property="og:type" content="website">
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
 
-body{
-background:#020c2b;
-color:white;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-header{
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:#06163f;
-position:sticky;
-top:0;
-z-index:1000;
-}
+    body {
+      background: #020c2b;
+      color: white;
+      overflow-x: hidden;
+    }
 
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#38bdf8;
-}
+    header {
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #06163f;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #162544;
+    }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-font-size:17px;
-}
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #38bdf8;
+    }
 
-.hero{
-height:90vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 17px;
+      transition: 0.3s;
+    }
 
-.hero-content h1{
-font-size:60px;
-margin-bottom:20px;
-}
+    nav a:hover {
+      color: #38bdf8;
+    }
 
-.hero-content span{
-color:#38bdf8;
-}
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-.hero-content p{
-font-size:20px;
-max-width:700px;
-margin:auto;
-line-height:1.7;
-color:#cbd5e1;
-}
+    .hero-content h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
 
-.btn{
-display:inline-block;
-padding:15px 35px;
-background:#38bdf8;
-color:black;
-text-decoration:none;
-border-radius:10px;
-font-weight:bold;
-margin-top:30px;
-transition:0.3s;
-}
+    .hero-content span {
+      color: #38bdf8;
+    }
 
-.btn:hover{
-background:white;
-}
+    .hero-content p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
 
-.services{
-padding:100px 8%;
-text-align:center;
-}
+    .btn {
+      display: inline-block;
+      padding: 15px 35px;
+      background: #38bdf8;
+      color: black;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-top: 30px;
+      margin-right: 10px;
+      transition: 0.3s;
+      cursor: pointer;
+      border: none;
+    }
 
-.services h2{
-font-size:50px;
-margin-bottom:60px;
-}
+    .btn:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
+    .services {
+      padding: 100px 8%;
+      text-align: center;
+    }
 
-.card{
-background:#162544;
-padding:35px 25px;
-border-radius:20px;
-transition:0.4s;
-}
+    .services h2 {
+      font-size: 50px;
+      margin-bottom: 60px;
+    }
 
-.card:hover{
-transform:translateY(-10px);
-}
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
 
-.card h3{
-font-size:30px;
-margin-bottom:15px;
-color:#38bdf8;
-}
+    .card {
+      background: #162544;
+      padding: 35px 25px;
+      border-radius: 20px;
+      transition: 0.4s;
+      text-align: center;
+    }
 
-.card p{
-line-height:1.7;
-color:#d1d5db;
-margin-bottom:20px;
-}
+    .card:hover {
+      transform: translateY(-10px);
+      background: #1e315c;
+    }
 
-.about{
-padding:100px 8%;
-display:flex;
-flex-wrap:wrap;
-gap:40px;
-align-items:center;
-}
+    .card h3 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #38bdf8;
+    }
 
-.about-text{
-flex:1;
-}
+    .card p {
+      line-height: 1.7;
+      color: #d1d5db;
+      margin-bottom: 20px;
+    }
 
-.about-text h2{
-font-size:50px;
-margin-bottom:20px;
-}
+    .about {
+      padding: 100px 8%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
 
-.about-text p{
-line-height:1.9;
-color:#cbd5e1;
-font-size:18px;
-}
+    .about-text {
+      flex: 1;
+    }
 
-.contact{
-padding:100px 8%;
-text-align:center;
-}
+    .about-text h2 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
 
-.contact h2{
-font-size:50px;
-margin-bottom:20px;
-}
+    .about-text p {
+      line-height: 1.9;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
 
-.contact p{
-font-size:20px;
-margin-bottom:10px;
-}
+    .contact {
+      padding: 100px 8%;
+      text-align: center;
+    }
 
-footer{
-background:#06163f;
-padding:25px;
-text-align:center;
-margin-top:50px;
-}
-  .clock-section{
-padding:20px;
-text-align:center;
-}
+    .contact h2 {
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
 
-#utcClock{
-font-size:32px;
-font-weight:bold;
-color:#38bdf8;
-margin-top:20px;
-}
+    .contact p {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
 
-.popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-display:none;
-justify-content:center;
-align-items:center;
-padding:20px;
-z-index:9999;
-}
+    .contact form-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
-.popup-box{
-background:#111827;
-width:700px;
-max-height:90vh;
-overflow:auto;
-padding:40px;
-border-radius:20px;
-position:relative;
-}
+    .contact input, .contact select, .contact textarea {
+      width: 80%;
+      padding: 15px;
+      margin: 10px auto;
+      border-radius: 8px;
+      border: 1px solid #1e315c;
+      background: #111827;
+      color: white;
+      display: block;
+    }
 
-.popup-box h2{
-font-size:40px;
-margin-bottom:20px;
-color:#38bdf8;
-}
+    .contact select option {
+      background: #111827;
+      color: white;
+    }
 
-.popup-box p{
-line-height:1.8;
-margin-bottom:15px;
-color:#d1d5db;
-}
+    footer {
+      background: #06163f;
+      padding: 25px;
+      text-align: center;
+      margin-top: 50px;
+      border-top: 1px solid #162544;
+    }
 
-.close-btn{
-position:absolute;
-right:20px;
-top:15px;
-font-size:35px;
-cursor:pointer;
-color:#38bdf8;
-}
+    .clock-section {
+      padding: 10px;
+      text-align: center;
+    }
 
-@media(max-width:768px){
-.hero-content h1{
-font-size:40px;
-}
+    #utcClock {
+      font-size: 32px;
+      font-weight: bold;
+      color: #38bdf8;
+      margin-top: 20px;
+    }
 
-.services h2,
-.about-text h2,
-.contact h2{
-font-size:35px;
-}
-}
-  .whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-z-index:9999;
-}
-  .chatbot-btn{
-position:fixed;
-bottom:90px;
-right:20px;
-background:#38bdf8;
-color:black;
-padding:15px 20px;
-border-radius:50px;
-cursor:pointer;
-font-weight:bold;
-z-index:9999;
-}
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 10000;
+    }
 
-.chatbot-box{
-position:fixed;
-bottom:150px;
-right:20px;
-width:350px;
-background:#111827;
-border-radius:15px;
-display:none;
-z-index:9999;
-overflow:hidden;
-}
+    .popup-box {
+      background: #111827;
+      width: 700px;
+      max-height: 90vh;
+      overflow: auto;
+      padding: 40px;
+      border-radius: 20px;
+      position: relative;
+      border: 1px solid #38bdf8;
+    }
 
-.chatbot-header{
-background:#38bdf8;
-color:black;
-padding:15px;
-font-weight:bold;
-}
+    .popup-box h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: #38bdf8;
+    }
 
-.chatbot-messages{
-height:300px;
-overflow-y:auto;
-padding:15px;
-}
+    .popup-box p {
+      line-height: 1.8;
+      margin-bottom: 15px;
+      color: #d1d5db;
+      text-align: left;
+    }
 
-.chatbot-input{
-width:100%;
-padding:12px;
-border:none;
-outline:none;
-}
-</style>
+    .close-btn {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 35px;
+      cursor: pointer;
+      color: #38bdf8;
+    }
+
+    @media(max-width:768px){
+      .hero-content h1 { font-size: 40px; }
+      .services h2, .about-text h2, .contact h2 { font-size: 35px; }
+      .contact input, .contact select, .contact textarea { width: 100%; }
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 9999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chatbot-btn {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: #38bdf8;
+      color: black;
+      padding: 15px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 9999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .chatbot-box {
+      position: fixed;
+      bottom: 150px;
+      right: 20px;
+      width: 350px;
+      background: #111827;
+      border: 1px solid #38bdf8;
+      border-radius: 15px;
+      display: none;
+      z-index: 9999;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .chatbot-header {
+      background: #38bdf8;
+      color: black;
+      padding: 15px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chatbot-messages {
+      height: 250px;
+      overflow-y: auto;
+      padding: 15px;
+      background: #0b0f19;
+    }
+
+    .chatbot-messages p {
+      margin-bottom: 10px;
+      line-height: 1.4;
+      font-size: 14px;
+    }
+
+    .chatbot-input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      outline: none;
+      background: #1f2937;
+      color: white;
+      border-top: 1px solid #38bdf8;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-<div class="logo">Zentro AI</div>
+  <header>
+    <div class="logo">Zentro AI</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Modern <span>AI Agency</span> Solutions</h1>
+      <p>We create AI-powered websites, chatbots, automation systems, SEO growth strategies, and modern business solutions.</p>
+      
+      <div class="clock-section">
+        <div id="utcClock">UTC TIME: --:--:--</div>
+      </div>
 
-<section class="hero" id="home">
-<div class="hero-content">
-<h1>Modern <span>AI Agency</span> Solutions</h1>
-<p>
-We create AI-powered websites, chatbots, automation systems, SEO growth strategies, and modern business solutions.
-</p>
-  <div class="clock-section">
-  <div id="utcClock">UTC TIME: --:--:--</div>
-</div>
+      <a href="#services" class="btn">Explore Services</a>
+      <a href="#contact" class="btn">Get Started</a>
+      
+      <p style="margin-top:25px; color:#94a3b8; font-size:16px;">
+        ✓ 30% Advance Only &nbsp;&nbsp;|&nbsp;&nbsp; ✓ Custom AI Solutions &nbsp;&nbsp;|&nbsp;&nbsp; ✓ 24 Hour Response Time &nbsp;&nbsp;|&nbsp;&nbsp; ✓ Repeat Client Discounts
+      </p>
+    </div>
+  </section>
 
-<a href="#services" class="btn">Explore Services</a>
-  <a href="#contact" class="btn">Get Started</a>
-  <p style="margin-top:25px;color:#94a3b8;font-size:16px;">
-✓ 30% Advance Only
-&nbsp;&nbsp;|&nbsp;&nbsp;
-✓ Custom AI Solutions
-&nbsp;&nbsp;|&nbsp;&nbsp;
-✓ 24 Hour Response Time
-&nbsp;&nbsp;|&nbsp;&nbsp;
-✓ Repeat Client Discounts
-</p>
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>AI Websites</h3>
+        <p>Modern responsive websites powered with AI tools.</p>
+        <button class="btn" onclick="showAIWebsites()">Learn More</button>
+      </div>
+      <div class="card">
+        <h3>Chatbots</h3>
+        <p>Smart AI assistants for customer support & automation.</p>
+        <button class="btn" onclick="showChatbots()">Learn More</button>
+      </div>
+      <div class="card">
+        <h3>Automation</h3>
+        <p>Automate repetitive tasks and save business time.</p>
+        <button class="btn" onclick="showAutomation()">Learn More</button>
+      </div>
+      <div class="card">
+        <h3>SEO Growth</h3>
+        <p>Rank your business higher with smart optimization.</p>
+        <button class="btn" onclick="showSEO()">Learn More</button>
+      </div>
+    </div>
+  </section>
 
-</div>
-</section>
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        Zentro AI Agency is a modern digital solutions company dedicated to helping businesses grow and succeed in the online world. We specialize in AI-powered websites, smart automation systems, SEO optimization, and advanced web development.
+        <br><br>
+        Our goal is to transform traditional businesses into smart digital brands by using the latest AI technologies and modern design strategies. We focus on delivering high-quality, fast, and result-driven solutions tailored to each client’s needs.
+        <br><br>
+        At Zentro AI Agency, we don’t just build websites — we build complete digital growth systems that increase visibility, improve customer engagement, and boost sales.
+      </p>
+    </div>
+  </section>
 
-<section class="services" id="services">
-<h2>Our Services</h2>
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Phone: 03238194763</p>
+    <p><strong>Ready to start your project? Contact us today.</strong></p>
+    <a href="https://wa.me/923238194763" target="_blank" class="btn" style="background:#25D366; color:white; margin-bottom:20px;">
+      Chat on WhatsApp
+    </a>
+    <p>Email: <a href="mailto:Mz9977106@gmail.com" style="color:#38bdf8;">Mz9977106@gmail.com</a></p>
+    <p>Location: Pakistan</p>
+    <p id="visitorLocation">📍 Loading...</p>
+    <p style="margin-bottom:40px;">Response Time: Within 24 Hours</p>
 
-<div class="cards">
+    <h2>Project Requirements</h2>
+    <input type="email" id="email" placeholder="Your Email Address">
 
-<div class="card">
-<h3>AI Websites</h3>
-<p>Modern responsive websites powered with AI tools.</p>
+    <select id="service">
+      <option selected disabled>Select Service</option>
+      <option>AI Website</option>
+      <option>AI Chatbot</option>
+      <option>Business Automation</option>
+      <option>SEO Growth</option>
+    </select>
 
-<a href="#" class="btn" onclick="showAIWebsites()">Learn More</a>
-</div>
+    <select id="business">
+      <option selected disabled>Select Business Type</option>
+      <option>Restaurant</option>
+      <option>Real Estate</option>
+      <option>E-commerce</option>
+      <option>Education</option>
+      <option>Healthcare</option>
+      <option>Other</option>
+    </select>
 
-<div class="card">
-<h3>Chatbots</h3>
-<p>Smart AI assistants for customer support & automation.</p>
+    <select id="website">
+      <option selected disabled>Do You Already Have A Website?</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
 
-<a href="#" class="btn" onclick="showChatbots()">Learn More</a>
-</div>
+    <select id="budget">
+      <option selected disabled>Select Budget Range</option>
+      <option>$80 - $150</option>
+      <option>$150 - $300</option>
+      <option>$300 - $550</option>
+      <option>$550+</option>
+    </select>
 
-<div class="card">
-<h3>Automation</h3>
-<p>Automate repetitive tasks and save business time.</p>
+    <select id="timeline">
+      <option selected disabled>Select Timeline</option>
+      <option>Urgent</option>
+      <option>1 Week</option>
+      <option>2 Weeks</option>
+      <option>1 Month+</option>
+    </select>
 
-<a href="#" class="btn" onclick="showAutomation()">Learn More</a>
-</div>
+    <textarea id="details" placeholder="Describe Your Project Requirements..."></textarea>
 
-<div class="card">
-<h3>SEO Growth</h3>
-<p>Rank your business higher with smart optimization.</p>
-
-<a href="#" class="btn" onclick="showSEO()">Learn More</a>
-</div>
-
-</div>
-</section>
-
-<section class="about" id="about">
-<div class="about-text">
-<h2>About Us</h2>
-
-<p>
-Zentro AI Agency is a modern digital solutions company dedicated to helping businesses grow and succeed in the online world. We specialize in AI-powered websites, smart automation systems, SEO optimization, and advanced web development.
-
-Our goal is to transform traditional businesses into smart digital brands by using the latest AI technologies and modern design strategies. We focus on delivering high-quality, fast, and result-driven solutions tailored to each client’s needs.
-
-At Zentro AI Agency, we don’t just build websites — we build complete digital growth systems that increase visibility, improve customer engagement, and boost sales.
-</p>
-</div>
-</section>
-
-<section class="contact" id="contact">
-<h2>Contact Us</h2>
-
-<p>Phone: 03238194763</p>
-  <p><strong>Ready to start your project? Contact us today.</strong></p>
-  <a href="https://wa.me/923238194763" target="_blank" class="btn">
-Chat on WhatsApp
+    <div id="errorBox" style="width:80%; margin:10px auto; padding:15px; background:#dc2626; color:white; border-radius:8px; display:none; text-align:left;"></div>
     
-</a>
-<p>Email: <a href="mailto:Mz9977106@gmail.com">Mz9977106@gmail.com</a></p>
-<p>Location: Pakistan</p>
-  <p id="visitorLocation">📍 Loading...</p>
-  <p>Response Time: Within 24 Hours</p>
-<h2>Project Requirements</h2>
+    <button onclick="sendRequirements()" class="btn">Submit Requirements</button>
 
-<input type="email" id="email" placeholder="Your Email Address" style="width:80%;padding:15px;margin:10px;border-radius:8px;border:none;">
+    <h2 style="margin-top:60px;">Our Process</h2>
+    <p>1. Submit Your Requirements</p>
+    <p>2. Receive a Custom Quote</p>
+    <p>3. Pay 30% Advance</p>
+    <p>4. Development Begins</p>
+    <p>5. Project Delivery</p>
+    <p>6. Final Payment & Support</p>
 
-<select id="service" style="width:80%;padding:15px;margin:10px;border-radius:8px;">
-<option selected disabled>Select Service</option>
-<option>AI Website</option>
-<option>AI Chatbot</option>
-<option>Business Automation</option>
-<option>SEO Growth</option>
-</select>
+    <h2 style="margin-top:60px;">Pricing</h2>
+    <p><strong>Starter Package:</strong> $80 - $150</p>
+    <p style="color:#cbd5e1; font-size:16px; margin-bottom:15px;">Perfect for simple landing pages and basic websites.</p>
+    <p><strong>Business Package:</strong> $150 - $300</p>
+    <p style="color:#cbd5e1; font-size:16px; margin-bottom:15px;">Ideal for growing businesses needing a professional website.</p>
+    <p><strong>Professional Package:</strong> $300 - $550</p>
+    <p style="color:#cbd5e1; font-size:16px; margin-bottom:15px;">Advanced websites with premium features and integrations.</p>
+    <p><strong>Custom Enterprise Solution:</strong> Starting From $550+</p>
+    <p style="color:#cbd5e1; font-size:16px;">Customized solutions tailored to your business requirements.</p>
+  </section>
 
-<select id="business" style="width:80%;padding:15px;margin:10px;border-radius:8px;">
-<option selected disabled>Select Business Type</option>
-<option>Restaurant</option>
-<option>Real Estate</option>
-<option>E-commerce</option>
-<option>Education</option>
-<option>Healthcare</option>
-<option>Other</option>
-</select>
-
-<select id="website" style="width:80%;padding:15px;margin:10px;border-radius:8px;">
-<option selected disabled>Do You Already Have A Website?</option>
-<option>Yes</option>
-<option>No</option>
-</select>
-
-<select id="budget" style="width:80%;padding:15px;margin:10px;border-radius:8px;">
-<option selected disabled>Select Budget Range</option>
-<option>$80 - $150</option>
-<option>$150 - $300</option>
-<option>$300 - $550</option>
-<option>$550+</option>
-</select>
-
-<select id="timeline" style="width:80%;padding:15px;margin:10px;border-radius:8px;">
-<option selected disabled>Select Timeline</option>
-<option>Urgent</option>
-<option>1 Week</option>
-<option>2 Weeks</option>
-<option>1 Month+</option>
-</select>
-
-<textarea id="details" placeholder="Describe Your Project Requirements..." style="width:80%;height:150px;padding:15px;margin:10px;border-radius:8px;"></textarea>
-
-<br>
-
-  <div id="errorBox" style="
-width:80%;
-margin:10px auto;
-padding:15px;
-background:#dc2626;
-color:white;
-border-radius:8px;
-display:none;">
-</div>
-<button onclick="sendRequirements()" class="btn">
-Submit Requirements
-  
-</button>
-
-  <h2>Our Process</h2>
-
-<p>1. Submit Your Requirements</p>
-<p>2. Receive a Custom Quote</p>
-<p>3. Pay 30% Advance</p>
-<p>4. Development Begins</p>
-<p>5. Project Delivery</p>
-<p>6. Final Payment & Support</p>
-  <h2>Pricing</h2>
-
-<p><strong>Starter Package:</strong> $80 - $150</p>
-<p>Perfect for simple landing pages and basic websites.</p>
-
-<p><strong>Business Package:</strong> $150 - $300</p>
-<p>Ideal for growing businesses needing a professional website.</p>
-
-<p><strong>Professional Package:</strong> $300 - $550</p>
-<p>Advanced websites with premium features and integrations.</p>
-
-<p><strong>Custom Enterprise Solution:</strong> Starting From $550+</p>
-<p>Customized solutions tailored to your business requirements.</p>
-</section>
-<section class="services">
-
-<h2>Why Choose Zentro AI?</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Fast Delivery</h3>
-<p>Projects delivered on time with professional quality.</p>
-</div>
-
-<div class="card">
-<h3>30% Advance</h3>
-<p>Simple and secure payment process for every project.</p>
-</div>
-
-<div class="card">
-<h3>24/7 Support</h3>
-<p>We're available to assist you whenever you need help.</p>
-</div>
-
-<div class="card">
-<h3>Custom Solutions</h3>
-<p>Every project is tailored to your business goals and budget.</p>
-</div>
-
-</div>
-
-</section>
   <section class="services">
+    <h2>Why Choose Zentro AI?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Fast Delivery</h3>
+        <p>Projects delivered on time with professional quality.</p>
+      </div>
+      <div class="card">
+        <h3>30% Advance</h3>
+        <p>Simple and secure payment process for every project.</p>
+      </div>
+      <div class="card">
+        <h3>24/7 Support</h3>
+        <p>We're available to assist you whenever you need help.</p>
+      </div>
+      <div class="card">
+        <h3>Custom Solutions</h3>
+        <p>Every project is tailored to your business goals and budget.</p>
+      </div>
+    </div>
+  </section>
 
-<h2>Our Portfolio</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Restaurant Website</h3>
-<p>Modern website with online menu, reservations and WhatsApp contact.</p>
-</div>
-
-<div class="card">
-<h3>Real Estate Website</h3>
-<p>Property listings, inquiry forms and AI-powered lead generation.</p>
-</div>
-
-<div class="card">
-<h3>AI Chatbot System</h3>
-<p>24/7 customer support chatbot with automated responses.</p>
-</div>
-
-</div>
-
-</section>
   <section class="services">
+    <h2>Our Portfolio</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Restaurant Website</h3>
+        <p>Modern website with online menu, reservations and WhatsApp contact.</p>
+      </div>
+      <div class="card">
+        <h3>Real Estate Website</h3>
+        <p>Property listings, inquiry forms and AI-powered lead generation.</p>
+      </div>
+      <div class="card">
+        <h3>AI Chatbot System</h3>
+        <p>24/7 customer support chatbot with automated responses.</p>
+      </div>
+    </div>
+  </section>
 
-<h2>Client Reviews</h2>
+  <section class="services">
+    <h2>Client Reviews</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>⭐⭐⭐⭐⭐</h3>
+        <p>"Professional work and fast delivery. Highly recommended!"</p>
+      </div>
+      <div class="card">
+        <h3>⭐⭐⭐⭐⭐</h3>
+        <p>"Our business website looks amazing and generates more leads."</p>
+      </div>
+      <div class="card">
+        <h3>⭐⭐⭐⭐⭐</h3>
+        <p>"Excellent communication and AI solutions for our company."</p>
+      </div>
+    </div>
 
-<div class="cards">
-
-<div class="card">
-<h3>⭐⭐⭐⭐⭐</h3>
-<p>"Professional work and fast delivery. Highly recommended!"</p>
-</div>
-
-<div class="card">
-<h3>⭐⭐⭐⭐⭐</h3>
-<p>"Our business website looks amazing and generates more leads."</p>
-</div>
-
-<div class="card">
-<h3>⭐⭐⭐⭐⭐</h3>
-<p>"Excellent communication and AI solutions for our company."</p>
-</div>
-
-</div>
+    <div id="reviewsContainer" style="max-width:800px; margin:30px auto 0 auto; display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:20px;"></div>
 
     <h2 style="margin-top:60px;">Leave Your Review</h2>
-    
+    <input type="text" id="reviewName" placeholder="Your Name" style="width:80%; padding:15px; margin:10px auto; border-radius:8px; border:none; background:#111827; color:white; display:block;">
+    <textarea id="reviewText" placeholder="Write Your Review..." style="width:80%; height:120px; padding:15px; margin:10px auto; border-radius:8px; background:#111827; color:white; display:block;"></textarea>
+    <select id="reviewRating" style="width:80%; padding:15px; margin:10px auto; border-radius:8px; background:#111827; color:white; display:block;">
+      <option selected disabled>Select Rating</option>
+      <option value="⭐">⭐ 1 Star</option>
+      <option value="⭐⭐">⭐⭐ 2 Stars</option>
+      <option value="⭐⭐⭐">⭐⭐⭐ 3 Stars</option>
+      <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ 4 Stars</option>
+      <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ 5 Stars</option>
+    </select>
+    <button id="btnSubmitReview" class="btn">Submit Review</button>
+  </section>
 
-<input type="text" id="reviewName"
-placeholder="Your Name"
-style="width:80%;padding:15px;margin:10px;border-radius:8px;border:none;">
-<textarea id="reviewText"
-placeholder="Write Your Review..."
-style="width:80%;height:120px;padding:15px;margin:10px;border-radius:8px;">
-</textarea>
-
-<br>
-
-<select id="reviewRating"
-style="width:80%;padding:15px;margin:10px;border-radius:8px;">
-<option selected disabled>Select Rating</option>
-<option value="⭐">⭐ 1 Star</option>
-<option value="⭐⭐">⭐⭐ 2 Stars</option>
-<option value="⭐⭐⭐">⭐⭐⭐ 3 Stars</option>
-<option value="⭐⭐⭐⭐">⭐⭐⭐⭐ 4 Stars</option>
-<option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ 5 Stars</option>
-</select>
-
-<br>
-
-<button onclick="submitReview()" class="btn">
-Submit Review
-</button>
-    <div id="reviewsContainer" style="margin-top:30px;"></div>
-</section>
   <section class="services">
+    <h2>Frequently Asked Questions</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>How much advance payment is required?</h3>
+        <p>We require only 30% advance before starting any project.</p>
+      </div>
+      <div class="card">
+        <h3>How long does a project take?</h3>
+        <p>Delivery time depends on project requirements and complexity.</p>
+      </div>
+      <div class="card">
+        <h3>Do you provide support after delivery?</h3>
+        <p>Yes, we provide post-delivery support for all clients.</p>
+      </div>
+      <div class="card">
+        <h3>Do you offer discounts?</h3>
+        <p>Repeat clients may receive special discounts and offers.</p>
+      </div>
+    </div>
+  </section>
 
-<h2>Frequently Asked Questions</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>How much advance payment is required?</h3>
-<p>We require only 30% advance before starting any project.</p>
-</div>
-
-<div class="card">
-<h3>How long does a project take?</h3>
-<p>Delivery time depends on project requirements and complexity.</p>
-</div>
-
-<div class="card">
-<h3>Do you provide support after delivery?</h3>
-<p>Yes, we provide post-delivery support for all clients.</p>
-</div>
-
-<div class="card">
-<h3>Do you offer discounts?</h3>
-<p>Repeat clients may receive special discounts and offers.</p>
-</div>
-
-</div>
-
-</section>
   <section class="services">
+    <h2>Ready To Start?</h2>
+    <p style="max-width:700px; margin:auto; color:#cbd5e1; line-height:1.8;">
+      Have questions about our services, pricing, or project requirements? If there is anything on our website that you do not understand, or if you would like to discuss your project directly with us, feel free to contact us on WhatsApp.
+    </p>
+    <a href="https://wa.me/923238194763" target="_blank" class="btn" style="background:#25D366; color:white;">
+      Chat With Us on WhatsApp
+    </a>
+  </section>
+
+  <footer>
+    © 2026 Zentro AI Agency. All Rights Reserved.
+  </footer>
+
+  <div class="popup" id="popup">
+    <div class="popup-box">
+      <span class="close-btn" onclick="closePopup()">×</span>
+      <h2 id="popupTitle"></h2>
+      <p id="popupContent"></p>
+    </div>
+  </div>
+
+  <div class="chatbot-btn" onclick="toggleChat()">💬 DEMO CHATBOT</div>
+
+  <div class="chatbot-box" id="chatbox">
+    <div class="chatbot-header">
+      <span>Zentro AI Assistant</span>
+      <span style="cursor:pointer;" onclick="toggleChat()">❌</span>
+    </div>
+    <button onclick="resetChat()" style="width:100%; padding:10px; border:none; background:#ef4444; color:white; cursor:pointer; font-weight:bold;">
+      🗑 Clear Chat
+    </button>
+    <div class="chatbot-messages" id="chatMessages">
+      <p><strong>Zentro AI:</strong> Hello 👋<br>Ask me about websites, chatbots, automation, SEO, pricing or support.</p>
+    </div>
+    <input type="text" class="chatbot-input" id="userMessage" placeholder="Type your question and press Enter..." onkeypress="handleChat(event)">
+  </div>
+
+  <a href="https://wa.me/923238194763" target="_blank" class="whatsapp-float">
+    WhatsApp
+  </a>
+
+  <script>
+    // System Utilities & Global State
+    let leadCounter = localStorage.getItem("leadCounter") || 0;
+    let visitorCity = "Unknown";
+    let visitorCountry = "Unknown";
+
+    // Modal Operations
+    function openPopup(title, content){
+      document.getElementById('popup').style.display = 'flex';
+      document.getElementById('popupTitle').innerHTML = title;
+      document.getElementById('popupContent').innerHTML = content;
+    }
+
+    function closePopup(){
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    function showAIWebsites(){
+      openPopup('AI Websites', 'Responsive Website Design → Works perfectly on all devices.<br><br>AI Integration → Smart AI tools and automation features.<br><br>Modern UI/UX → Premium and professional design.<br><br>Fast Loading Speed → Better user experience and performance.<br><br>SEO Friendly → Helps improve Google ranking.<br><br>Admin Dashboard → Easy website management system.<br><br>Live Chat Support → Customers can instantly contact you.');
+    }
+
+    function showChatbots(){
+      openPopup('AI Chatbots', '24/7 Customer Support → Customers get instant replies anytime.<br><br>Automation → Saves business time and effort.<br><br>AI Responses → Smart and human-like conversations.<br><br>Lead Generation → Helps increase customers and sales.<br><br>Multi Platform Support → Works on websites and social media.');
+    }
+
+    function showAutomation(){
+      openPopup('Business Automation', 'Task Automation → Automates repetitive business work.<br><br>Email Automation → Sends automatic emails to clients.<br><br>Workflow Management → Improves business efficiency.<br><br>Time Saving → Reduces manual work and saves time.<br><br>Productivity Growth → Helps teams work faster.');
+    }
+
+    function showSEO(){
+      openPopup('SEO Growth', 'Google Ranking → Improve website visibility.<br><br>Keyword Optimization → Better search engine results.<br><br>Traffic Growth → Increase website visitors.<br><br>Business Growth → More leads and customers.<br><br>Performance Optimization → Faster and SEO-friendly website.');
+    }
+
+    // Geolocation Implementation
+    async function getLocation(){
+      try{
+        let response = await fetch("https://ipapi.co/json/");
+        let data = await response.json();
+        visitorCity = data.city || "Unknown";
+        visitorCountry = data.country_name || "Unknown";
+        document.getElementById("visitorLocation").innerHTML = `📍 ${visitorCity}, ${visitorCountry}`;
+      }catch(error){
+        document.getElementById("visitorLocation").innerHTML = "📍 Location unavailable";
+      }
+    }
+    getLocation();
+
+    // Lead Generation Processing
+    function sendRequirements(){
+      let email = document.getElementById("email").value;
+      let service = document.getElementById("service").value;
+      let business = document.getElementById("business").value;
+      let website = document.getElementById("website").value;
+      let budget = document.getElementById("budget").value;
+      let timeline = document.getElementById("timeline").value;
+      let details = document.getElementById("details").value;
+      let missingFields = [];
+
+      if (!email) missingFields.push("Email");
+      if (!service || service === "Select Service") missingFields.push("Service");
+      if (!business || business === "Select Business Type") missingFields.push("Business Type");
+      if (!website || website === "Do You Already Have A Website?") missingFields.push("Website Question");
+      if (!budget || budget === "Select Budget Range") missingFields.push("Budget");
+      if (!timeline || timeline === "Select Timeline") missingFields.push("Timeline");
+      if (!details) missingFields.push("Project Details");
+
+      if (missingFields.length > 0) {
+        document.getElementById("errorBox").style.display = "block";
+        document.getElementById("errorBox").innerHTML = "<strong>Please complete these fields:</strong><br><br>• " + missingFields.join("<br>• ");
+        return;
+      }
+
+      document.getElementById("errorBox").style.display = "none";
+      leadCounter++;
+      localStorage.setItem("leadCounter", leadCounter);
+      let leadID = "ZAI-" + String(leadCounter).padStart(3,"0");
+
+      let message = `🚀 NEW PROJECT INQUIRY\n\n🆔 Lead ID: ${leadID}\n📧 Email: ${email}\n📍 Location: ${visitorCity}, ${visitorCountry}\n💼 Service: ${service}\n🏢 Business Type: ${business}\n🌐 Existing Website: ${website}\n💰 Budget: ${budget}\n⏳ Timeline: ${timeline}\n📝 Project Details:\n${details}`;
+
+      window.open(`https://wa.me/923238194763?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    // Real-time Chatbot Mechanics
+    function toggleChat(){
+      let box = document.getElementById("chatbox");
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+
+    const qa = {
+      "hello":"Hello 👋 Welcome to Zentro AI. How can I help you today?",
+      "hi":"Hi there! How can I assist you?",
+      "who are you":"I am Zentro AI Assistant.",
+      "what is zentro ai":"Zentro AI is an agency providing AI websites, chatbots, automation and SEO services.",
+      "what services do you offer":"We offer AI Websites, Chatbots, Automation and SEO services.",
+      "what is an ai website":"An AI website uses smart tools and automation to improve user experience.",
+      "do you build websites":"Yes, we build modern responsive websites.",
+      "how much does a website cost":"Website pricing starts from $80.",
+      "how long does a website take":"Most websites are completed within 1-2 weeks.",
+      "do you create landing pages":"Yes, we create professional landing pages.",
+      "do you build ecommerce websites":"Yes, we build eCommerce websites.",
+      "can you redesign my website":"Yes, we can redesign existing websites.",
+      "is the website mobile friendly":"Yes, all websites are mobile responsive.",
+      "will my website be seo friendly":"Yes, websites are built with SEO best practices.",
+      "do you build chatbots":"Yes, we create AI chatbots.",
+      "what is an ai chatbot":"An AI chatbot automatically answers customer questions.",
+      "can chatbots work 24 7":"Yes, chatbots work 24/7.",
+      "can chatbot work on websites":"Yes, chatbots can be integrated into websites.",
+      "can chatbot work on whatsapp":"Yes, WhatsApp chatbot solutions are available.",
+      "what is automation":"Automation reduces manual work using software and AI.",
+      "does automation save time":"Yes, automation saves significant time.",
+      "what is seo":"SEO improves visibility on search engines.",
+      "how does seo help":"SEO increases website traffic and leads.",
+      "how much is seo service":"Pricing depends on project requirements.",
+      "what is your pricing":"Projects start from $80.",
+      "how much advance is required":"Only 30% advance payment is required.",
+      "how can i contact you":"You can contact us on WhatsApp.",
+      "what is your whatsapp number":"03238194763",
+      "what is your email":"Email: Mz9977106@gmail.com",
+      "thank you":"You're welcome 😊",
+      "bye":"Goodbye 👋 Have a great day!"
+    };
+
+    function handleChat(event){
+      if(event.key !== "Enter") return;
+
+      let input = document.getElementById("userMessage");
+      let rawMsg = input.value;
+      let cleanMsg = rawMsg.toLowerCase().trim().replace(/[?.,!]/g, "");
+
+      if(!cleanMsg) return;
+
+      let reply = qa[cleanMsg] || "Please contact us on WhatsApp for explicit project requirements.";
+
+      let chatArea = document.getElementById("chatMessages");
+      chatArea.innerHTML += `<p><strong>You:</strong> ${rawMsg}</p>`;
+      chatArea.innerHTML += `<p style="color:#38bdf8;"><strong>Zentro AI:</strong> ${reply}</p>`;
+      
+      input.value = "";
+      chatArea.scrollTop = chatArea.scrollHeight;
+    }
+
+    function resetChat(){
+      document.getElementById("chatMessages").innerHTML = "<p><strong>Zentro AI:</strong> Hello 👋<br>Ask me about websites, chatbots, automation, SEO, pricing or support.</p>";
+      document.getElementById("userMessage").value = "";
+    }
+
+    // Dynamic Header Clock Operations
+    function updateClock(){
+      const now = new Date();
+      const hours = String(now.getUTCHours()).padStart(2,'0');
+      const minutes = String(now.getUTCMinutes()).padStart(2,'0');
+      const seconds = String(now.getUTCSeconds()).padStart(2,'0');
+      document.getElementById("utcClock").innerText = `UTC TIME: ${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 
-<h2>Ready To Start?</h2>
-
-<p style="max-width:700px;margin:auto;color:#cbd5e1;line-height:1.8;">
-  Have questions about our services, pricing, or project requirements?
-
-If there is anything on our website that you do not understand, or if you would like to discuss your project directly with us, feel free to contact us on WhatsApp.
-
-Click the WhatsApp button below to chat with us directly. We will be happy to answer your questions and discuss your requirements personally.
-
-
-</p>
-
-<a href="https://wa.me/923238194763" target="_blank" class="btn">
-Chat With Us on WhatsApp
-</a>
-
-</section>
-<footer>
-© 2026 Zentro AI Agency. All Rights Reserved.
-</footer>
-
-<div class="popup" id="popup">
-<div class="popup-box">
-
-<span class="close-btn" onclick="closePopup()">×</span>
-
-<h2 id="popupTitle"></h2>
-
-<p id="popupContent"></p>
-
-</div>
-</div>
-
-<script>
-
-function openPopup(title, content){
-
-document.getElementById('popup').style.display='flex';
-
-document.getElementById('popupTitle').innerHTML=title;
-
-document.getElementById('popupContent').innerHTML=content;
-
-}
-
-function closePopup(){
-document.getElementById('popup').style.display='none';
-}
-
-function showAIWebsites(){
-openPopup(
-'AI Websites',
-'Responsive Website Design → Works perfectly on all devices.<br><br>AI Integration → Smart AI tools and automation features.<br><br>Modern UI/UX → Premium and professional design.<br><br>Fast Loading Speed → Better user experience and performance.<br><br>SEO Friendly → Helps improve Google ranking.<br><br>Admin Dashboard → Easy website management system.<br><br>Live Chat Support → Customers can instantly contact you.'
-);
-}
-
-function showChatbots(){
-openPopup(
-'AI Chatbots',
-'24/7 Customer Support → Customers get instant replies anytime.<br><br>Automation → Saves business time and effort.<br><br>AI Responses → Smart and human-like conversations.<br><br>Lead Generation → Helps increase customers and sales.<br><br>Multi Platform Support → Works on websites and social media.'
-);
-}
-
-function showAutomation(){
-openPopup(
-'Business Automation',
-'Task Automation → Automates repetitive business work.<br><br>Email Automation → Sends automatic emails to clients.<br><br>Workflow Management → Improves business efficiency.<br><br>Time Saving → Reduces manual work and saves time.<br><br>Productivity Growth → Helps teams work faster.'
-);
-}
-
-function showSEO(){
-openPopup(
-'SEO Growth',
-'Google Ranking → Improve website visibility.<br><br>Keyword Optimization → Better search engine results.<br><br>Traffic Growth → Increase website visitors.<br><br>Business Growth → More leads and customers.<br><br>Performance Optimization → Faster and SEO-friendly website.'
-);
-}
-  function sendRequirements(){
-
-let email = document.getElementById("email").value;
-let service = document.getElementById("service").value;
-let business = document.getElementById("business").value;
-let website = document.getElementById("website").value;
-let budget = document.getElementById("budget").value;
-let timeline = document.getElementById("timeline").value;
-let details = document.getElementById("details").value;
-    let missingFields = [];
-
-if (!email) missingFields.push("Email");
-if (!service || service === "Select Service") missingFields.push("Service");
-
-if (!business || business === "Select Business Type")
-missingFields.push("Business Type");
-
-if (!website || website === "Do You Already Have A Website?")
-missingFields.push("Website Question");
-
-if (!budget || budget === "Select Budget Range")
-missingFields.push("Budget");
-
-if (!timeline || timeline === "Select Timeline")
-missingFields.push("Timeline");
-
-if (!details)
-missingFields.push("Project Details");
-
-if (missingFields.length > 0) {
-
-document.getElementById("errorBox").style.display = "block";
-
-document.getElementById("errorBox").innerHTML =
-"<strong>Please complete these fields:</strong><br><br>• " +
-missingFields.join("<br>• ");
-
-return;
-}
-
-document.getElementById("errorBox").style.display = "none";
-    leadCounter++;
-
-localStorage.setItem("leadCounter", leadCounter);
-
-let leadID = "ZAI-" + String(leadCounter).padStart(3,"0");
-
-let message =
-`🚀 NEW PROJECT INQUIRY
-
-🆔 Lead ID: ${leadID}
-
-📧 Email: ${email}
-
-📍 Location: ${visitorCity}, ${visitorCountry}
-
-💼 Service: ${service}
-
-🏢 Business Type: ${business}
-
-🌐 Existing Website: ${website}
-
-💰 Budget: ${budget}
-
-⏳ Timeline: ${timeline}
-
-📝 Project Details:
-${details}`;
-
-window.open(
-`https://wa.me/923238194763?text=${encodeURIComponent(message)}`,
-'_blank'
-);
-
-}
-function submitReview(){
-
-let name = document.getElementById("reviewName").value;
-let review = document.getElementById("reviewText").value;
-let rating = document.getElementById("reviewRating").value;
-
-if(name === "" || review === "" || !rating){
-alert("Please fill all fields");
-return;
-}
-addDoc(
-collection(db,"reviews"),
-{
-name:name,
-review:review,
-rating:rating
-}
-);
-
-loadReviews();
-document.getElementById("reviewName").value="";
-document.getElementById("reviewText").value="";
-document.getElementById("reviewRating").selectedIndex=0;
-}
-  async function loadReviews(){
-
-let snapshot =
-await getDocs(collection(db,"reviews"));
-
-let html = "";
-
-snapshot.forEach(doc => {
-
-let r = doc.data();
-
-html += `
-<div class="card" style="margin-top:20px;">
-<h3>${r.name}</h3>
-<p style="font-size:22px;">${r.rating}</p>
-<p>${r.review}</p>
-</div>
-`;
-
-});
-
-document.getElementById(
-"reviewsContainer"
-).innerHTML = html;
-
-}
-
-loadReviews();
-
-  function toggleChat(){
-
-let box = document.getElementById("chatbox");
-
-if(box.style.display === "block"){
-box.style.display = "none";
-}else{
-box.style.display = "block";
-}
-
-}
-
-  const qa = {
-
-"hello":"Hello 👋 Welcome to Zentro AI. How can I help you today?",
-"hi":"Hi there! How can I assist you?",
-"who are you":"I am Zentro AI Assistant.",
-"what is zentro ai":"Zentro AI is an agency providing AI websites, chatbots, automation and SEO services.",
-"what services do you offer":"We offer AI Websites, Chatbots, Automation and SEO services.",
-"what is an ai website":"An AI website uses smart tools and automation to improve user experience.",
-"do you build websites":"Yes, we build modern responsive websites.",
-"how much does a website cost":"Website pricing starts from $80.",
-"how long does a website take":"Most websites are completed within 1-2 weeks.",
-"do you create landing pages":"Yes, we create professional landing pages.",
-"do you build ecommerce websites":"Yes, we build eCommerce websites.",
-"can you redesign my website":"Yes, we can redesign existing websites.",
-"do you provide hosting":"Hosting can be arranged upon request.",
-"do you provide domain registration":"Yes, we can help with domain registration.",
-"is the website mobile friendly":"Yes, all websites are mobile responsive.",
-"will my website be seo friendly":"Yes, websites are built with SEO best practices.",
-"do you build chatbots":"Yes, we create AI chatbots.",
-"what is an ai chatbot":"An AI chatbot automatically answers customer questions.",
-"can chatbots work 24 7":"Yes, chatbots work 24/7.",
-"can chatbot increase sales":"Yes, chatbots can help generate leads and sales.",
-"can chatbot work on websites":"Yes, chatbots can be integrated into websites.",
-"can chatbot work on whatsapp":"Yes, WhatsApp chatbot solutions are available.",
-"what is automation":"Automation reduces manual work using software and AI.",
-"what tasks can be automated":"Emails, forms, lead management and workflows.",
-"does automation save time":"Yes, automation saves significant time.",
-"can automation reduce costs":"Yes, it helps reduce operational costs.",
-"what is seo":"SEO improves visibility on search engines.",
-"how does seo help":"SEO increases website traffic and leads.",
-"how long does seo take":"SEO results usually take several weeks or months.",
-"do you offer local seo":"Yes, local SEO services are available.",
-"can you rank my website":"We use proven SEO strategies to improve rankings.",
-"how much is seo service":"Pricing depends on project requirements.",
-"what is your pricing":"Projects start from $80.",
-"what payment methods do you accept":"Payment details are provided during consultation.",
-"how much advance is required":"Only 30% advance payment is required.",
-"do you offer discounts":"Yes, repeat clients may receive discounts.",
-"do you provide invoices":"Yes, invoices can be provided.",
-"how can i contact you":"You can contact us on WhatsApp.",
-"what is your whatsapp number":"03238194763",
-"what is your email":"Email: Mz9977106@gmail.com",
-"where are you located":"We are based in Pakistan.",
-"what are your working hours":"We respond within 24 hours.",
-"how quickly do you reply":"Usually within 24 hours.",
-"do you provide support":"Yes, support is available after delivery.",
-"how long is support available":"Support duration depends on the package.",
-"do you fix website bugs":"Yes, bug fixing services are available.",
-"can you update my website":"Yes, website updates are available.",
-"what industries do you work with":"Restaurants, Real Estate, Education, Healthcare and more.",
-"do you work with startups":"Yes, we work with startups and businesses.",
-"can you help small businesses":"Yes, small businesses are welcome.",
-"can you build restaurant websites":"Yes, restaurant websites are available.",
-"can you build real estate websites":"Yes, real estate websites are available.",
-"can you build education websites":"Yes, education websites are available.",
-"can you build healthcare websites":"Yes, healthcare websites are available.",
-"what is your process":"Requirements, Quote, Advance, Development, Delivery.",
-"how do i start":"Send your requirements through the form or WhatsApp.",
-"do you offer consultations":"Yes, consultations are available.",
-"can i get a quote":"Yes, we provide custom quotes.",
-"is consultation free":"Basic consultation is free.",
-"can you build custom systems":"Yes, custom solutions are available.",
-"do you use ai tools":"Yes, we use modern AI technologies.",
-"can ai help my business":"Yes, AI can improve efficiency and customer experience.",
-"what technologies do you use":"We use modern web and AI technologies.",
-"do you provide analytics":"Yes, analytics integration is available.",
-"can you integrate google analytics":"Yes, Google Analytics can be integrated.",
-"can you add whatsapp chat":"Yes, WhatsApp chat integration is available.",
-"can you add contact forms":"Yes, contact forms can be added.",
-"can you add booking systems":"Yes, booking systems can be integrated.",
-"can you add payment gateways":"Yes, payment gateways can be integrated.",
-"can you improve website speed":"Yes, speed optimization is available.",
-"can you secure my website":"Yes, website security improvements are available.",
-"do you provide backups":"Backup solutions can be provided.",
-"can you migrate websites":"Yes, website migration services are available.",
-"do you create portfolios":"Yes, portfolio websites are available.",
-"do you create business websites":"Yes, professional business websites are available.",
-"can i request custom features":"Yes, custom features can be developed.",
-"how many revisions are included":"Revision limits depend on the package.",
-"do you sign contracts":"Yes, agreements can be arranged if required.",
-"can you create logos":"Basic branding services may be available.",
-"do you create content":"Content assistance can be provided.",
-"can you manage my website":"Website management services are available.",
-"can you improve conversions":"Yes, conversion-focused design strategies are used.",
-"what makes zentro ai different":"Affordable pricing, AI expertise and fast support.",
-"why should i choose you":"We provide modern solutions, fair pricing and reliable support.",
-"can i see your portfolio":"Portfolio examples are available on request.",
-"do you have client reviews":"Yes, client reviews are available.",
-"are there hidden charges":"No, pricing is discussed before project start.",
-"can i cancel my project":"Project terms are discussed before work begins.",
-"how do i send requirements":"Use the project requirements form.",
-"what happens after submission":"We review your request and provide a quote.",
-"how soon can work start":"Usually after approval and advance payment.",
-"can you deliver urgently":"Urgent projects may be possible depending on availability.",
-"thank you":"You're welcome 😊",
-"bye":"Goodbye 👋 Have a great day!"
-};
-
-function handleChat(event){
-
-if(event.key !== "Enter") return;
-
-let input = document.getElementById("userMessage");
-let msg = input.value.toLowerCase();
-
-let reply = qa[msg] || "Please contact us on WhatsApp for more details.";
-
-
-
-document.getElementById("chatMessages").innerHTML +=
-"<p><strong>You:</strong> " + input.value + "</p>" +
-"<p><strong>Zentro AI:</strong> " + reply + "</p>";
-
-input.value = "";
-
-}
-  function resetChat(){
-
-document.getElementById("chatMessages").innerHTML =
-"<p>Hello 👋<br>Ask me about websites, chatbots, automation, SEO, pricing or support.</p>";
-
-document.getElementById("userMessage").value = "";
-
-location.reload();
-
-}
-  let leadCounter = localStorage.getItem("leadCounter") || 0;
- let visitorCity = "Unknown";
-
-let visitorCountry = "Unknown";
-
-async function getLocation(){
-
-try{
-
-let response = await fetch("https://ipapi.co/json/");
-let data = await response.json();
-
-visitorCity = data.city;
-visitorCountry = data.country_name;
-
-document.getElementById("visitorLocation").innerHTML =
-`📍 ${visitorCity}, ${visitorCountry}`;
-
-}catch(error){
-
-document.getElementById("visitorLocation").innerHTML =
-"📍 Location unavailable";
-}
-
-}
-
-getLocation();
-</script>
-  <div class="chatbot-btn" onclick="toggleChat()">
-💬 DEMO CHATBOOT
-</div>
-
-<div class="chatbot-box" id="chatbox">
-
-<div class="chatbot-header">
-Zentro AI Assistant
-</div>
-<button onclick="resetChat()" style="
-width:100%;
-padding:10px;
-border:none;
-background:#ef4444;
-color:white;
-cursor:pointer;">
-🗑 Clear Chat
-</button>
-<div class="chatbot-messages" id="chatMessages">
-<p>Hello 👋<br>Ask me about websites, chatbots, automation, SEO, pricing or support.</p>
-</div>
-
-<input
-type="text"
-class="chatbot-input"
-id="userMessage"
-placeholder="Type your question..."
-onkeypress="handleChat(event)">
-
-</div>
-<a href="https://wa.me/923238194763" target="_blank" class="whatsapp-float">
-WhatsApp
-</a>
   <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
-    import {
-getFirestore,
-collection,
-addDoc,
-getDocs
-} from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-analytics.js";
+    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyC37tqGTBHAfwSJ2Tl6THcyo2LPXTU58nQ",
-    authDomain: "zentro-ai-f2fea.firebaseapp.com",
-    projectId: "zentro-ai-f2fea",
-    storageBucket: "zentro-ai-f2fea.firebasestorage.app",
-    messagingSenderId: "776506936167",
-    appId: "1:776506936167:web:7f816f84fa8570bdef3dc2",
-    measurementId: "G-24T36QED3H"
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyC37tqGTBHAfwSJ2Tl6THcyo2LPXTU58nQ",
+      authDomain: "zentro-ai-f2fea.firebaseapp.com",
+      projectId: "zentro-ai-f2fea",
+      storageBucket: "zentro-ai-f2fea.firebasestorage.app",
+      messagingSenderId: "776506936167",
+      appId: "1:776506936167:web:7f816f84fa8570bdef3dc2",
+      measurementId: "G-24T36QED3H"
+    };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
     const db = getFirestore(app);
 
-window.db = db;
-window.collection = collection;
-window.addDoc = addDoc;
-window.getDocs = getDocs;
-</script>
+    // Live Evaluation Database Processing System
+    async function loadReviews(){
+      try {
+        let snapshot = await getDocs(collection(db, "reviews"));
+        let html = "";
+        snapshot.forEach(doc => {
+          let r = doc.data();
+          html += `
+            <div class="card" style="background:#111827; border: 1px solid #162544;">
+              <h3>${r.name}</h3>
+              <p style="font-size:22px; color:#f59e0b; margin-bottom:5px;">${r.rating}</p>
+              <p style="font-size:14px; color:#cbd5e1;">"${r.review}"</p>
+            </div>
+          `;
+        });
+        document.getElementById("reviewsContainer").innerHTML = html;
+      } catch (e) {
+        console.error("Error fetching reviews: ", e);
+      }
+    }
 
-<script>
-function updateClock(){
-  const now = new Date();
+    async function submitReview(){
+      let name = document.getElementById("reviewName").value.trim();
+      let review = document.getElementById("reviewText").value.trim();
+      let rating = document.getElementById("reviewRating").value;
 
-  const hours = String(now.getUTCHours()).padStart(2,'0');
-  const minutes = String(now.getUTCMinutes()).padStart(2,'0');
-  const seconds = String(now.getUTCSeconds()).padStart(2,'0');
+      if(name === "" || review === "" || !rating || rating === "Select Rating"){
+        alert("Please complete all submission fields properly.");
+        return;
+      }
 
-  document.getElementById("utcClock").innerText =
-    `UTC TIME: ${hours}:${minutes}:${seconds}`;
-}
+      try {
+        await addDoc(collection(db, "reviews"), {
+          name: name,
+          review: review,
+          rating: rating
+        });
+        
+        document.getElementById("reviewName").value = "";
+        document.getElementById("reviewText").value = "";
+        document.getElementById("reviewRating").selectedIndex = 0;
+        
+        loadReviews();
+        alert("Review uploaded successfully! Thank you.");
+      } catch(e) {
+        alert("Submission failed. Review credentials / Firestore database constraints.");
+        console.error(e);
+      }
+    }
 
-setInterval(updateClock, 1000);
-updateClock();
-</script>
-
+    // Attach actions directly to elements securely on runtime
+    document.getElementById("btnSubmitReview").addEventListener("click", submitReview);
+    window.addEventListener("DOMContentLoaded", loadReviews);
+  </script>
 </body>
 </html>
