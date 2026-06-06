@@ -456,17 +456,45 @@ display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:20px;
 }
+/* ===== FORM FIELDS FIX ===== */
 
-input,select,textarea{
+input,
+select,
+textarea{
 width:100%;
 padding:14px;
 border-radius:12px;
-border:1px solid rgba(255,255,255,.1);
-background:rgba(255,255,255,.05);
-color:var(--white);
-font-family:inherit;
+border:1px solid #cbd5e1;
+background:#ffffff !important;
+color:#000000 !important;
+font-family:'Exo 2',sans-serif;
+font-size:15px;
 }
 
+input::placeholder,
+textarea::placeholder{
+color:#64748b;
+opacity:1;
+}
+
+select{
+background:#ffffff !important;
+color:#000000 !important;
+appearance:auto;
+}
+
+select option{
+background:#ffffff !important;
+color:#000000 !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+outline:none;
+border-color:#38bdf8;
+box-shadow:0 0 15px rgba(56,189,248,.35);
+}
 textarea{
 resize:vertical;
 min-height:140px;
