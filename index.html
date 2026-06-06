@@ -1851,4 +1851,91 @@ Answer questions about services, pricing, process, and general web/AI topics. Ke
 </script>
 
 </body>
+  <div id="servicesPopup" class="popup">
+  <div class="popup-box">
+    <button class="close-btn" onclick="closePopup()">&times;</button>
+    <h2 id="popupTitle">Service Details</h2>
+    <p id="popupSubtitle" class="popup-subtitle">Loading information...</p>
+    <div class="modal-section">
+      <div id="popupContent" class="business-type-grid"></div>
+    </div>
+  </div>
+</div>
+
+<div id="demoModal" class="popup" style="display: none;">
+  <div class="demo-container">
+    <div class="demo-header">
+      <h3 style="color:white; font-family:'Orbitron', monospace;" id="demoModalTitle">Live Preview</h3>
+      <div class="demo-nav">
+        <button class="demo-nav-btn active">Live View</button>
+        <button class="demo-nav-btn" style="background:#ef4444; color:white; border-color:#ef4444;" onclick="closeDemoModal()">Close Demo</button>
+      </div>
+    </div>
+    <div class="demo-content" style="padding: 20px; color: white;">
+      <div id="restaurantDemoPage" class="demo-page">
+        <h2 style="color:var(--primary); font-family:'Orbitron';">🍔 Restaurant AI System Active</h2>
+        <p style="margin:15px 0; color:var(--muted);">Automated WhatsApp ordering and dynamic booking panels are simulation live.</p>
+      </div>
+      <div id="realestateDemoPage" class="demo-page">
+        <h2 style="color:var(--primary); font-family:'Orbitron';">🏢 Real Estate Portal Active</h2>
+        <p style="margin:15px 0; color:var(--muted);">Smart filtration engine and AI property evaluation model running successfully.</p>
+      </div>
+    </div>
+  </div>
+</div>
+  <script>
+  // --- Services Custom Popups Trigger ---
+  function openPopup(title, subtitle, contentHtml) {
+    document.getElementById('popupTitle').innerText = title;
+    document.getElementById('popupSubtitle').innerText = subtitle;
+    document.getElementById('popupContent').innerHTML = contentHtml;
+    document.getElementById('servicesPopup').style.display = 'flex';
+  }
+
+  function closePopup() {
+    document.getElementById('servicesPopup').style.display = 'none';
+  }
+
+  function showAIWebsites() {
+    let content = `
+      <div class="business-type-card">
+        <h4>⚡ Premium Intelligent Architecture</h4>
+        <p style="color:var(--muted); font-size:13px; margin-top:5px;">Custom design algorithms tailored directly for high engagement setups.</p>
+      </div>`;
+    openPopup("AI Web Systems", "Advanced next-gen digital portals for scale", content);
+  }
+
+  function showChatbots() {
+    let content = `<div class="business-type-card"><h4>💬 Automated Onboarding Bot</h4><p style="color:var(--muted); font-size:13px; margin-top:5px;">Handles target cold leads and standard CRM integrations automatically 24/7.</p></div>`;
+    openPopup("AI Chatbots System", "Human-like support experience without manual delays", content);
+  }
+
+  function showAutomation() {
+    let content = `<div class="business-type-card"><h4>⚡ API Workflow Automation</h4><p style="color:var(--muted); font-size:13px; margin-top:5px;">Connect third-party webhook tools instantly to reduce workplace manual tracking workload.</p></div>`;
+    openPopup("Workflow Automation", "Scale operational systems effortlessly without bottlenecks", content);
+  }
+
+  function showSEO() {
+    let content = `<div class="business-type-card"><h4>📈 Keyword Growth Engine</h4><p style="color:var(--muted); font-size:13px; margin-top:5px;">Semantic data configurations deployed directly to compete with high organic searches.</p></div>`;
+    openPopup("SEO Optimization Strategies", "Acquire hyper-targeted audience traffic flawlessly", content);
+  }
+
+  // --- Live Demos Panel Switching ---
+  function openDemoModal(type) {
+    document.getElementById('demoModal').style.display = 'flex';
+    if(type === 'restaurant') {
+      document.getElementById('demoModalTitle').innerText = "Restaurant AI Core Framework";
+      document.getElementById('restaurantDemoPage').style.display = 'block';
+      document.getElementById('realestateDemoPage').style.display = 'none';
+    } else {
+      document.getElementById('demoModalTitle').innerText = "Real Estate Analytics Hub";
+      document.getElementById('realestateDemoPage').style.display = 'block';
+      document.getElementById('restaurantDemoPage').style.display = 'none';
+    }
+  }
+
+  function closeDemoModal() {
+    document.getElementById('demoModal').style.display = 'none';
+  }
+</script>
 </html>
