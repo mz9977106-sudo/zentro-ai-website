@@ -55,60 +55,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:0 5%;display:flex;al
 .mobile-menu.active{display:flex}
 
 /* ─── HERO ──────────────────────────────────────── */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:100px 5% 80px;overflow:hidden}
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 5% 80px;overflow:hidden}
 .hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(10,170,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(10,170,255,0.04) 1px,transparent 1px);background-size:60px 60px;opacity:.6}
 .hero-orb1{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(10,170,255,0.12) 0%,transparent 70%);top:-100px;right:-100px;border-radius:50%;animation:float1 8s ease-in-out infinite}
 .hero-orb2{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(108,99,255,0.1) 0%,transparent 70%);bottom:-50px;left:10%;border-radius:50%;animation:float2 10s ease-in-out infinite}
 @keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,30px)}}
 @keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-20px)}}
-.hero-content{position:relative;z-index:1;max-width:760px}
+.hero-content{position:relative;z-index:1;max-width:820px}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.25);padding:.4rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.8rem;animation:fadeUp .8s .1s both}
 .hero-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-h1.hero-title{font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:1.4rem;animation:fadeUp .8s .2s both}
+h1.hero-title{font-size:clamp(2.2rem,4.8vw,3.6rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.25;margin-bottom:1.6rem;word-wrap:break-word;overflow-wrap:break-word;animation:fadeUp .8s .2s both}
 h1.hero-title .line2{color:var(--accent)}
-.hero-sub{font-size:1.15rem;color:var(--text2);max-width:560px;line-height:1.75;margin-bottom:2.4rem;animation:fadeUp .8s .3s both;font-weight:300}
+.hero-sub{font-size:1.15rem;color:var(--text2);max-width:600px;line-height:1.75;margin-bottom:2.4rem;animation:fadeUp .8s .3s both;font-weight:300}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .8s .4s both}
 .btn-primary{background:var(--accent);color:#000;padding:.8rem 2rem;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;letter-spacing:.01em;border:none;cursor:pointer}
 .btn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(10,170,255,0.3)}
 .btn-outline{background:transparent;color:var(--text);padding:.8rem 2rem;border-radius:50px;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s;letter-spacing:.01em;border:1px solid var(--border);cursor:pointer}
 .btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-
-/* ─── SCROLL INDICATOR ──────────────────────────── */
-.scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 5%;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text3);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-.scroll-line {
-  width: 40px;
-  height: 1px;
-  background: var(--text3);
-  position: relative;
-  overflow: hidden;
-}
-.scroll-line::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--accent);
-  animation: scrollAnim 2s infinite;
-}
-@keyframes scrollAnim {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
 
 /* ─── SECTION COMMONS ───────────────────────────── */
 section{padding:100px 5%}
@@ -121,71 +86,71 @@ section{padding:100px 5%}
 
 /* ─── SERVICES ──────────────────────────────────── */
 #services{background:var(--bg2)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-.service-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.2rem;transition:all .3s;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:between;height:100%}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.service-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.2rem;transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
 .service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,170,255,0.04) 0%,transparent 60%);opacity:0;transition:opacity .3s}
 .service-card:hover{border-color:rgba(10,170,255,0.3);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(10,170,255,0.1)}
 .service-card:hover::before{opacity:1}
 .svc-icon{width:52px;height:52px;background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;font-size:1.4rem}
 .svc-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.7rem}
-.svc-desc{font-size:.9rem;color:var(--text2);line-height:1.7;margin-bottom:1.4rem;font-weight:300;flex-grow:1}
+.svc-desc{font-size:.9rem;color:var(--text2);line-height:1.7;margin-bottom:1.4rem;font-weight:300}
 .svc-btn{display:inline-flex;align-items:center;gap:.4rem;color:var(--accent);font-size:.85rem;font-weight:600;background:none;border:none;cursor:pointer;padding:0;transition:gap .2s;letter-spacing:.01em}
 .svc-btn:hover{gap:.7rem}
 .svc-btn::after{content:'→'}
 
 /* ─── PORTFOLIO ─────────────────────────────────── */
 #portfolio{background:var(--bg)}
-.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2.5rem}
-.port-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);overflow:hidden;transition:all .3s;display:flex;flex-direction:column;height:480px}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem}
+.port-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);overflow:hidden;transition:all .3s;display:flex;flex-direction:column;justify-content:between}
 .port-card:hover{transform:translateY(-6px);box-shadow:0 30px 80px rgba(0,0,0,0.5);border-color:rgba(10,170,255,0.25)}
-.port-img{height:200px;position:relative;overflow:hidden}
-.port-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.port-img{height:220px;position:relative;overflow:hidden}
+.port-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .port-card:hover .port-img img{transform:scale(1.05)}
-.port-img-label{position:absolute;bottom:1rem;left:1rem;background:rgba(0,0,0,0.75);backdrop-filter:blur(10px);padding:.35rem .8rem;border-radius:50px;font-size:.75rem;font-weight:600;color:#fff;letter-spacing:.05em;border:1px solid rgba(255,255,255,0.1);z-index:2}
-.port-body{padding:1.8rem;display:flex;flex-direction:column;flex-grow:1;justify-content:space-between}
-.port-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
-.port-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.5rem}
-.port-desc{font-size:.88rem;color:var(--text2);line-height:1.6;margin-bottom:1rem;font-weight:300}
-.port-features{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.port-img-label{position:absolute;bottom:1rem;left:1rem;background:rgba(0,0,0,0.75);backdrop-filter:blur(10px);padding:.35rem .8rem;border-radius:50px;font-size:.75rem;font-weight:600;color:#fff;letter-spacing:.05em;border:1px solid rgba(255,255,255,0.1)}
+.port-body{padding:1.8rem;flex-grow:1;display:flex;flex-direction:column}
+.port-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.port-title{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.port-desc{font-size:.88rem;color:var(--text2);line-height:1.7;margin-bottom:1.2rem;font-weight:300;flex-grow:1}
+.port-features{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
 .port-feat{background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.15);padding:.25rem .7rem;border-radius:50px;font-size:.75rem;color:var(--accent);font-weight:500}
-.port-demo-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;padding:.65rem 1.6rem;border-radius:50px;font-weight:700;font-size:.85rem;border:none;cursor:pointer;transition:all .25s;letter-spacing:.01em;width:fit-content}
+.port-demo-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;padding:.7rem 1.6rem;border-radius:50px;font-weight:700;font-size:.85rem;border:none;cursor:pointer;transition:all .25s;letter-spacing:.01em;text-align:center;width:100%}
 .port-demo-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(10,170,255,0.35)}
 
 /* ─── PRICING ───────────────────────────────────── */
 #pricing{background:var(--bg2)}
-.pricing-grid{display:grid;grid-template-columns:repeat(5, 1fr);gap:1rem;align-items:stretch}
-@media (max-width: 1200px) { .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 850px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 550px) { .pricing-grid { grid-template-columns: 1fr; } }
-.price-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:1.8rem 1.4rem;transition:all .3s;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:between;height:100%}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5rem;align-items:stretch}
+.price-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.2rem;transition:all .3s;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:between;height:100%}
 .price-card:hover{transform:translateY(-4px);border-color:rgba(10,170,255,0.3)}
 .price-card.popular{border-color:rgba(10,170,255,0.5);background:rgba(10,170,255,0.04)}
-.price-card.popular::before{content:'Popular';position:absolute;top:0.8rem;right:0.8rem;background:var(--accent);color:#000;font-size:.6rem;font-weight:700;padding:.2rem .5rem;border-radius:50px;letter-spacing:.06em;text-transform:uppercase}
+.price-card.popular::before{content:'Most Popular';position:absolute;top:1.2rem;right:1.2rem;background:var(--accent);color:#000;font-size:.65rem;font-weight:700;padding:.25rem .6rem;border-radius:50px;letter-spacing:.06em;text-transform:uppercase}
 .price-card.premium{background:linear-gradient(135deg,rgba(108,99,255,0.08) 0%,rgba(10,170,255,0.04) 100%);border-color:rgba(108,99,255,0.35)}
-.price-card.enterprise{background:linear-gradient(135deg,rgba(240,180,41,0.06) 0%,rgba(240,180,41,0.02) 100%);border-color:rgba(240,180,41,0.3)}
+.price-card.enterprise{background:linear-gradient(135deg,rgba(240,180,41,0.06) 0%,rgba(240,180,41,0.02) 100%);border-color:rgba(240,180,41,0.3);grid-column:1 / -1}
+@media (min-width:992px){.price-card.enterprise{grid-column:auto}}
+.price-top{margin-bottom:1.5rem}
 .price-plan{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem}
-.price-amount{font-family:'Syne',sans-serif;font-size:1.75rem;font-weight:800;color:#fff;margin-bottom:.3rem;line-height:1}
-.price-amount span{font-size:0.85rem;color:var(--text2);font-weight:400}
-.price-desc{font-size:.82rem;color:var(--text2);margin-bottom:1.4rem;line-height:1.5;font-weight:300;min-height:45px}
-.price-features{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.6rem;flex-grow:1}
-.price-features li{font-size:.8rem;color:var(--text2);display:flex;align-items:flex-start;gap:.5rem;line-height:1.4}
-.price-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+.price-amount{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;margin-bottom:.3rem;line-height:1}
+.price-amount span{font-size:1rem;color:var(--text2);font-weight:400}
+.price-desc{font-size:.85rem;color:var(--text2);margin-bottom:1.5rem;line-height:1.6;font-weight:300;min-height:48px}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem;flex-grow:1}
+.price-features li{font-size:.85rem;color:var(--text2);display:flex;align-items:flex-start;gap:.5rem;line-height:1.5}
+.price-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:.05rem}
 .price-card.enterprise .price-features li::before{color:var(--gold)}
-.price-cta{width:100%;background:rgba(10,170,255,0.1);border:1px solid rgba(10,170,255,0.25);color:var(--accent);padding:.7rem;border-radius:50px;font-weight:700;font-size:.85rem;cursor:pointer;transition:all .25s;letter-spacing:.01em;margin-top:auto}
+.price-cta{width:100%;background:rgba(10,170,255,0.1);border:1px solid rgba(10,170,255,0.25);color:var(--accent);padding:.8rem;border-radius:50px;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .25s;letter-spacing:.01em;margin-top:auto}
 .price-cta:hover{background:var(--accent);color:#000}
 .price-card.enterprise .price-cta{background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.3);color:var(--gold)}
 .price-card.enterprise .price-cta:hover{background:var(--gold);color:#000}
+.premium-badge{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:.3rem}
+.enterprise-note{font-size:.8rem;color:var(--text3);line-height:1.5;margin-top:1rem;font-weight:400}
 
-/* ─── INQUIRY / REQUIREMENT FORM ────────────────── */
-#inquiry{background:var(--bg)}
-.inquiry-form-box {
-  max-width: 850px;
-  margin: 0 auto;
-  background: var(--card);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius2);
-  padding: 3rem;
-}
+/* ─── PROCESS ───────────────────────────────────── */
+#process{background:var(--bg)}
+.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem}
+.process-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.4rem 1.8rem;position:relative;overflow:hidden;transition:all .3s;min-height:240px;display:flex;flex-direction:column}
+.process-card:hover{border-color:rgba(10,170,255,0.25);transform:translateY(-3px)}
+.process-num{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:rgba(10,170,255,0.07);position:absolute;top:.5rem;right:1rem;line-height:1;letter-spacing:-.05em}
+.process-icon{font-size:1.6rem;margin-bottom:1rem}
+.process-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:.7rem}
+.process-desc{font-size:.85rem;color:var(--text2);line-height:1.75;font-weight:300;flex:1}
 
 /* ─── FAQ ───────────────────────────────────────── */
 #faq{background:var(--bg2)}
@@ -204,60 +169,42 @@ section{padding:100px 5%}
 /* ─── CONTACT ───────────────────────────────────── */
 #contact{background:var(--bg)}
 .contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
-@media (max-width: 850px) { .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; } }
-.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+@media (max-width: 768px){.contact-wrap{grid-template-columns:1fr;gap:2.5rem}}
+.contact-info{display:flex;flex-direction:column;gap:1.8rem}
+.contact-info-title{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;line-height:1.3}
+.contact-info-sub{color:var(--text2);font-size:.9rem;line-height:1.75;font-weight:300}
 .contact-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem;background:var(--card);border:1px solid var(--border2);border-radius:var(--radius)}
-.contact-item-icon{width:40px;height:40px;background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;color:var(--accent)}
+.contact-item-icon{width:40px;height:40px;background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
 .contact-item-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:.2rem}
 .contact-item-val{font-size:.9rem;color:var(--text);font-weight:500}
 .contact-form{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.5rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
-@media (max-width: 550px) { .form-row { grid-template-columns: 1fr; } }
+@media (max-width: 480px){.form-row{grid-template-columns:1fr}}
 .form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
 .form-label{font-size:.78rem;font-weight:600;color:var(--text2);letter-spacing:.05em;text-transform:uppercase}
-.form-input,.form-select,.form-textarea{background:rgba(255,255,255,0.04);border:1px solid var(--border2);border-radius:10px;padding:.8rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;transition:border-color .2s,box-shadow .2s;width:100%;outline:none}
+.form-input,.form-select,.form-textarea{background:rgba(255,255,255,0.04);border:1px solid var(--border2);border-radius:10px;padding:.8rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;transition:border-color .2s,box-shadow .2s;width:100%;outline:none;-webkit-appearance:none;appearance:none}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a99b3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-size:12px;padding-right:2.5rem;cursor:pointer}
+.form-select option{background:#0c1525;color:#e8edf5}
 .form-textarea{resize:vertical;min-height:120px}
 .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:rgba(10,170,255,0.5);box-shadow:0 0 0 3px rgba(10,170,255,0.08)}
 .form-input::placeholder,.form-textarea::placeholder{color:var(--text3)}
-.form-error{display:none;background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.25);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem;color:#ff6b6b;font-size:0.85rem}
+.form-error{display:none;background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.25);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem}
 .form-error.active{display:block}
+.form-error-title{font-size:.82rem;font-weight:700;color:#ff6b6b;margin-bottom:.5rem}
+.form-error ul{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+.form-error ul li{font-size:.82rem;color:#ff8a8a;display:flex;align-items:center;gap:.4rem}
+.form-error ul li::before{content:'!';width:16px;height:16px;background:rgba(255,80,80,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;flex-shrink:0}
 .form-success{display:none;background:rgba(10,170,255,0.06);border:1px solid rgba(10,170,255,0.25);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem;color:var(--accent);font-size:.88rem;font-weight:500}
 .form-success.active{display:block}
 .field-error{border-color:rgba(255,80,80,0.5)!important}
 
-/* ─── WHATSAPP FLOATING BUTTON ─────────────────── */
-.whatsapp-float {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 56px;
-  height: 56px;
-  background: #25d366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-  z-index: 9999;
-  transition: transform 0.3s;
-  text-decoration: none;
-}
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
-.whatsapp-float svg {
-  width: 28px;
-  height: 28px;
-  fill: #fff;
-}
-
 /* ─── FOOTER ────────────────────────────────────── */
 footer{background:var(--bg2);border-top:1px solid var(--border2);padding:60px 5% 30px}
 .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-@media (max-width: 850px) { .footer-top { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 550px) { .footer-top { grid-template-columns: 1fr; } }
+@media (max-width: 768px){.footer-top{grid-template-columns:1fr 1fr;gap:2rem}}
+@media (max-width: 480px){.footer-top{grid-template-columns:1fr}}
 .footer-brand{display:flex;flex-direction:column;gap:1rem}
-.footer-logo{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#fff;text-decoration:none}
+.footer-logo{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#fff}
 .footer-logo span{color:var(--accent)}
 .footer-tagline{font-size:.88rem;color:var(--text3);line-height:1.7;font-weight:300;max-width:260px}
 .footer-col-title{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.2rem}
@@ -269,7 +216,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border2);padding:60px 5%
 .footer-copy span{color:var(--accent)}
 
 /* ─── MODAL ─────────────────────────────────────── */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(12px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s}
 .modal-overlay.active{opacity:1;pointer-events:all}
 .modal-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);max-width:700px;width:100%;max-height:85vh;overflow-y:auto;transform:translateY(20px);transition:transform .3s;position:relative}
 .modal-overlay.active .modal-box{transform:translateY(0)}
@@ -284,1115 +231,1194 @@ footer{background:var(--bg2);border-top:1px solid var(--border2);padding:60px 5%
 .modal-point-title{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;color:var(--accent);margin-bottom:.4rem}
 .modal-point-desc{font-size:.86rem;color:var(--text2);line-height:1.75;font-weight:300}
 
-/* ─── DEMO PAGES OVERLAY CONTROLLER ──────────────── */
+/* ─── DEMO PAGES OVERLAY LAYER ──────────────────── */
 .demo-page-view {
   display: none;
   position: fixed;
   inset: 0;
-  background: #000;
+  background: #0f172a;
+  color: #f8fafc;
   z-index: 3000;
   overflow-y: auto;
+  font-family: 'DM Sans', sans-serif;
 }
 .demo-page-view.active {
   display: block;
 }
-.demo-back-bar {
-  background: #111;
+.demo-close-bar {
+  background: #020617;
   padding: 0.75rem 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #222;
   position: sticky;
   top: 0;
   z-index: 3100;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.demo-back-btn {
-  background: var(--accent);
-  color: #000;
-  border: none;
-  padding: 0.5rem 1.2rem;
-  border-radius: 50px;
-  font-weight: 700;
-  cursor: pointer;
+.demo-close-bar span {
   font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+}
+.demo-close-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.demo-close-btn:hover {
+  opacity: 0.9;
 }
 
-/* ─── DEMO COMMON STYLE ────────────────────────── */
-.demo-addr-block {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin-top: 1.5rem;
-}
+/* Base Internal Elements for Demos */
+.d-nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(15,23,42,0.9); backdrop-filter: blur(10px); position: sticky; top: 48px; z-index: 100; }
+.d-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; text-decoration: none; }
+.d-links { display: flex; gap: 1.5rem; list-style: none; }
+.d-links a { color: #94a3b8; text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; cursor: pointer; }
+.d-hero { padding: 80px 5%; text-align: center; position: relative; background-size: cover; background-position: center; background-repeat: no-repeat; }
+.d-hero::before { content: ''; position: absolute; inset: 0; background: rgba(15,23,42,0.75); }
+.d-hero-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+.d-hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: #fff; }
+.d-hero p { color: #cbd5e1; margin-bottom: 1.5rem; font-size: 1rem; }
+.d-section { padding: 60px 5%; }
+.d-section-title { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 700; text-align: center; margin-bottom: 2.5rem; color: #fff; }
+.d-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.d-card { background: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
+.d-card img { width: 100%; height: 200px; object-fit: cover; }
+.d-card-body { padding: 1.25rem; }
+.d-form { max-width: 500px; margin: 0 auto; background: #1e293b; padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
+.d-form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; text-align: left; }
+.d-form-group label { font-size: 0.8rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; }
+.d-form-group input, .d-form-group select, .d-form-group textarea { background: #0f172a; border: 1px solid rgba(255,255,255,0.1); padding: 0.75rem; color: #fff; border-radius: 8px; font-size: 0.9rem; width: 100%; }
+.d-btn { background: var(--accent); color: #000; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; transition: opacity 0.2s; width: 100%; text-align: center; }
+.d-btn:hover { opacity: 0.9; }
+.d-footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 2rem 5%; text-align: center; font-size: 0.85rem; color: #64748b; background: #020617; }
 
-/* RESTAURANT DEMO DESIGN */
-.rest-body { background: #0f0b08; color: #f4f1ea; font-family: 'DM Sans', sans-serif; }
-.rest-hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80') center/cover; padding: 120px 5%; text-align: center; }
-.rest-title { font-family: 'Syne', sans-serif; color: var(--gold); font-size: 3rem; margin-bottom: 1rem; }
-.rest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; padding: 4rem 5%; }
-.rest-card { background: #1a1512; border: 1px solid #2a221c; border-radius: 16px; overflow: hidden; transition: transform 0.3s; cursor: pointer; }
-.rest-card:hover { transform: translateY(-5px); }
-.rest-card img { width: 100%; height: 200px; object-fit: cover; }
-.rest-card-info { padding: 1.5rem; }
-.rest-card-title { font-family: 'Syne', sans-serif; font-size: 1.25rem; color: #fff; margin-bottom: 0.5rem; }
-.rest-price { color: var(--gold); font-weight: 700; font-size: 1.1rem; }
-
-/* CLINIC DEMO DESIGN */
-.clinic-body { background: #f8fafc; color: #1e293b; font-family: 'DM Sans', sans-serif; }
-.clinic-hero { background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80') center/cover; padding: 100px 5%; color: #0f172a; }
-.clinic-section { padding: 4rem 5%; }
-.clinic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-.clinic-card { background: #fff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); text-align: center; }
-.clinic-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
-
-/* REAL ESTATE DEMO DESIGN */
-.re-body { background: #0b0f19; color: #f1f5f9; font-family: 'DM Sans', sans-serif; }
-.re-hero { background: linear-gradient(rgba(11,15,25,0.7), rgba(11,15,25,0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80') center/cover; padding: 120px 5%; text-align: center; }
-.re-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; padding: 4rem 5%; }
-.re-card { background: #141b2d; border: 1px solid #1f293d; border-radius: 16px; overflow: hidden; }
-.re-card img { width: 100%; height: 220px; object-fit: cover; }
-.re-card-body { padding: 1.5rem; }
-.re-meta { display: flex; justify-content: space-between; font-size: 0.85rem; color: #94a3b8; margin-top: 1rem; border-top: 1px solid #1f293d; padding-top: 0.75rem; }
-
-/* LIGHTBOX FOR FOOD GALLERIES */
-.lightbox-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 4000; display: none; align-items: center; justify-content: center; padding: 2rem; }
-.lightbox-box { max-width: 800px; width: 100%; background: #1a1512; border-radius: 24px; overflow: hidden; border: 1px solid #333; position: relative; display: grid; grid-template-columns: 1fr 1fr; }
-@media (max-width: 700px) { .lightbox-box { grid-template-columns: 1fr; } }
-.lightbox-img img { width: 100%; height: 100%; object-fit: cover; min-height: 300px; }
-.lightbox-info { padding: 2.5rem; color: #fff; }
-.lightbox-close { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.1); border: none; color: #fff; width: 40px; height: 40px; border-radius: 50%; font-size: 1.25rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
+  .d-links { display: none; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAVIGATION BAR -->
 <nav>
-  <a href="#" class="nav-logo">ZENTRO <span>AI</span></a>
+  <a href="#" class="nav-logo">ZENTRO<span>.AI</span></a>
   <ul class="nav-links">
-    <li><a href="#hero">Home</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#portfolio">Demos</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#process">Process</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#inquiry" class="nav-cta">Get Started</a>
-  <button class="nav-hamburger" onclick="toggleMobileMenu()">
+  <a href="#contact" class="nav-cta">Get Started</a>
+  <button class="nav-hamburger" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#hero" onclick="toggleMobileMenu()">Home</a>
   <a href="#services" onclick="toggleMobileMenu()">Services</a>
-  <a href="#portfolio" onclick="toggleMobileMenu()">Portfolio</a>
+  <a href="#portfolio" onclick="toggleMobileMenu()">Demos</a>
   <a href="#pricing" onclick="toggleMobileMenu()">Pricing</a>
+  <a href="#process" onclick="toggleMobileMenu()">Process</a>
   <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
   <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
-  <a href="#inquiry" class="nav-cta" style="text-align:center; margin-top:0.5rem" onclick="toggleMobileMenu()">Get Started</a>
 </div>
 
-<!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/03238194763" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp">
-  <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-</a>
-
-<!-- HERO SECTION -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
   <div class="hero-orb1"></div>
   <div class="hero-orb2"></div>
-  
   <div class="hero-content">
-    <div class="hero-badge">Zentro Intelligent Architecture</div>
+    <div class="hero-badge">Next-Gen Automation Agency</div>
     <h1 class="hero-title">
-      Deploy Next-Generation <span class="line2">AI Websites</span> & Enterprise Automation
+      We engineer highly autonomous architectures and production platforms for <span class="line2">Zentro Digital Solutions</span>
     </h1>
     <p class="hero-sub">
-      We custom-engineer performant digital ecosystems, specialized AI workflows, and strategic growth infrastructure tailored exclusively for expanding companies.
+      Empower your organization with pixel-perfect, hyper-scaled digital products driven by functional AI integrations, optimized logic pipelines, and robust layouts.
     </p>
     <div class="hero-actions">
-      <a href="#inquiry" class="btn-primary">Initiate Project Build</a>
-      <a href="#portfolio" class="btn-outline">View Agent Systems</a>
+      <a href="#portfolio" class="btn-primary">Explore Live Demos</a>
+      <a href="#pricing" class="btn-outline">View Packages</a>
     </div>
-  </div>
-
-  <div class="scroll-indicator">
-    <span>Scroll Exploration</span>
-    <div class="scroll-line"></div>
   </div>
 </section>
 
-<!-- SERVICES SECTION -->
 <section id="services">
   <div class="section-header centered">
-    <div class="section-label">Core Capabilities</div>
-    <h2 class="section-title">Specialized Intelligence Services</h2>
-    <p class="section-sub">Production-grade infrastructure components deployed directly into your live corporate workflows.</p>
+    <div class="section-label">Core Specializations</div>
+    <h2 class="section-title">Automated Digital Engineering</h2>
+    <p class="section-sub">We deploy production-grade software frameworks embedded with specialized business logic layers.</p>
   </div>
-
   <div class="services-grid">
-    <!-- Card 1 -->
-    <div class="service-card">
-      <div class="svc-icon">🧠</div>
-      <h3 class="svc-title">AI Website Development</h3>
-      <p class="svc-desc">Immersive web platforms engineered with contextual data capabilities and real-time computation mechanisms.</p>
-      <button class="svc-btn" onclick="openServiceModal(0)">Learn More</button>
-    </div>
-    <!-- Card 2 -->
     <div class="service-card">
       <div class="svc-icon">⚡</div>
-      <h3 class="svc-title">Website Redesign</h3>
-      <p class="svc-desc">Migrate legacy code bases into premium glassmorphic, performant fluid interfaces engineered to maximize user conversion.</p>
-      <button class="svc-btn" onclick="openServiceModal(1)">Learn More</button>
+      <h3 class="svc-title">High-Scale Web Frameworks</h3>
+      <p class="svc-desc">Monolithic and distributed front-end micro-architectures engineered for speed, high conversion, and responsive modular components.</p>
+      <button class="svc-btn" onclick="openModal('web')">Learn More</button>
     </div>
-    <!-- Card 3 -->
     <div class="service-card">
-      <div class="svc-icon">💬</div>
-      <h3 class="svc-title">AI Chatbots</h3>
-      <p class="svc-desc">Autonomous customer support entities micro-trained on proprietary company databases for instantaneous logic resolution.</p>
-      <button class="svc-btn" onclick="openServiceModal(2)">Learn More</button>
+      <div class="svc-icon">🧠</div>
+      <h3 class="svc-title">Functional AI Integration</h3>
+      <p class="svc-desc">Plugging smart autonomous logic, automated dynamic content pipelines, and interactive search intelligence directly into your app layers.</p>
+      <button class="svc-btn" onclick="openModal('ai')">Learn More</button>
     </div>
-    <!-- Card 4 -->
     <div class="service-card">
-      <div class="svc-icon">⚙️</div>
-      <h3 class="svc-title">AI Automation</h3>
-      <p class="svc-desc">Eliminate human latency by implementing multi-agent operations across asynchronous back-office pipelines.</p>
-      <button class="svc-btn" onclick="openServiceModal(3)">Learn More</button>
-    </div>
-    <!-- Card 5 -->
-    <div class="service-card">
-      <div class="svc-icon">🔌</div>
-      <h3 class="svc-title">CRM Integration</h3>
-      <p class="svc-desc">Synchronize communication links between your front-facing websites and internal operational systems seamlessly.</p>
-      <button class="svc-btn" onclick="openServiceModal(4)">Learn More</button>
-    </div>
-    <!-- Card 6 -->
-    <div class="service-card">
-      <div class="svc-icon">📈</div>
-      <h3 class="svc-title">Lead Generation Systems</h3>
-      <p class="svc-desc">Data capturing arrays using predictive validation layers to ensure automated pipeline flow stability.</p>
-      <button class="svc-btn" onclick="openServiceModal(5)">Learn More</button>
+      <div class="svc-icon">💎</div>
+      <h3 class="svc-title">Custom Brand Implementations</h3>
+      <p class="svc-desc">Total strategic alignment. We systematically wrap our high-performance technical templates around your unified corporate ecosystem.</p>
+      <button class="svc-btn" onclick="openModal('brand')">Learn More</button>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO SECTION -->
 <section id="portfolio">
-  <div class="section-header">
-    <div class="section-label">Engineered Proof of Concepts</div>
-    <h2 class="section-title">Production Systems Portfolio</h2>
-    <p class="section-sub">Explore full functional blueprints built with premium UI matrices and high performance capabilities.</p>
+  <div class="section-header centered">
+    <div class="section-label">Interactive Portfolio Ecosystem</div>
+    <h2 class="section-title">6 Complete Enterprise Demos</h2>
+    <p class="section-sub">Explore our functional structural templates built for speed, real assets, and interactive configurations.</p>
   </div>
-
   <div class="portfolio-grid">
-    <!-- Portfolio Card 1 -->
+    
     <div class="port-card">
       <div class="port-img">
-        <div class="port-img-label">Ecosystem Demo</div>
-        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Zentro Restaurant Demo Architecture">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Zentro Restaurant Interior" loading="lazy">
+        <div class="port-img-label">Fine Dining Platform</div>
       </div>
       <div class="port-body">
-        <div>
-          <div class="port-tag">Gastronomy & Retail</div>
-          <h3 class="port-title">Zentro Restaurant Demo</h3>
-          <p class="port-desc">Immersive interactive fine dining interface equipped with deep data arrays and visual lightbox indexing matrix.</p>
-          <div class="port-features">
-            <span class="port-feat">8-Item Image Grid</span>
-            <span class="port-feat">Data Lightbox</span>
-          </div>
+        <div class="port-tag">Zentro Restaurant</div>
+        <h3 class="port-title">Premium Hospitality Portal</h3>
+        <p class="port-desc">Complete epicurean framework supporting integrated luxury reservation tools, dynamic menu groupings, and gourmet visual assets.</p>
+        <div class="port-features">
+          <span class="port-feat">Menu Display</span>
+          <span class="port-feat">Reservations</span>
+          <span class="port-feat">Gallery</span>
         </div>
-        <button class="port-demo-btn" onclick="openDemoPage('restaurant')">Launch System Blueprint</button>
+        <button class="port-demo-btn" onclick="openDemo('restaurant')">Launch Project View</button>
       </div>
     </div>
 
-    <!-- Portfolio Card 2 -->
     <div class="port-card">
       <div class="port-img">
-        <div class="port-img-label">Ecosystem Demo</div>
-        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=600&q=80" alt="Zentro Clinic Demo Architecture">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" alt="Zentro Real Estate Complex" loading="lazy">
+        <div class="port-img-label">Property Management</div>
       </div>
       <div class="port-body">
-        <div>
-          <div class="port-tag">Healthcare Systems</div>
-          <h3 class="port-title">Zentro Clinic Demo</h3>
-          <p class="port-desc">Fully structured medical blueprint featuring verified medical team cards and zero cartoon abstractions.</p>
-          <div class="port-features">
-            <span class="port-feat">Real Staff Matrix</span>
-            <span class="port-feat">Intake Module</span>
-          </div>
+        <div class="port-tag">Zentro Real Estate</div>
+        <h3 class="port-title">Corporate Brokerage Suite</h3>
+        <p class="port-desc">High-speed modular layout architected for multi-tier industrial real estate listings, agent metadata matrix, and dynamic inquiry fields.</p>
+        <div class="port-features">
+          <span class="port-feat">Listings Hub</span>
+          <span class="port-feat">Agent Directory</span>
+          <span class="port-feat">Inquiry Flow</span>
         </div>
-        <button class="port-demo-btn" onclick="openDemoPage('clinic')">Launch System Blueprint</button>
+        <button class="port-demo-btn" onclick="openDemo('realestate')">Launch Project View</button>
       </div>
     </div>
 
-    <!-- Portfolio Card 3 -->
     <div class="port-card">
       <div class="port-img">
-        <div class="port-img-label">Ecosystem Demo</div>
-        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="Zentro Real Estate Demo Architecture">
+        <img src="https://images.unsplash.com/photo-1584515933487-75982136b247?auto=format&fit=crop&w=600&q=80" alt="Zentro Clinic Medical Lab" loading="lazy">
+        <div class="port-img-label">Healthcare Solutions</div>
       </div>
       <div class="port-body">
-        <div>
-          <div class="port-tag">High-End Real Estate</div>
-          <h3 class="port-title">Zentro Real Estate Demo</h3>
-          <p class="port-desc">Clean engineering solution processing ultra-realistic real-estate assets mapped with geometric metrics.</p>
-          <div class="port-features">
-            <span class="port-feat">Structural Metrics</span>
-            <span class="port-feat">Agent Blueprints</span>
-          </div>
+        <div class="port-tag">Zentro Clinic</div>
+        <h3 class="port-title">Clinical Care Hub</h3>
+        <p class="port-desc">HIPAA-ready architectural layouts emphasizing structured clinician listings, detailed specialty medical services, and clean scheduling forms.</p>
+        <div class="port-features">
+          <span class="port-feat">Doctor Profiles</span>
+          <span class="port-feat">Appointments</span>
+          <span class="port-feat">Medical Catalog</span>
         </div>
-        <button class="port-demo-btn" onclick="openDemoPage('realestate')">Launch System Blueprint</button>
+        <button class="port-demo-btn" onclick="openDemo('clinic')">Launch Project View</button>
       </div>
     </div>
+
+    <div class="port-card">
+      <div class="port-img">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Zentro E-Commerce Store" loading="lazy">
+        <div class="port-img-label">Digital Retail</div>
+      </div>
+      <div class="port-body">
+        <div class="port-tag">Zentro E-Commerce</div>
+        <h3 class="port-title">Omnichannel Retail Architecture</h3>
+        <p class="port-desc">Lightning-fast store experience engineered with an interactive stateful shopping cart layout, high-performance product filters, and secure pricing grids.</p>
+        <div class="port-features">
+          <span class="port-feat">Cart Engine</span>
+          <span class="port-feat">Product Matrix</span>
+          <span class="port-feat">Checkout Flow</span>
+        </div>
+        <button class="port-demo-btn" onclick="openDemo('ecommerce')">Launch Project View</button>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-img">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" alt="Zentro Education Campus" loading="lazy">
+        <div class="port-img-label">Academic LMS</div>
+      </div>
+      <div class="port-body">
+        <div class="port-tag">Zentro Education</div>
+        <h3 class="port-title">Knowledge & Learning LMS</h3>
+        <p class="port-desc">A structured academic environment delivering comprehensive course navigation matrixes, professor tracking indices, and dynamic enrollment applications.</p>
+        <div class="port-features">
+          <span class="port-feat">Course Index</span>
+          <span class="port-feat">Faculty Directory</span>
+          <span class="port-feat">Enrollment Portal</span>
+        </div>
+        <button class="port-demo-btn" onclick="openDemo('education')">Launch Project View</button>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-img">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Zentro Construction Site" loading="lazy">
+        <div class="port-img-label">Industrial Engineering</div>
+      </div>
+      <div class="port-body">
+        <div class="port-tag">Zentro Construction</div>
+        <h3 class="port-title">Infrastructure & Heavy Industry</h3>
+        <p class="port-desc">Heavy industrial framework displaying large-scale blueprint progress matrices, project capitalization parameters, and comprehensive safety crew listings.</p>
+        <div class="port-features">
+          <span class="port-feat">Project Matrices</span>
+          <span class="port-feat">Capital Analytics</span>
+          <span class="port-feat">Safety Crew Index</span>
+        </div>
+        <button class="port-demo-btn" onclick="openDemo('construction')">Launch Project View</button>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- PRICING SECTION -->
 <section id="pricing">
   <div class="section-header centered">
-    <div class="section-label">Investment Framework</div>
-    <h2 class="section-title">Transparent Architecture Pricing</h2>
-    <p class="section-sub">Fixed scope cost plans without misleading formulas or artificial markup metrics.</p>
+    <div class="section-label">Transparent Commitments</div>
+    <h2 class="section-title">Production Tier Subscriptions</h2>
+    <p class="section-sub">Deploy production-ready framework builds packed with custom configurations and clean code logic.</p>
   </div>
-
   <div class="pricing-grid">
-    <!-- Plan 1 -->
+    
     <div class="price-card">
-      <div>
-        <div class="price-plan">Starter</div>
-        <div class="price-amount">Starting From $80+</div>
-        <p class="price-desc">Essential modern digital deployment frameworks for expanding entities.</p>
-        <ul class="price-features">
-          <li>Core Landing Layout</li>
-          <li>Basic AI Integration Routing</li>
-          <li>Fluid Responsive Matrix</li>
-        </ul>
+      <div class="price-top">
+        <div class="price-plan">Plan 01</div>
+        <div class="price-amount">$80 <span>/ asset</span></div>
+        <p class="price-desc">Optimized core infrastructure setup for rapidly launching high-fidelity landing frameworks.</p>
       </div>
-      <button class="price-cta" onclick="selectPricingPlan('Starter')">Deploy Blueprint</button>
+      <ul class="price-features">
+        <li>Standard Component Blueprint</li>
+        <li>Custom Brand Alignment Setup</li>
+        <li>Responsive Fluid Media Grid</li>
+        <li><strong>3-day express delivery</strong></li>
+      </ul>
+      <button class="price-cta" onclick="selectPlan('Plan 01 ($80)')">Subscribe Tier</button>
     </div>
 
-    <!-- Plan 2 -->
     <div class="price-card popular">
-      <div>
-        <div class="price-plan">Growth</div>
-        <div class="price-amount">Starting From $150+</div>
-        <p class="price-desc">Expanded architecture scaling up communication structures.</p>
-        <ul class="price-features">
-          <li>Multi-layer Core Architecture</li>
-          <li>Asynchronous Intake Forms</li>
-          <li>Enhanced Spacing Matrices</li>
-        </ul>
+      <div class="price-top">
+        <div class="price-plan">Plan 02</div>
+        <div class="price-amount">$150 <span>/ asset</span></div>
+        <p class="price-desc">Comprehensive structural blueprint configured with secondary logical link pathways and content systems.</p>
       </div>
-      <button class="price-cta" onclick="selectPricingPlan('Growth')">Deploy Blueprint</button>
+      <ul class="price-features">
+        <li>Extended System Pages (Up to 4)</li>
+        <li>Active Data Capture Endpoints</li>
+        <li>Comprehensive CSS Motion Profiles</li>
+        <li><strong>6-7 day delivery schedule</strong></li>
+      </ul>
+      <button class="price-cta" onclick="selectPlan('Plan 02 ($150)')">Subscribe Tier</button>
     </div>
 
-    <!-- Plan 3 -->
-    <div class="price-card">
-      <div>
-        <div class="price-plan">Professional</div>
-        <div class="price-amount">Starting From $300+</div>
-        <p class="price-desc">Comprehensive organizational setups targeting rapid growth metrics.</p>
-        <ul class="price-features">
-          <li>Advanced CRM Pipelines</li>
-          <li>Contextual Conversational AI</li>
-          <li>Interactive Component Arrays</li>
-        </ul>
-      </div>
-      <button class="price-cta" onclick="selectPricingPlan('Professional')">Deploy Blueprint</button>
-    </div>
-
-    <!-- Plan 4 -->
     <div class="price-card premium">
-      <div>
-        <div class="premium-badge">Enterprise Option</div>
-        <div class="price-plan">Premium</div>
-        <div class="price-amount">Starting From $550+</div>
-        <p class="price-desc">Heavy operational engine deployment handling deep custom automations.</p>
-        <ul class="price-features">
-          <li>Enterprise Multi-Agents</li>
-          <li>Custom Database Synchronicities</li>
-          <li>Complete Structural Audits</li>
-        </ul>
+      <div class="price-top">
+        <div class="premium-badge">High Performance</div>
+        <div class="price-plan">Plan 03</div>
+        <div class="price-amount">$300 <span>/ asset</span></div>
+        <p class="price-desc">Advanced multi-tier system engineered with complex interaction parameters and structural blocks.</p>
       </div>
-      <button class="price-cta" onclick="selectPricingPlan('Premium')">Deploy Blueprint</button>
+      <ul class="price-features">
+        <li>Full Structural Blueprint Setup</li>
+        <li>Advanced Component Architecture</li>
+        <li>Integrated Client Access Points</li>
+        <li><strong>Delivered within 14 days</strong></li>
+      </ul>
+      <button class="price-cta" onclick="selectPlan('Plan 03 ($300)')">Subscribe Tier</button>
     </div>
 
-    <!-- Plan 5 -->
+    <div class="price-card">
+      <div class="price-top">
+        <div class="price-plan">Plan 04</div>
+        <div class="price-amount">$550 <span>/ asset</span></div>
+        <p class="price-desc">Premium tier engineered for large scale portfolios and fully interactive data representation states.</p>
+      </div>
+      <ul class="price-features">
+        <li>Max Tier Page Configurations</li>
+        <li>Custom Logic State Matrices</li>
+        <li>Full Media Optimization Layers</li>
+        <li><strong>Delivered within 21 days</strong></li>
+      </ul>
+      <button class="price-cta" onclick="selectPlan('Plan 04 ($550)')">Subscribe Tier</button>
+    </div>
+
     <div class="price-card enterprise">
-      <div>
-        <div class="price-plan">Custom</div>
-        <div class="price-amount">Custom Pricing</div>
-        <p class="price-desc">Bespoke software architecture engineered cleanly for complex specifications.</p>
-        <ul class="price-features">
-          <li>Tailor-Made Core Code</li>
-          <li>Dedicated Dev Matrix Link</li>
-          <li>Infinite System Elasticity</li>
-        </ul>
+      <div class="price-top">
+        <div class="price-plan">Plan 05</div>
+        <div class="price-amount">Custom Enterprise <span>/ architecture</span></div>
+        <p class="price-desc">Complete systemic deployment built entirely around specialized corporate enterprise requirements, massive data volumes, and advanced autonomous pipelines.</p>
       </div>
-      <button class="price-cta" onclick="selectPricingPlan('Custom')">Inquire Matrix</button>
+      <ul class="price-features">
+        <li>Unlimited Scaled Structural Nodes</li>
+        <li>Deep Custom AI & Automation Core Orchestration</li>
+        <li>Dedicated Solutions Engineering Pipeline Support</li>
+        <li><strong>Delivery Timeline:</strong> Custom based on project definitions</li>
+      </ul>
+      <p class="enterprise-note">
+        * Delivery timeline varies because enterprise projects often require custom integrations, advanced automation, multiple revisions and client-specific requirements.
+      </p>
+      <button class="price-cta" onclick="selectPlan('Custom Enterprise (Plan 05)')">Initiate Consultation</button>
+    </div>
+
+  </div>
+</section>
+
+<section id="process">
+  <div class="section-header centered">
+    <div class="section-label">Operational Blueprint</div>
+    <h2 class="section-title">The Engineering Execution</h2>
+    <p class="section-sub">How Zentro transforms raw operational scope into high-performance web systems.</p>
+  </div>
+  <div class="process-grid">
+    <div class="process-card">
+      <div class="process-num">01</div>
+      <div class="process-icon">📋</div>
+      <h3 class="process-title">Scope Alignment</h3>
+      <p class="process-desc">We extract, analyze, and formalize structural code requirements and branding assets directly from your team.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">02</div>
+      <div class="process-icon">⚙️</div>
+      <h3 class="process-title">Core Development</h3>
+      <p class="process-desc">Drafting the structural component layers, setting up CSS variables, and building clean anchor routing blocks.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">03</div>
+      <div class="process-icon">🤖</div>
+      <h3 class="process-title">Logic Integration</h3>
+      <p class="process-desc">We load real assets, hook up form listeners, map custom brand details, and activate autonomous functions.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">04</div>
+      <div class="process-icon">🚀</div>
+      <h3 class="process-title">Production Delivery</h3>
+      <p class="process-desc">Rigorous multi-point testing across various viewport ratios followed by a clean, production-ready source code deployment.</p>
     </div>
   </div>
 </section>
 
-<!-- PROJECT INQUIRY REQUIREMENT SUBMISSION FORM -->
-<section id="inquiry">
-  <div class="section-header centered">
-    <div class="section-label">Project Initialization Form</div>
-    <h2 class="section-title">Submit Architecture Requirements</h2>
-    <p class="section-sub">Define system configurations directly to our architectural engine core.</p>
-  </div>
-
-  <div class="inquiry-form-box">
-    <form id="reqForm" onsubmit="handleFormSubmit(event, 'req')">
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Full Name</label>
-          <input type="text" id="reqName" class="form-input" placeholder="e.g. David Vance" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Business Name</label>
-          <input type="text" id="reqBiz" class="form-input" placeholder="e.g. Zentro Corp" required>
-        </div>
-      </div>
-      
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input type="email" id="reqEmail" class="form-input" placeholder="e.g. vance@zentro.com" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Phone Number</label>
-          <input type="tel" id="reqPhone" class="form-input" placeholder="e.g. +1 000-000000" required>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Service Needed</label>
-          <select id="reqService" class="form-select" required>
-            <option value="">Select Target Core Architecture</option>
-            <option value="dev">AI Website Development</option>
-            <option value="redesign">Website Redesign</option>
-            <option value="chatbots">AI Chatbots</option>
-            <option value="automation">AI Automation Systems</option>
-            <option value="crm">CRM Integration Matrix</option>
-            <option value="leads">Lead Generation Arrays</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Budget Range</label>
-          <select id="reqBudget" class="form-select" required>
-            <option value="">Select Investment Band</option>
-            <option value="starter">$80 – $150</option>
-            <option value="growth">$150 – $300</option>
-            <option value="pro">$300 – $550</option>
-            <option value="premium">$550+</option>
-            <option value="custom">Bespoke Custom Framework</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Target Completion Deadline</label>
-        <input type="text" id="reqDeadline" class="form-input" placeholder="e.g. 30 Days from Deployment" required>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Detailed Project Description</label>
-        <textarea id="reqDesc" class="form-textarea" placeholder="Detail the features, integrations, and logic loops required..." required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">System Documentation Upload (Optional File Reference)</label>
-        <input type="file" id="reqFile" class="form-input" style="padding: 0.6rem">
-      </div>
-
-      <div class="form-error" id="reqError"></div>
-      <div class="form-success" id="reqSuccess">System Requirements received. Our project logic team is processing your data vectors.</div>
-
-      <button type="submit" class="btn-primary" style="width:100%; margin-top:1rem">Transmit Core Project Data</button>
-    </form>
-  </div>
-</section>
-
-<!-- FAQ SECTION Accordion Matrix -->
 <section id="faq">
   <div class="section-header centered">
-    <div class="section-label">Knowledge Resolution Base</div>
-    <h2 class="section-title">Frequently Checked Operations</h2>
-    <p class="section-sub">Immediate logical documentation answers regarding our development pipelines.</p>
+    <div class="section-label">Information Matrix</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-sub">Answering essential parameters regarding our development framework pipelines.</p>
   </div>
-
   <div class="faq-wrap">
-    <!-- FAQ 1 -->
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">
-        <span>How are Zentro AI websites engineered?</span>
+        What is included in the production-ready source code delivery?
         <span class="faq-arrow">+</span>
       </button>
       <div class="faq-a">
         <div class="faq-a-inner">
-          Every website framework is built natively on dynamic fluid structures utilizing modern glassmorphism models. We combine fast JavaScript engines with clean code structures to prevent performance bottlenecks.
+          You receive complete, highly organized HTML5 files, responsive modern CSS frameworks, and optimized modular vanilla JavaScript code scripts entirely configured for seamless hosting deployment.
         </div>
       </div>
     </div>
-    <!-- FAQ 2 -->
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">
-        <span>What parameters determine the starting cost metrics?</span>
+        How does the Zentro rebranding implementation work?
         <span class="faq-arrow">+</span>
       </button>
       <div class="faq-a">
         <div class="faq-a-inner">
-          Costs track directly with pipeline logic maps. Standard layout maps begin at $80+, scaling systematically into multi-agent operational ecosystems starting at $550+.
+          We replace all placeholder branding assets, text, typography, color schemas, dynamic metadata setups, and vector graphics with your unique verified corporate branding elements across all view structures.
         </div>
       </div>
     </div>
-    <!-- FAQ 3 -->
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">
-        <span>Are old design identities retained during system overhauls?</span>
+        Are the structural design assets and images real and safe to use?
         <span class="faq-arrow">+</span>
       </button>
       <div class="faq-a">
         <div class="faq-a-inner">
-          No. All abstract legacy data vectors and low-grade cartoon graphics are systematically discarded and replaced with pristine high-fidelity photography grids.
-        </div>
-      </div>
-    </div>
-    <!-- FAQ 4 -->
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span>Do your automated booking structures use real photography?</span>
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a">
-        <div class="faq-a-inner">
-          Absolutely. Our sample systems, including restaurant blueprints, real estate lists, and clinical arrays use explicitly verified real-world imagery assets exclusively.
-        </div>
-      </div>
-    </div>
-    <!-- FAQ 5 -->
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span>What protocols secure customer inquiry uploads?</span>
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a">
-        <div class="faq-a-inner">
-          All documentation parameters pass directly into isolated processing modules embedded inside our system structure, preventing cross-leak data corruptions.
-        </div>
-      </div>
-    </div>
-    <!-- FAQ 6 -->
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span>Can internal legacy CRM components sync with your systems?</span>
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a">
-        <div class="faq-a-inner">
-          Yes, our custom API infrastructure arrays bridge external software silos with advanced modern web forms natively.
-        </div>
-      </div>
-    </div>
-    <!-- FAQ 7 -->
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        <span>How long do core functional deployments take?</span>
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a">
-        <div class="faq-a-inner">
-          Standard structural plans activate within 7 to 14 standard calendar operational loops, depending directly on structural feature density levels selected.
+          Yes. All template graphics utilize real, fully optimized, and high-resolution media streams fetched from standard open-source production libraries, guaranteeing authentic appearance states.
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
 <section id="contact">
+  <div class="section-header">
+    <div class="section-label">Interface Portal</div>
+    <h2 class="section-title">Initiate Your System Build</h2>
+    <p class="section-sub">Submit your project requirements matrix directly to our automated processing pipeline below.</p>
+  </div>
   <div class="contact-wrap">
     <div class="contact-info">
-      <div>
-        <div class="section-label">Direct Communication Channels</div>
-        <h2 class="contact-info-title">Establish Operational Contact</h2>
-        <p class="contact-info-sub" style="margin-top:0.5rem">Our agency response protocols function constantly to resolve pending project pipeline queries.</p>
-      </div>
-
+      <h3 class="contact-info-title">Let's coordinate high-performance engineering layouts.</h3>
+      <p class="contact-info-sub">Our internal system nodes process submissions in real time to match required pricing levels.</p>
+      
       <div class="contact-item">
-        <div class="contact-item-icon">📍</div>
+        <div class="contact-item-icon">📬</div>
         <div>
-          <div class="contact-item-label">System Headquarters</div>
-          <div class="contact-item-val">XYZ Address</div>
+          <div class="contact-item-label">Direct Endpoint</div>
+          <div class="contact-item-val">solutions@zentro.ai</div>
         </div>
       </div>
-
       <div class="contact-item">
-        <div class="contact-item-icon">📞</div>
+        <div class="contact-item-icon">🌐</div>
         <div>
-          <div class="contact-item-label">Voice Communications</div>
-          <div class="contact-item-val">0000-0000000</div>
-        </div>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-item-icon">✉️</div>
-        <div>
-          <div class="contact-item-label">Secure Data Mail</div>
-          <div class="contact-item-val">xyz@example.com</div>
+          <div class="contact-item-label">Corporate Network</div>
+          <div class="contact-item-val">Zentro Digital Solutions Labs</div>
         </div>
       </div>
     </div>
 
     <div class="contact-form">
-      <form id="contactForm" onsubmit="handleFormSubmit(event, 'contact')">
-        <div class="form-group">
-          <label class="form-label">Your Name</label>
-          <input type="text" id="contactName" class="form-input" placeholder="e.g. Sarah Connor" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input type="email" id="contactEmail" class="form-input" placeholder="e.g. sarah@cyberdyne.com" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Phone Number</label>
-          <input type="tel" id="contactPhone" class="form-input" placeholder="e.g. 0000-0000000" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Transmission Message</label>
-          <textarea id="contactMsg" class="form-textarea" placeholder="Detail your general inquiries directly..." required></textarea>
-        </div>
+      <div class="form-success" id="formSuccess">Submission secured. Our engineering pipeline has queued your project node.</div>
+      <div class="form-error" id="formError">
+        <div class="form-error-title">Validation Error Detected:</div>
+        <ul id="errorList"></ul>
+      </div>
 
-        <div class="form-error" id="contactError"></div>
-        <div class="form-success" id="contactSuccess">Secure node transmission confirmed. Agent communication active shortly.</div>
-
-        <button type="submit" class="btn-primary" style="width:100%">Transmit Message Vector</button>
+      <form id="zentroForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="clientName">Identity Name</label>
+            <input type="text" id="clientName" class="form-input" placeholder="e.g. Alex Vance">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="clientEmail">Network Email</label>
+            <input type="email" id="clientEmail" class="form-input" placeholder="e.g. alex@network.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="projectTier">Target Configuration Subscription</label>
+          <select id="projectTier" class="form-select">
+            <option value="">-- Choose Subscription Tier --</option>
+            <option value="Plan 01 ($80)">Plan 01 ($80) — 3-Day Sprint Build</option>
+            <option value="Plan 02 ($150)">Plan 02 ($150) — 6-7 Day Enhanced Blueprint</option>
+            <option value="Plan 03 ($300)">Plan 03 ($300) — 14-Day Full Product Platform</option>
+            <option value="Plan 04 ($550)">Plan 04 ($550) — 21-Day High Matrix Framework</option>
+            <option value="Custom Enterprise (Plan 05)">Custom Enterprise (Plan 05) — Scope Dependent</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="projectScope">Functional Architecture Scope Documentation</label>
+          <textarea id="projectScope" class="form-textarea" placeholder="Detail any necessary dynamic UI logic, required pages matrix, or asset parameters..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%;">Transmit Parameters</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- SYSTEM FOOTER ARRAY -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="#" class="footer-logo">ZENTRO <span>AI</span></a>
-      <p class="footer-tagline">Advanced agency architecture modeling beautiful digital frontends and high computing automated logic pathways.</p>
+      <div class="footer-logo">ZENTRO<span>.AI</span></div>
+      <p class="footer-tagline">Architecting bulletproof structural layouts and algorithmic workflow automation layers for next-generation platforms.</p>
     </div>
     <div>
-      <h4 class="footer-col-title">Architecture Cores</h4>
+      <div class="footer-col-title">Framework Ecosystem</div>
       <ul class="footer-links">
-        <li><a href="#services">Web Interfaces</a></li>
-        <li><a href="#services">Automation Layers</a></li>
-        <li><a href="#services">CRM Synchronicities</a></li>
+        <li><a href="#services">Specializations</a></li>
+        <li><a href="#portfolio">Live Demos</a></li>
+        <li><a href="#pricing">Price Tiers</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="footer-col-title">Engine Blueprints</h4>
+      <div class="footer-col-title">Operational Core</div>
       <ul class="footer-links">
-        <li><a href="#portfolio" onclick="openDemoPage('restaurant')">Zentro Restaurant Demo</a></li>
-        <li><a href="#portfolio" onclick="openDemoPage('clinic')">Zentro Clinic Demo</a></li>
-        <li><a href="#portfolio" onclick="openDemoPage('realestate')">Zentro Real Estate Demo</a></li>
+        <li><a href="#process">Development Process</a></li>
+        <li><a href="#faq">System FAQ Matrix</a></li>
+        <li><a href="#contact">Contact Support</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="footer-col-title">Framework Nodes</h4>
+      <div class="footer-col-title">Zentro Branding Network</div>
       <ul class="footer-links">
-        <li><a href="#inquiry">Initialization</a></li>
-        <li><a href="#pricing">Cost Matrix</a></li>
-        <li><a href="#faq">Faq Node</a></li>
+        <li><a onclick="openDemo('restaurant')" style="cursor:pointer;">Zentro Restaurant</a></li>
+        <li><a onclick="openDemo('realestate')" style="cursor:pointer;">Zentro Real Estate</a></li>
+        <li><a onclick="openDemo('clinic')" style="cursor:pointer;">Zentro Clinic</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">&copy; 2026 <span>ZENTRO AI</span>. All algorithmic production structures certified intact.</div>
+    <div class="footer-copy">&copy; 2026 <span>Zentro Digital Solutions</span>. All technical parameters reserved globally.</div>
   </div>
 </footer>
 
-<!-- SYSTEM SPECIFIC LEARN MORE MODAL ARRAY -->
-<div class="modal-overlay" id="serviceModal">
-  <div class="modal-box">
+<div class="modal-overlay" id="infoModal" onclick="closeModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
     <div class="modal-header">
-      <h3 class="modal-title" id="mTitle">System Component Explanation</h3>
-      <button class="modal-close" onclick="closeServiceModal()">&times;</button>
+      <h3 class="modal-title" id="modalTitle">System Specs</h3>
+      <button class="modal-close" onclick="closeModal(null)">×</button>
     </div>
     <div class="modal-body">
-      <p class="modal-intro" id="mDesc">Loading blueprint details from our core storage bank...</p>
-      <div class="modal-points">
-        <div class="modal-point">
-          <div class="modal-point-title">System Deliverables & Architecture</div>
-          <div class="modal-point-desc" id="mDeliv">Asynchronous core code execution layouts mapped exactly to parameters.</div>
-        </div>
-        <div class="modal-point">
-          <div class="modal-point-title">Timeline Framework Loop</div>
-          <div class="modal-point-desc" id="mTimeline">7 to 14 production integration passes with system checks completely active.</div>
-        </div>
-      </div>
+      <p class="modal-intro" id="modalIntro">Information profile loading...</p>
+      <div class="modal-points" id="modalPoints"></div>
     </div>
   </div>
 </div>
 
-<!-- ======================================================= -->
-<!-- FULL SYSTEM BLUEPRINT DEMO OVERLAYS (NO DEAD LINKS)     -->
-<!-- ======================================================= -->
-
-<!-- 1. ZENTRO RESTAURANT DEMO OVERLAY VIEW -->
-<div class="demo-page-view" id="demo_restaurant">
-  <div class="demo-back-bar">
-    <span style="color:#fff; font-weight:700; font-family:'Syne'">SYSTEM SIMULATION MODE: Zentro Restaurant Demo</span>
-    <button class="demo-back-btn" onclick="closeDemoPage('restaurant')">Return to Zentro Core</button>
+<div class="demo-page-view" id="demo-restaurant">
+  <div class="demo-close-bar">
+    <span>Live Sandbox View — Zentro Restaurant Portal</span>
+    <button class="demo-close-btn" onclick="closeDemo('restaurant')">Exit Project View</button>
   </div>
-  <div class="rest-body">
-    <div class="rest-hero">
-      <h1 class="rest-title">The Culinary Grid</h1>
-      <p style="max-width:600px; margin:0 auto; font-size:1.1rem; font-weight:300">Experience computational premium gastronomy design driven by ultra-clean data presentation frameworks.</p>
-    </div>
-    
-    <div style="text-align:center; padding-top:4rem;">
-      <h2 style="font-family:'Syne'; font-size:2rem; color:var(--gold)">Our Premium Gastronomy Grid</h2>
-      <p style="color:#888; font-size:0.9rem; margin-top:0.5rem">Click any realistic item card component to deploy the high fidelity lightbox overlay data stack.</p>
+  <nav class="d-nav">
+    <a class="d-logo" style="color: #f59e0b;">Zentro Restaurant</a>
+    <ul class="d-links">
+      <li><a onclick="showDemoPage('restaurant', 'home')">Home</a></li>
+      <li><a onclick="showDemoPage('restaurant', 'menu')">Menu</a></li>
+      <li><a onclick="showDemoPage('restaurant', 'gallery')">Gallery</a></li>
+      <li><a onclick="showDemoPage('restaurant', 'reservations')">Reservations</a></li>
+      <li><a onclick="showDemoPage('restaurant', 'about')">About</a></li>
+      <li><a onclick="showDemoPage('restaurant', 'contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="demo-page-container">
+    <div class="demo-subpage restaurant-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80');">
+      <div class="d-hero-inner">
+        <h1>Zentro Culinary Experience</h1>
+        <p>Gourmet gastronomy designed for modern palates. Fresh organic inputs, exquisite combinations, and unforgettable fine hospitality environments.</p>
+        <button class="d-btn" style="background:#f59e0b;" onclick="showDemoPage('restaurant', 'reservations')">Reserve Fine Dining Table</button>
+      </div>
     </div>
 
-    <div class="rest-grid" id="foodGrid">
-      <!-- 8 items will be cleanly outputted by data loops in the script file below -->
+    <div class="demo-subpage restaurant-menu d-section" style="display:none;">
+      <h2 class="d-section-title">The Culinary Catalog & Menu Prices</h2>
+      <div class="d-grid">
+        <div class="d-card"><div class="d-card-body"><h3>Zentro Reserve Steak</h3><p>Dry-aged wagyu beef ribeye served over custom truffle butter mash.</p><strong style="color:#f59e0b;">$110.00</strong></div></div>
+        <div class="d-card"><div class="d-card-body"><h3>Pacific Seared Salmon</h3><p>Wild-caught salmon accompanied by wild ginger reduction greens.</p><strong style="color:#f59e0b;">$46.00</strong></div></div>
+        <div class="d-card"><div class="d-card-body"><h3>Artisan Organic Rigatoni</h3><p>Fresh hand-rolled pasta tossed gently in heirloom slow-cooked tomato reduction.</p><strong style="color:#f59e0b;">$32.00</strong></div></div>
+      </div>
     </div>
 
-    <!-- Contact & Sample Blueprint Data Footers -->
-    <div style="padding: 4rem 5%; background: #15110e; border-top: 1px solid #2a221c; text-align: center;">
-      <h3 style="font-family:'Syne'; margin-bottom:1rem">Secure Reservation Intake Node</h3>
-      <p style="color:#aaa; max-width:500px; margin: 0 auto 2rem">Reservations process automatically utilizing structural web vectors.</p>
-      <div class="demo-addr-block" style="max-width:400px; margin:0 auto">
-        <div style="color:var(--gold); font-weight:700; font-size:0.8rem; text-transform:uppercase; margin-bottom:0.5rem">System Sample Metadata</div>
-        <p style="font-size:0.9rem">📍 XYZ Address</p>
-        <p style="font-size:0.9rem">📞 0000-0000000</p>
-        <p style="font-size:0.9rem">✉️ xyz@example.com</p>
+    <div class="demo-subpage restaurant-gallery d-section" style="display:none;">
+      <h2 class="d-section-title">Interior Spaces & Plates Presentation</h2>
+      <div class="d-grid">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80" alt="Plates">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80" alt="Dining Room">
+        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=400&q=80" alt="Chef Work">
+      </div>
+    </div>
+
+    <div class="demo-subpage restaurant-reservations d-section" style="display:none;">
+      <h2 class="d-section-title">Luxury Dining Reservation Log</h2>
+      <div class="d-form">
+        <div class="d-form-group"><label>Party Count</label><input type="number" value="2"></div>
+        <div class="d-form-group"><label>Calendar Date</label><input type="date"></div>
+        <div class="d-form-group"><label>Target Seating Zone</label><select><option>Main Dining Hall</option><option>Panoramic Garden Lounge</option><option>Private Wine Cellar Room</option></select></div>
+        <button class="d-btn" style="background:#f59e0b;" onclick="alert('Table allocation holds secured.')">Lock Reservation Node</button>
+      </div>
+    </div>
+
+    <div class="demo-subpage restaurant-about d-section" style="display:none;">
+      <h2 class="d-section-title">Our Heritage & Culinary Values</h2>
+      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">Established under Zentro corporate design standards, our premium hospitality portals feature elite culinary artists, pristine farm networks, and clean operational architecture across all processing nodes.</p>
+    </div>
+
+    <div class="demo-subpage restaurant-contact d-section" style="display:none;">
+      <h2 class="d-section-title">Direct Maitre D' Communication</h2>
+      <div class="d-form">
+        <div class="d-form-group"><label>Message Matrix</label><textarea placeholder="Write message details..."></textarea></div>
+        <button class="d-btn" style="background:#f59e0b;" onclick="alert('Message passed to staff.')">Send Message</button>
       </div>
     </div>
   </div>
+  <footer class="d-footer">&copy; 2026 Zentro Restaurant Group — Powered by Zentro Frameworks.</footer>
 </div>
 
-<!-- 2. ZENTRO CLINIC DEMO OVERLAY VIEW -->
-<div class="demo-page-view" id="demo_clinic">
-  <div class="demo-back-bar">
-    <span style="color:#fff; font-weight:700; font-family:'Syne'">SYSTEM SIMULATION MODE: Zentro Clinic Demo</span>
-    <button class="demo-back-btn" onclick="closeDemoPage('clinic')">Return to Zentro Core</button>
+<div class="demo-page-view" id="demo-realestate">
+  <div class="demo-close-bar">
+    <span>Live Sandbox View — Zentro Real Estate Framework</span>
+    <button class="demo-close-btn" onclick="closeDemo('realestate')">Exit Project View</button>
   </div>
-  <div class="clinic-body">
-    <div class="clinic-hero">
-      <h1 style="font-family:'Syne'; font-size: 3rem; color: #0284c7">Zentro Clinic Architectural Center</h1>
-      <p style="max-width:600px; font-size:1.1rem; font-weight:300; margin-top:1rem; color:#334155">High performance clinical administration framework. Completely audited to feature zero cartoon iconography or placeholders.</p>
-    </div>
+  <nav class="d-nav">
+    <a class="d-logo" style="color: #10b981;">Zentro Real Estate</a>
+    <ul class="d-links">
+      <li><a onclick="showDemoPage('realestate', 'home')">Home</a></li>
+      <li><a onclick="showDemoPage('realestate', 'properties')">Properties</a></li>
+      <li><a onclick="showDemoPage('realestate', 'details')">Property Details</a></li>
+      <li><a onclick="showDemoPage('realestate', 'agents')">Agents</a></li>
+      <li><a onclick="showDemoPage('realestate', 'about')">About</a></li>
+      <li><a onclick="showDemoPage('realestate', 'contact')">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="clinic-section">
-      <h2 style="font-family:'Syne'; text-align:center; margin-bottom:3rem; color:#0f172a">Verified Medical Practice Directors</h2>
-      <div class="clinic-grid">
-        <div class="clinic-card">
-          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=300&q=80" alt="Dr. Aris Thorne">
-          <h3 style="font-family:'Syne'">Dr. Aris Thorne, MD</h3>
-          <p style="color:#0284c7; font-size:0.85rem; font-weight:600; margin-bottom:0.5rem">Chief Neurological Architecture</p>
-          <p style="font-size:0.85rem; color:#64748b">Directs automated critical diagnostic operations using verified sensory metrics.</p>
-        </div>
-        <div class="clinic-card">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80" alt="Dr. Eliana Vance">
-          <h3 style="font-family:'Syne'">Dr. Eliana Vance, PhD</h3>
-          <p style="color:#0284c7; font-size:0.85rem; font-weight:600; margin-bottom:0.5rem">Director of Clinical Diagnostics</p>
-          <p style="font-size:0.85rem; color:#64748b">Manages asynchronous dynamic data streams to speed up physical recovery cycles.</p>
-        </div>
-        <div class="clinic-card">
-          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80" alt="Marcus Vance, RN">
-          <h3 style="font-family:'Syne'">Marcus Vance, RN</h3>
-          <p style="color:#0284c7; font-size:0.85rem; font-weight:600; margin-bottom:0.5rem">Emergency Outpatient Manager</p>
-          <p style="font-size:0.85rem; color:#64748b">Coordinates high frequency critical care setups across diagnostic spaces.</p>
-        </div>
+  <div class="demo-page-container">
+    <div class="demo-subpage realestate-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80');">
+      <div class="d-hero-inner">
+        <h1>Premier Industrial & Corporate Realty</h1>
+        <p>Premium real estate brokerages, architectural smart apartments, high-capacity warehouses, and pristine development sites cataloged cleanly.</p>
+        <button class="d-btn" style="background:#10b981; color:white;" onclick="showDemoPage('realestate', 'properties')">Browse All Asset Logs</button>
       </div>
     </div>
 
-    <div class="clinic-section" style="background:#f1f5f9">
-      <h2 style="font-family:'Syne'; text-align:center; margin-bottom:2rem; color:#0f172a">Clinical Operations & Equipment Blueprint</h2>
-      <div class="clinic-grid">
-        <div class="clinic-card" style="text-align:left">
-          <h4 style="font-family:'Syne'; color:#0f172a; margin-bottom:0.5rem">Advanced Consultation Chambers</h4>
-          <p style="font-size:0.9rem; color:#475569">Equipped with zero latency computing arrays to monitor diagnostic shifts seamlessly.</p>
-        </div>
-        <div class="clinic-card" style="text-align:left">
-          <h4 style="font-family:'Syne'; color:#0f172a; margin-bottom:0.5rem">Precision Diagnostics Lab</h4>
-          <p style="font-size:0.9rem; color:#475569">Modern clinical design components matching pristine real photo parameters explicitly.</p>
-        </div>
+    <div class="demo-subpage realestate-properties d-section" style="display:none;">
+      <h2 class="d-section-title">Active Real Estate Portfolios</h2>
+      <div class="d-grid">
+        <div class="d-card"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80" alt="Luxury Villa"><div class="d-card-body"><h3>Zentro Penthouse Hub</h3><p>4-bedroom modular residential complex with private panoramic helipad.</p><strong style="color:#10b981;">$3,450,000</strong></div></div>
+        <div class="d-card"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=400&q=80" alt="Apartment Complex"><div class="d-card-body"><h3>Metropolitan Tech Loft</h3><p>Ultra-efficient workspace apartment with integrated smart home mesh.</p><strong style="color:#10b981;">$890,000</strong></div></div>
+        <div class="d-card"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=400&q=80" alt="Suburban Home"><div class="d-card-body"><h3>Industrial Assembly Complex</h3><p>Heavy duty automated manufacturing facility equipped with solar arrays.</p><strong style="color:#10b981;">$7,200,000</strong></div></div>
       </div>
     </div>
 
-    <div class="clinic-section" style="text-align:center; color:#334155">
-      <h3 style="font-family:'Syne'; margin-bottom:1rem">Clinical Communications Substation</h3>
-      <div class="demo-addr-block" style="max-width:400px; margin:0 auto; color:#0f172a; background:#fff">
-        <div style="color:#0284c7; font-weight:700; font-size:0.8rem; text-transform:uppercase; margin-bottom:0.5rem">Operational Contact Registry</div>
-        <p style="font-size:0.9rem">📍 XYZ Address</p>
-        <p style="font-size:0.9rem">📞 0000-0000000</p>
-        <p style="font-size:0.9rem">✉️ xyz@example.com</p>
+    <div class="demo-subpage realestate-details d-section" style="display:none;">
+      <h2 class="d-section-title">Asset Specification Sheet: Node 401</h2>
+      <div class="d-form" style="max-width:700px;">
+        <h3>Zentro Penthouse Hub Parameters</h3>
+        <p style="margin: 1rem 0; color:#cbd5e1;">This pristine, architectural high-rise features carbon-fiber structures, independent microgrids, smart secure vaults, and dedicated hyper-speed server drops across all five private floors.</p>
+        <ul>
+          <li><strong>Internal Area:</strong> 8,450 square feet</li>
+          <li><strong>Energy Configuration:</strong> Net-Zero Solar Matrix</li>
+          <li><strong>Zoning Baseline:</strong> Mixed Commercial & Residential Executive</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="demo-subpage realestate-agents d-section" style="display:none;">
+      <h2 class="d-section-title">Elite Brokerage Deployment Staff</h2>
+      <div class="d-grid">
+        <div class="d-card" style="text-align:center; padding:1.5rem;"><h3 style="color:#10b981;">Marcus Vance</h3><p>Principal Industrial Broker</p><p style="font-size:0.8rem; color:#64748b;">mvance@zentro-realty.com</p></div>
+        <div class="d-card" style="text-align:center; padding:1.5rem;"><h3 style="color:#10b981;">Elena Rostova</h3><p>Luxury Residential Partner</p><p style="font-size:0.8rem; color:#64748b;">erostova@zentro-realty.com</p></div>
+      </div>
+    </div>
+
+    <div class="demo-subpage realestate-about d-section" style="display:none;">
+      <h2 class="d-section-title">About Zentro Brokerage Networks</h2>
+      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">We scale commercial real estate marketing portals through fluid design, rich interactive grid filtering, and automated customer qualification pipelines.</p>
+    </div>
+
+    <div class="demo-subpage realestate-contact d-section" style="display:none;">
+      <h2 class="d-section-title">Submit Structural Acquisition Inquiry</h2>
+      <div class="d-form">
+        <div class="d-form-group"><label>Target Listing</label><input type="text" value="Zentro Penthouse Hub"></div>
+        <div class="d-form-group"><label>Offer Capital ($)</label><input type="number" value="3450000"></div>
+        <button class="d-btn" style="background:#10b981; color:white;" onclick="alert('Financial intent submitted.')">Transmit Listing Inquiry</button>
       </div>
     </div>
   </div>
+  <footer class="d-footer">&copy; 2026 Zentro Real Estate Conglomerate. All corporate profiles active.</footer>
 </div>
 
-<!-- 3. ZENTRO REAL ESTATE DEMO OVERLAY VIEW -->
-<div class="demo-page-view" id="demo_realestate">
-  <div class="demo-back-bar">
-    <span style="color:#fff; font-weight:700; font-family:'Syne'">SYSTEM SIMULATION MODE: Zentro Real Estate Demo</span>
-    <button class="demo-back-btn" onclick="closeDemoPage('realestate')">Return to Zentro Core</button>
+<div class="demo-page-view" id="demo-clinic">
+  <div class="demo-close-bar">
+    <span>Live Sandbox View — Zentro Clinic Engine</span>
+    <button class="demo-close-btn" onclick="closeDemo('clinic')">Exit Project View</button>
   </div>
-  <div class="re-body">
-    <div class="re-hero">
-      <h1 style="font-family:'Syne'; font-size:3rem; color:var(--accent)">Geometric Spatial Listings</h1>
-      <p style="max-width:600px; margin: 1rem auto 0; color:#94a3b8; font-weight:300">High-end real estate structural maps utilizing explicit high fidelity photography matrices.</p>
+  <nav class="d-nav">
+    <a class="d-logo" style="color: #06b6d4;">Zentro Clinic</a>
+    <ul class="d-links">
+      <li><a onclick="showDemoPage('clinic', 'home')">Home</a></li>
+      <li><a onclick="showDemoPage('clinic', 'services')">Services</a></li>
+      <li><a onclick="showDemoPage('clinic', 'doctors')">Doctors</a></li>
+      <li><a onclick="showDemoPage('clinic', 'appointments')">Appointments</a></li>
+      <li><a onclick="showDemoPage('clinic', 'about')">About</a></li>
+      <li><a onclick="showDemoPage('clinic', 'contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="demo-page-container">
+    <div class="demo-subpage clinic-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1584515933487-75982136b247?auto=format&fit=crop&w=1200&q=80');">
+      <div class="d-hero-inner">
+        <h1>Advanced Medical & Clinical Practice Suite</h1>
+        <p>Premium medical diagnostics, certified clinical laboratory hubs, and high-efficiency primary healthcare systems running cleanly.</p>
+        <button class="d-btn" style="background:#06b6d4; color:black;" onclick="showDemoPage('clinic', 'appointments')">Schedule Clinical Appointment</button>
+      </div>
     </div>
 
-    <h2 style="font-family:'Syne'; text-align:center; margin-top:4rem; font-size:1.8rem">Premium Spatial Assets</h2>
+    <div class="demo-subpage clinic-services d-section" style="display:none;">
+      <h2 class="d-section-title">Medical Specializations Catalog</h2>
+      <div class="d-grid">
+        <div class="d-card"><div class="d-card-body"><h3>Molecular Diagnostics</h3><p>Comprehensive DNA screening matrices and detailed baseline biometric diagnostics mapping.</p></div></div>
+        <div class="d-card"><div class="d-card-body"><h3>Precision Cardiology</h3><p>Advanced cardiovascular testing workflows using premium dynamic imaging tools.</p></div></div>
+        <div class="d-card"><div class="d-card-body"><h3>Neuro-Systemic Health</h3><p>Functional neurological cognitive mapping profiles and modern restorative therapy.</p></div></div>
+      </div>
+    </div>
 
-    <div class="re-grid">
-      <!-- Property 1 -->
-      <div class="re-card">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Monolithic Glass Mansion">
-        <div class="re-card-body">
-          <h3 style="font-family:'Syne'; color:#fff">Monolithic Glass Mansion</h3>
-          <p style="font-size:0.85rem; color:#94a3b8; margin-top:0.25rem">Hyper-modern structural layout utilizing raw luxury components.</p>
-          <div class="re-meta">
-            <span>$4,850,000</span>
-            <span>5 Beds</span>
-            <span>6 Baths</span>
-            <span>6,200 SqFt</span>
-          </div>
-          <div style="font-size:0.75rem; color:var(--accent); margin-top:0.5rem">📍 Elite District Apex, Zone 1</div>
+    <div class="demo-subpage clinic-doctors d-section" style="display:none;">
+      <h2 class="d-section-title">Certified Attending Clinicians</h2>
+      <div class="d-grid">
+        <div class="d-card" style="padding:1.5rem; text-align:center;">
+          <h3 style="color:#06b6d4;">Dr. Sarah Jenkins, MD</h3>
+          <p>Chief Neurological Officer — 15+ Years Clinical Focus</p>
+        </div>
+        <div class="d-card" style="padding:1.5rem; text-align:center;">
+          <h3 style="color:#06b6d4;">Dr. Raymond Chen, PhD</h3>
+          <p>Lead Molecular Bio-Architect</p>
         </div>
       </div>
-      <!-- Property 2 -->
-      <div class="re-card">
-        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80" alt="Minimalist Linear Estate">
-        <div class="re-card-body">
-          <h3 style="font-family:'Syne'; color:#fff">Minimalist Linear Estate</h3>
-          <p style="font-size:0.85rem; color:#94a3b8; margin-top:0.25rem">Pristine lines constructed with high grade structural concrete foundations.</p>
-          <div class="re-meta">
-            <span>$3,120,000</span>
-            <span>4 Beds</span>
-            <span>4 Baths</span>
-            <span>4,800 SqFt</span>
-          </div>
-          <div style="font-size:0.75rem; color:var(--accent); margin-top:0.5rem">📍 Coastal Ridge Terminal</div>
-        </div>
+    </div>
+
+    <div class="demo-subpage clinic-appointments d-section" style="display:none;">
+      <h2 class="d-section-title">Secure Medical Appointment Form</h2>
+      <div class="d-form">
+        <div class="d-form-group"><label>Clinical Specialty</label><select><option>Molecular Diagnostics</option><option>Precision Cardiology</option><option>Neuro-Systemic Health</option></select></div>
+        <div class="d-form-group"><label>Biometric Patient ID</label><input type="text" placeholder="e.g. ZN-9948"></div>
+        <button class="d-btn" style="background:#06b6d4; color:black;" onclick="alert('Patient scheduling request logged.')">Queue Appointment Request</button>
       </div>
     </div>
 
-    <div style="padding:4rem 5%; border-top:1px solid #1f293d; text-align:center">
-      <h3 style="font-family:'Syne'; margin-bottom:1rem">Brokerage Logic Pipeline</h3>
-      <div class="demo-addr-block" style="max-width:400px; margin:0 auto">
-        <div style="color:var(--accent); font-weight:700; font-size:0.8rem; text-transform:uppercase; margin-bottom:0.5rem">Asset Custodian Parameters</div>
-        <p style="font-size:0.9rem">📍 XYZ Address</p>
-        <p style="font-size:0.9rem">📞 0000-0000000</p>
-        <p style="font-size:0.9rem">✉️ xyz@example.com</p>
+    <div class="demo-subpage clinic-about d-section" style="display:none;">
+      <h2 class="d-section-title">Institutional Healthcare Excellence</h2>
+      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">Zentro Clinic nodes run optimized digital front doors that minimize clinical scheduling drop-off while providing crystal clear informational layout profiles.</p>
+    </div>
+
+    <div class="demo-subpage clinic-contact d-section" style="display:none;">
+      <h2 class="d-section-title">Urgent Administrative Contact</h2>
+      <div class="d-form">
+        <div class="d-form-group"><label>Department Endpoint</label><select><option>General Clinical Inquiries</option><option>Medical Records Storage</option><option>Billing Logic Verification</option></select></div>
+        <button class="d-btn" style="background:#06b6d4; color:black;" onclick="alert('Administrative dispatch alert triggered.')">Signal Support Station</button>
       </div>
     </div>
   </div>
+  <footer class="d-footer">&copy; 2026 Zentro Clinical Networks — HIPAA Compliant Interface Profile.</footer>
 </div>
 
-<!-- DATA FOOD LIGHTBOX FOR RESTAURANT GRID SYSTEM -->
-<div class="lightbox-overlay" id="foodLightbox" onclick="closeLightbox(event)">
-  <div class="lightbox-box" onclick="event.stopPropagation()">
-    <button class="lightbox-close" onclick="closeLightbox(null)">&times;</button>
-    <div class="lightbox-img">
-      <img id="lbImg" src="" alt="Target Image Data">
+<div class="demo-page-view" id="demo-ecommerce">
+  <div class="demo-close-bar">
+    <span>Live Sandbox View — Zentro E-Commerce Infrastructure</span>
+    <button class="demo-close-btn" onclick="closeDemo('ecommerce')">Exit Project View</button>
+  </div>
+  <nav class="d-nav">
+    <a class="d-logo" style="color: #ec4899;">Zentro E-Commerce</a>
+    <ul class="d-links">
+      <li><a onclick="showDemoPage('ecommerce', 'home')">Home</a></li>
+      <li><a onclick="showDemoPage('ecommerce', 'shop')">Shop</a></li>
+      <li><a onclick="showDemoPage('ecommerce', 'details')">Product Details</a></li>
+      <li><a onclick="showDemoPage('ecommerce', 'cart')">Cart</a></li>
+      <li><a onclick="showDemoPage('ecommerce', 'about')">About</a></li>
+      <li><a onclick="showDemoPage('ecommerce', 'contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="demo-page-container">
+    <div class="demo-subpage ecommerce-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80');">
+      <div class="d-hero-inner">
+        <h1>Omnichannel Retail Engine</h1>
+        <p>Ultra-responsive global store frameworks featuring modular inventories, client-side cart logic, and clean transaction blocks.</p>
+        <button class="d-btn" style="background:#ec4899; color:white;" onclick="showDemoPage('ecommerce', 'shop')">Enter Product Retail Grid</button>
+      </div>
     </div>
-    <div class="lightbox-info">
-      <h2 id="lbName" style="font-family:'Syne'; margin-bottom:0.5rem; color:var(--gold)">Food Item Title</h2>
-      <div id="lbPrice" style="font-size:1.4rem; font-weight:800; margin-bottom:1rem">Cost Parameter</div>
-      <p id="lbDesc" style="font-size:0.9rem; color:#ccc; line-height:1.6; margin-bottom:1.5rem">Detailed recipe build specification metrics trace information here cleanly...</p>
-      <div style="border-top:1px solid #333; padding-top:1rem; font-size:0.85rem; display:flex; flex-direction:column; gap:0.4rem">
-        <div><strong>Taste Matrix Profile:</strong> <span id="lbTaste" style="color:var(--gold)">Flavor data</span></div>
-        <div><strong>Country of Origin Source:</strong> <span id="lbOrigin">Data node</span></div>
-        <div><strong>Most Popular Regional Density:</strong> <span id="lbPopular">Data node</span></div>
+
+    <div class="demo-subpage ecommerce-shop d-section" style="display:none;">
+      <h2 class="d-section-title">Premium Product Catalog Grid</h2>
+      <div class="d-grid">
+        <div class="d-card"><div class="d-card-body"><h3>Zentro Node Core Smartwatch</h3><p>Titanium tracking matrix housing biometric arrays and ultra-low frequency Bluetooth grids.</p><strong style="color:#ec4899;">$299.00</strong><button class="d-btn" style="background:#ec4899; color:white; margin-top:1rem;" onclick="addToDemoCart('Zentro Node Core Smartwatch', 299)">Inject to Cart</button></div></div>
+        <div class="d-card"><div class="d-card-body"><h3>Acoustic ANC Enclosures</h3><p>Bespoke wireless over-ear auditory hardware supporting true spatial decoding logic.</p><strong style="color:#ec4899;">$450.00</strong><button class="d-btn" style="background:#ec4899; color:white; margin-top:1rem;" onclick="addToDemoCart('Acoustic ANC Enclosures', 450)">Inject to Cart</button></div></div>
+      </div>
+    </div>
+
+    <div class="demo-subpage ecommerce-details d-section" style="display:none;">
+      <h2 class="d-section-title">Deep Product Analysis: Node Core Smartwatch</h2>
+      <div class="d-form" style="max-width:650px;">
+        <h3>Zentro Node Core Hardware Parameters</h3>
+        <p style="color:#cbd5e1; margin:1rem 0;">Engineered using aerospace forged titanium alloy grids. Includes absolute hardware cryptography layers to keep peripheral health sync loops perfectly safe.</p>
+        <button class="d-btn" style="background:#ec4899; color:white;" onclick="addToDemoCart('Zentro Node Core Smartwatch', 299)">Add Single Item to Cart Block</button>
+      </div>
+    </div>
+
+    <div class="demo-subpage ecommerce-cart d-section" style="display:none;">
+      <h2 class="d-section-title">Stateful Client Shopping Cart</h2>
+      <div class="d-form" style="max-width:550px;">
+        <div id="demo-cart-status" style="color:#cbd5e1; margin-bottom:1.5rem;">Cart buffer currently unallocated. Try adding items from the store tab!</div>
+        <button class="d-btn" style="background:#ec4899; color:white;" onclick="alert('Cart payload transmitted to mock payment gateway node.')">Process Checkout Pipeline</button>
+      </div>
+    </div>
+
+    <div class="demo-subpage ecommerce-about d-section" style="display:none;">
+      <h2 class="d-section-title">High Conversion Architecture Frameworks</h2>
+      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">Zentro retail interfaces minimize payload size and script blockades to maximize programmatic checkout yields on mobile hardware layers.</p>
+    </div>
+
+    <div class="demo-subpage ecommerce-contact d-section" style="display:none;">
+      <h2 class="d-section-title">Global Merchant Matrix Contact</h2>
+      <div class="d-form">
+        <div class="d-form-group"><label>Order Tracking Hash Reference</label><input type="text" placeholder="e.g. #ZN-88391"></div>
+        <button class="d-btn" style="background:#ec4899; color:white;" onclick="alert('Ticket flagged for logistical review.')">Open Discrepancy Ticket</button>
       </div>
     </div>
   </div>
+  <footer class="d-footer">&copy; 2026 Zentro Retail Networks — Production Cart Simulation Node.</footer>
 </div>
 
-<!-- SYSTEM PROGRAMLOGIC FUNCTION SCRIPTS -->
+<div class="demo-page-view" id="demo-education">
+  <div class="demo-close-bar">
+    <span>Live Sandbox View — Zentro Education Platform</span>
+    <button class="demo-close-btn" onclick="closeDemo('education')">Exit Project View</button>
+  </div>
+  <nav class="d-nav">
+    <a class="d-logo" style="color: #3b82f6;">Zentro Education</a>
+    <ul class="d-links">
+      <li><a onclick="showDemoPage('education', 'home')">Home</a></li>
+      <li><a onclick="showDemoPage('education', 'courses')">Courses</a></li>
+      <li><a onclick="showDemoPage('education', 'teachers')">Teachers</a></li>
+      <li><a onclick="showDemoPage('education', 'admissions')">Admissions</a></li>
+      <li><a onclick="showDemoPage('education', 'about')">About</a></li>
+      <li><a onclick="showDemoPage('education', 'contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="demo-page-container">
+    <div class="demo-subpage education-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80');">
+      <div class="d-hero-inner">
+        <h1>Advanced Learning Management Systems</h1>
+        <p>Comprehensive pedagogical indices, automated remote grading matrices, and responsive lecture asset modules.</p>
+        <button class="d-btn" style="background:#3b82f6; color:white;" onclick="showDemoPage('education', 'admissions')">Apply for Active Cohort Enrollment</button>
+      </div>
+    </div>
+
+    <div class="demo-subpage education-courses d-section" style="display:none;">
+      <h2 class="d-section-title">Curriculum Learning Paths Matrix</h2>
+      <div class="d-grid">
+        <div class="d-card"><div class="d-card-body"><h3>Advanced Logic Systems</h3><p>Comprehensive algorithmic parsing, state machine configurations, and mathematical parsing frameworks.</p><strong style="color:#3b82f6;">Tuition Fee: $1,200 / term</strong></div></div>
+        <div class="d-card"><div class="d-card-body"><h3>Applied Systems Automation</h3><p>Deep implementation methodologies mapping distributed cloud components and webhook processing structures.</p><strong style="color:#3b82f6;">Tuition Fee: $1,550 / term</strong></div></div>
+      </div>
+    </div>
+
+    <div class="demo-subpage education-teachers d-section" style="display:none;">
+      <h2 class="d-section-title">Distinguished Tenured Faculty</h2>
+      <div class="d-grid">
+        <div class="d-card" style="padding:1.5rem; text-align:center;"><h3 style="color:#3b82f6;">Prof. Arthur Pendelton</h3><p>Department of Discrete Engineering Logic</p></div>
+        <div class="d-card" style="padding:1.5rem; text-align:center;"><h3 style="color:#3b82f6;">Dr. Miranda Thorne</h3><p>Chairperson of Cloud Architecture Research</p></div>
+      </div>
+    </div>
+
+    <div class="demo-subpage education-admissions d-section" style="display:none;">
+      <h2 class="d-section-title">Cohort Matriculation Application Form</h2>
+      <div class="d-form">
+        <div class="d-form-group"><label>Candidate Educational Background</label><input type="text" placeholder="Degree/Certifications Profile"></div>
+        <div class="d-form-group"><label>Target Specialized Learning Track</label><select><option>Advanced Logic Systems</option><option>Applied Systems Automation</option></select></div>
+        <button class="d-btn" style="background:#3b82f6; color:white;" onclick="alert('Academic records queued for internal evaluation.')">Transmit Admissions Node</button>
+      </div>
+    </div>
+
+    <div class="demo-subpage education-about d-section" style="display:none;">
+      <h2 class="d-section-title">Next-Generation Academic Portals</h2>
+      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">Zentro Education architectures unify high data-density tracking setups with hyper-legible components for optimal information ingestion logs.</p>
+    </div>
+
+    <div class="demo-subpage education-contact d-section" style="display:none;">
+      <h2 class="d-section-title">Academic Registrar Communication Link</h2>
+      <div class="d-form">
+        <div class="d-form-group"><label>Inquiry Description Parameters</label><textarea placeholder="State your programmatic administrative questions cleanly..."></textarea></div>
+        <button class="d-btn" style="background:#3b82f6; color:white;" onclick="alert('Registrar inquiry link confirmed.')">Submit Inquiry Node</button>
+      </div>
+    </div>
+  </div>
+  <footer class="d-footer">&copy; 2026 Zentro Learning Academies — Global Knowledge Base Hub.</footer>
+</div>
+
+<div class="demo-page-view" id="demo-construction">
+  <div class="demo-close-bar">
+    <span>Live Sandbox View — Zentro Construction Portfolio</span>
+    <button class="demo-close-btn" onclick="closeDemo('construction')">Exit Project View</button>
+  </div>
+  <nav class="d-nav">
+    <a class="d-logo" style="color: #f59e0b;">Zentro Construction</a>
+    <ul class="d-links">
+      <li><a onclick="showDemoPage('construction', 'home')">Home</a></li>
+      <li><a onclick="showDemoPage('construction', 'projects')">Projects</a></li>
+      <li><a onclick="showDemoPage('construction', 'services')">Services</a></li>
+      <li><a onclick="showDemoPage('construction', 'team')">Team</a></li>
+      <li><a onclick="showDemoPage('construction', 'about')">About</a></li>
+      <li><a onclick="showDemoPage('construction', 'contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="demo-page-container">
+    <div class="demo-subpage construction-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80');">
+      <div class="d-hero-inner">
+        <h1>Heavy Industry & Civil Engineering Operations</h1>
+        <p>Large-scale site build workflows, precise structural modeling, architectural infrastructure coordination platforms.</p>
+        <button class="d-btn" style="background:#f59e0b; color:black;" onclick="showDemoPage('construction', 'projects')">Examine Blueprint Project Index</button>
+      </div>
+    </div>
+
+    <div class="demo-subpage construction-projects d-section" style="display:none;">
+      <h2 class="d-section-title">Active Civil Infrastructure Deployments</h2>
+      <div class="d-grid">
+        <div class="d-card"><div class="d-card-body"><h3>Apex Mega-Logistics Vault</h3><p>Reinforced concrete high-capacity logistical shipping nexus configured with complete autonomous sorting grids.</p><strong style="color:#f59e0b;">Capitalization Cost: $14.5M</strong></div></div>
+        <div class="d-card"><div class="d-card-body"><h3>Zentro High-Rise Complex B</h3><p>42-story high-density structural residential tower deploying reinforced core isolation blocks.</p><strong style="color:#f59e0b;">Capitalization Cost: $38.2M</strong></div></div>
+      </div>
+    </div>
+
+    <div class="demo-subpage construction-services d-section" style="display:none;">
+      <h2 class="d-section-title">Industrial Project Capabilities</h2>
+      <div class="d-grid">
+        <div class="d-card"><div class="d-card-body"><h3>BIM Parametric Structural Modeling</h3><p>Complete pre-construction digital execution blueprint rendering guaranteeing absolute material tolerance calculations.</p></div></div>
+        <div class="d-card"><div class="d-card-body"><h3>Sustainable Eco-Grid Foundations</h3><p>Deep geothermic foundation pinning configurations built safely using carbon-negative concrete matrices.</p></div></div>
+      </div>
+    </div>
+
+    <div class="demo-subpage construction-team d-section" style="display:none;">
+      <h2 class="d-section-title">Lead Infrastructure Engineers</h2>
+      <div class="d-grid">
+        <div class="d-card" style="padding:1.5rem; text-align:center;"><h3 style="color:#f59e0b;">Garrick Stone, P.E.</h3><p>Chief Civil Infrastructure Director</p></div>
+        <div class="d-card" style="padding:1.5rem; text-align:center;"><h3 style="color:#f59e0b;">Lina Morgenstern, AIA</h3><p>Lead Modular Systems Architect</p></div>
+      </div>
+    </div>
+
+    <div class="demo-subpage construction-about d-section" style="display:none;">
+      <h2 class="d-section-title">Absolute Engineering Integrity</h2>
+      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">Our heavy industry site portals combine crystal clear programmatic project timeline graphs with rigid safety documentation management logic layers.</p>
+    </div>
+
+    <div class="demo-subpage construction-contact d-section" style="display:none;">
+      <h2 class="d-section-title">Request Formal Contract Tender</h2>
+      <div class="d-form">
+        <div class="d-form-group"><label>Estimated Allocation Pool Budget</label><input type="text" value="$5,000,000+"></div>
+        <button class="d-btn" style="background:#f59e0b; color:black;" onclick="alert('RFQ tracking token generated.')">Transmit Project RFQ Packet</button>
+      </div>
+    </div>
+  </div>
+  <footer class="d-footer">&copy; 2026 Zentro Heavy Industries Engineering Matrix. All operations OSHA compliant.</footer>
+</div>
+
+
 <script>
-// MOBILE NAVIGATION SYSTEM OVERHAUL
-function toggleMobileMenu() {
-  document.getElementById('mobileMenu').classList.toggle('active');
-}
-
-// 6 SYSTEM CAPABILITIES MODAL MEMORY MATRIX
-const serviceDatabase = [
-  {
-    title: "AI Website Development Architecture",
-    desc: "We deploy raw production architectures leveraging premium components, high fidelity typography maps, and extreme code scannability matrices.",
-    features: "Dynamic asset pipelines, fully compiled responsive grids, interactive modal logic loops.",
-    timeline: "Complete system loop stabilization finalized inside 8 standard calendar passes."
-  },
-  {
-    title: "Website Redesign Framework",
-    desc: "Scrape old unstructured web assets completely out of operation, re-tooling layout architectures into beautiful sleek modular setups.",
-    features: "Fluid glassmorphic overlays, clean typography rendering systems, structural visual layout code.",
-    timeline: "System transformation and parity testing fully optimized within 7 operational loops."
-  },
-  {
-    title: "Autonomous AI Chatbot Clusters",
-    desc: "Train interactive conversational software matrices using advanced proprietary document indices to fulfill consumer interactions flawlessly.",
-    features: "Isolated computation variables, contextual tracking storage, zero artificial delays.",
-    timeline: "System micro-training logic layers completed inside 10 pipeline turns."
-  },
-  {
-    title: "AI Automation System Pipelines",
-    desc: "Wire high performance scripts to handle complex business communication dependencies automatically, removing organizational friction.",
-    features: "Dynamic webhook arrays, error verification algorithms, multi-stage file conversion loops.",
-    timeline: "Complete automation workflow architecture verified inside 14 processing turns."
-  },
-  {
-    title: "Premium CRM Integration Matrix",
-    desc: "Bridge database nodes with interactive user forms directly to update enterprise spreadsheets and tracking maps securely.",
-    features: "Automated verification algorithms, field length mapping loops, secure token parsing.",
-    timeline: "Secure sync configuration paths fully cleared inside 5 software cycles."
-  },
-  {
-    title: "Lead Generation Array Framework",
-    desc: "Maximize acquisition pathways with highly responsive user interaction loops structured to parse valid information directly.",
-    features: "Real-time email checking scripts, input format testing, automatic success triggers.",
-    timeline: "Data validation matrices certified fully operational inside 6 loop cycles."
-  }
-];
-
-function openServiceModal(index) {
-  const data = serviceDatabase[index];
-  document.getElementById('mTitle').innerText = data.title;
-  document.getElementById('mDesc').innerText = data.desc;
-  document.getElementById('mDeliv').innerText = data.features;
-  document.getElementById('mTimeline').innerText = data.timeline;
-  document.getElementById('serviceModal').classList.add('active');
-}
-
-function closeServiceModal() {
-  document.getElementById('serviceModal').classList.remove('active');
-}
-
-// SIMULATION ROUTING CONTROLLERS
-function openDemoPage(id) {
-  document.getElementById(`demo_${id}`).classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeDemoPage(id) {
-  document.getElementById(`demo_${id}`).classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// PRICING BLUEPRINT SELECT INTERACTION LINK
-function selectPricingPlan(planName) {
-  const svcDropdown = document.getElementById('reqService');
-  const budgetDropdown = document.getElementById('reqBudget');
-  
-  if (planName === 'Starter') budgetDropdown.value = 'starter';
-  else if (planName === 'Growth') budgetDropdown.value = 'growth';
-  else if (planName === 'Professional') budgetDropdown.value = 'pro';
-  else if (planName === 'Premium') budgetDropdown.value = 'premium';
-  else if (planName === 'Custom') budgetDropdown.value = 'custom';
-  
-  svcDropdown.selectedIndex = 1; // Default to first system option
-  
-  document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
-}
-
-// 8 EXPLICIT FOOD IMAGES STORAGE ARRAY MATRIX
-const foodItemsData = [
-  {
-    name: "Seared Bluefin Tuna Medallion",
-    price: "$48.00",
-    img: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=400&q=80",
-    taste: "Umami Savory with delicate citrus top notes",
-    origin: "Pacific Japanese Deep Waters",
-    popular: "Japan & Singapore Coastlines",
-    desc: "Perfectly crusted premium Bluefin loin treated with organic light soy reductions and micro-herbs matrix."
-  },
-  {
-    name: "Wood-Fired Truffle Ribeye",
-    price: "$65.00",
-    img: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=80",
-    taste: "Rich, deeply smoky, earthy undertones",
-    origin: "Wagyu Heritage Stock Farms",
-    popular: "United States & United Kingdom",
-    desc: "Agraded steak cut seared over custom oak barrels, basted with real black truffle clarified oil layers."
-  },
-  {
-    name: "Artisan Saffron Infused Risotto",
-    price: "$36.00",
-    img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=400&q=80",
-    taste: "Velvety aromatic with a creamy profile",
-    origin: "Northern Italian Po Valley",
-    popular: "Italy & Southern France",
-    desc: "Premium superfine Carnaroli grains toasted smoothly with authentic Iranian saffron strands and real aged cheese profiles."
-  },
-  {
-    name: "Pan-Roasted Glacier Seabass",
-    price: "$52.00",
-    img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=400&q=80",
-    taste: "Crisp exterior texture with buttery interior meat",
-    origin: "Antarctic Deep Current Zones",
-    popular: "Australia & United Arab Emirates",
-    desc: "Sourced sustainably, pan-seared over copper cookware arrays, served floating inside a white wine lemon emulsion."
-  },
-  {
-    name: "Heritage Berry Glazed Tart",
-    price: "$18.00",
-    img: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=400&q=80",
-    taste: "Balanced tart acidity meeting sweet buttery sugar crusts",
-    origin: "Bavarian Mountain Orchards",
-    popular: "Germany & Austria Regions",
-    desc: "Hand-pressed shortbread architecture holding fresh wild mountain berry compotes layered over genuine bean vanilla custards."
-  },
-  {
-    name: "Hand-Pulled Smoked Mushroom Tagliatelle",
-    price: "$29.00",
-    img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=400&q=80",
-    taste: "Woodland savory earthiness mapped with herbal freshness",
-    origin: "Tuscan Organic Woodlands",
-    popular: "Italy & Canada Urban Hubs",
-    desc: "House-kneaded high-protein semolina ribbons cooked precisely al dente alongside wild chanterelle mushroom data vectors."
-  },
-  {
-    name: "Cold-Pressed Avocado & King Crab Stack",
-    price: "$34.00",
-    img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80",
-    taste: "Clean mineral ocean profiles paired with rich plant creaminess",
-    origin: "Bering Sea Shelf Extraction",
-    popular: "United States & Japan Apex Districts",
-    desc: "Perfectly seasoned Alaskan King Crab meat layered systematically over Hass avocado geometric purees."
-  },
-  {
-    name: "Madagascar Vanilla Velvet Mousse",
-    price: "$22.00",
-    img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80",
-    taste: "Deep orchid luxury vanilla layers, micro-sweet",
-    origin: "East African Island Preserves",
-    popular: "France & Switzerland Hubs",
-    desc: "Aerated triple-whipped cream matrix embedded directly with organic vanilla bean pod scrapings and white chocolate finishes."
-  }
-];
-
-// RENDER GASTRONOMY CARDS
-const foodGrid = document.getElementById('foodGrid');
-foodItemsData.forEach((item, index) => {
-  const card = document.createElement('div');
-  card.className = 'rest-card';
-  card.onclick = () => openLightbox(index);
-  card.innerHTML = `
-    <img src="${item.img}" alt="${item.name}">
-    <div class="rest-card-info">
-      <div class="rest-card-title">${item.name}</div>
-      <div class="rest-price">${item.price}</div>
-      <p style="font-size:0.8rem; color:#aaa; margin-top:0.5rem">${item.desc.substring(0, 70)}...</p>
-    </div>
-  `;
-  foodGrid.appendChild(card);
+/* ─── SCROLL MANAGEMENT FOR MAIN PORTAL LINKS ───── */
+document.querySelectorAll('nav a[href^="#"], .mobile-menu a[href^="#"], .hero-actions a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    const targetNode = document.querySelector(targetId);
+    if (targetNode) {
+      targetNode.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });
 
-// LIGHTBOX LOGIC OPERATIONS
-function openLightbox(index) {
-  if (index === null) return;
-  const data = foodItemsData[index];
-  document.getElementById('lbImg').src = data.img;
-  document.getElementById('lbName').innerText = data.name;
-  document.getElementById('lbPrice').innerText = data.price;
-  document.getElementById('lbDesc').innerText = data.desc;
-  document.getElementById('lbTaste').innerText = data.taste;
-  document.getElementById('lbOrigin').innerText = data.origin;
-  document.getElementById('lbPopular').innerText = data.popular;
-  
-  document.getElementById('foodLightbox').style.display = 'flex';
+/* ─── HAMBURGER RESPONSE CONTROL ────────────────── */
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('active');
 }
 
-function closeLightbox(event) {
-  if (event === null || event.target === document.getElementById('foodLightbox') || event.target.className === 'lightbox-close') {
-    document.getElementById('foodLightbox').style.display = 'none';
+/* ─── FAQ INTERACTIVE DISPATCHER ────────────────── */
+function toggleFaq(btnElement) {
+  const parentItem = btnElement.parentElement;
+  const standardState = parentItem.classList.contains('active');
+  
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.classList.remove('active');
+    item.querySelector('.faq-arrow').textContent = '+';
+  });
+
+  if (!standardState) {
+    parentItem.classList.add('active');
+    parentItem.querySelector('.faq-arrow').textContent = '×';
   }
 }
 
-// ROBUST DATA SUBMISSION VALIDATION LOGIC MATRIX
-function handleFormSubmit(event, type) {
-  event.preventDefault();
+/* ─── PRICING BUTTON COUPLING FLOW ──────────────── */
+function selectPlan(planSpecificationString) {
+  const selectDropdownNode = document.getElementById('projectTier');
+  const contextFormWrapper = document.getElementById('contact');
   
-  const errDiv = document.getElementById(`${type}Error`);
-  const successDiv = document.getElementById(`${type}Success`);
+  if (selectDropdownNode) {
+    selectDropdownNode.value = planSpecificationString;
+  }
+  if (contextFormWrapper) {
+    contextFormWrapper.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+/* ─── MAIN MODAL SYSTEM SPECIALIZATIONS ─────────── */
+const specDatabase = {
+  web: {
+    title: "High-Scale Web Framework Specifications",
+    intro: "Deep dive specifications for deploying scalable monolithic and distributed client side application frames.",
+    points: [
+      { t: "Componentization Isolation", d: "Strictly isolated interface modules engineered to prevent performance degradation cascades." },
+      { t: "Fluid Viewport Recalculation", d: "Dynamic layouts matching multi-screen configurations without relying on heavy scripting cycles." },
+      { t: "Asset Lazy Evaluation", d: "Media resources execute initialization routines only when breaching the user viewport threshold." }
+    ]
+  },
+  ai: {
+    title: "Functional AI Integrations Core Blueprint",
+    intro: "System operational logic maps detailing exact execution boundaries of artificial intelligence software adapters.",
+    points: [
+      { t: "Dynamic Retrieval Context", d: "Feeding application states to real-time processors to deliver customized structural experiences." },
+      { t: "Input Sanitization Layers", d: "Rigid multi-layer parameter evaluation sequences protecting internal processing nodes from invalid injection parameters." },
+      { t: "Asynchronous Process Pipelines", d: "Heavy predictive evaluations run purely inside non-blocking background threads to eliminate display layout stuttering." }
+    ]
+  },
+  brand: {
+    title: "Systemic Brand Alignment Protocols",
+    intro: "The programmatic workflow framework deployed to systematically translate corporate guidelines into clean code structures.",
+    points: [
+      { t: "Global Design Properties Matrix", d: "Centralized configuration layer running semantic variables across layout color spaces, borders, and margins." },
+      { t: "Omnipresent Asset Uniformity", d: "Dynamic injection scripts mapping localized textual identities and structural signatures uniformly." },
+      { t: "Accessibility Compliance Layers", d: "Rigid parsing matrices confirming high relative contrast states to pass universal accessible application verification tests." }
+    ]
+  }
+};
+
+function openModal(specificationKey) {
+  const dataset = specDatabase[specificationKey];
+  if (!dataset) return;
+
+  document.getElementById('modalTitle').textContent = dataset.title;
+  document.getElementById('modalIntro').textContent = dataset.intro;
+
+  const dynamicPointWrapper = document.getElementById('modalPoints');
+  dynamicPointWrapper.innerHTML = '';
+
+  dataset.points.forEach(p => {
+    const block = document.createElement('div');
+    block.className = 'modal-point';
+    block.innerHTML = `<div class="modal-point-title">${p.t}</div><div class="modal-point-desc">${p.d}</div>`;
+    dynamicPointWrapper.appendChild(block);
+  });
+
+  document.getElementById('infoModal').classList.add('active');
+}
+
+function closeModal(clickEvent) {
+  document.getElementById('infoModal').classList.remove('active');
+}
+
+/* ─── PRODUCTION CONTACT FORM PIPELINE ──────────── */
+function handleFormSubmit(submitEvent) {
+  submitEvent.preventDefault();
   
-  errDiv.classList.remove('active');
-  errDiv.innerText = '';
-  successDiv.classList.remove('active');
+  const clientNameInput = document.getElementById('clientName');
+  const clientEmailInput = document.getElementById('clientEmail');
+  const projectTierSelect = document.getElementById('projectTier');
+  const projectScopeTextarea = document.getElementById('projectScope');
   
-  let valid = true;
-  let errorMessages = [];
+  const successUINode = document.getElementById('formSuccess');
+  const errorUINode = document.getElementById('formError');
+  const errorListUINode = document.getElementById('errorList');
 
-  if (type === 'req') {
-    const name = document.getElementById('reqName');
-    const biz = document.getElementById('reqBiz');
-    const email = document.getElementById('reqEmail');
-    const phone = document.getElementById('reqPhone');
-    const svc = document.getElementById('reqService');
-    const bgt = document.getElementById('reqBudget');
-    const ddl = document.getElementById('reqDeadline');
-    const desc = document.getElementById('reqDesc');
+  // Reset standard state indicators
+  successUINode.classList.remove('active');
+  errorUINode.classList.remove('active');
+  errorListUINode.innerHTML = '';
+  
+  const activeInputElements = [clientNameInput, clientEmailInput, projectTierSelect, projectScopeTextarea];
+  activeInputElements.forEach(elem => { if(elem) elem.classList.remove('field-error'); });
 
-    [name, biz, email, phone, svc, bgt, ddl, desc].forEach(el => el.classList.remove('field-error'));
+  let capturedValidationErrors = [];
 
-    if (!name.value.trim()) { valid = false; name.classList.add('field-error'); errorMessages.push("Name tracking data cannot exist blank."); }
-    if (!biz.value.trim()) { valid = false; biz.classList.add('field-error'); errorMessages.push("Business node name missing."); }
-    if (!email.value.includes('@')) { valid = false; email.classList.add('field-error'); errorMessages.push("Invalid destination target email string mapping."); }
-    if (!phone.value.trim()) { valid = false; phone.classList.add('field-error'); errorMessages.push("Phone verification integer track missing."); }
-    if (!svc.value) { valid = false; svc.classList.add('field-error'); errorMessages.push("Please link a valid architecture core value option."); }
-    if (!bgt.value) { valid = false; bgt.classList.add('field-error'); errorMessages.push("Please specify an explicit budget pricing scope metric."); }
-    if (!ddl.value.trim()) { valid = false; ddl.classList.add('field-error'); errorMessages.push("Target operational timeline window missing."); }
-    if (desc.value.trim().length < 10) { valid = false; desc.classList.add('field-error'); errorMessages.push("Description metric field density must surpass 10 values."); }
+  if (!clientNameInput.value.trim()) {
+    capturedValidationErrors.push("Identity Name string cannot remain blank.");
+    clientNameInput.classList.add('field-error');
+  }
+  if (!clientEmailInput.value.trim() || !clientEmailInput.value.includes('@')) {
+    capturedValidationErrors.push("A valid Network Email pointer structure must be submitted.");
+    clientEmailInput.classList.add('field-error');
+  }
+  if (!projectTierSelect.value) {
+    capturedValidationErrors.push("A target framework Subscription Tier selection is required.");
+    projectTierSelect.classList.add('field-error');
+  }
+  if (!projectScopeTextarea.value.trim() || projectScopeTextarea.value.trim().length < 15) {
+    capturedValidationErrors.push("Architecture Scope Documentation must register at least 15 clear description characters.");
+    projectScopeTextarea.classList.add('field-error');
+  }
+
+  if (capturedValidationErrors.length > 0) {
+    capturedValidationErrors.forEach(errString => {
+      const listItem = document.createElement('li');
+      listItem.textContent = errString;
+      errorListUINode.appendChild(listItem);
+    });
+    errorUINode.classList.add('active');
+    errorUINode.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   } else {
-    const name = document.getElementById('contactName');
-    const email = document.getElementById('contactEmail');
-    const phone = document.getElementById('contactPhone');
-    const msg = document.getElementById('contactMsg');
-
-    [name, email, phone, msg].forEach(el => el.classList.remove('field-error'));
-
-    if (!name.value.trim()) { valid = false; name.classList.add('field-error'); errorMessages.push("Sender identifier name required."); }
-    if (!email.value.includes('@')) { valid = false; email.classList.add('field-error'); errorMessages.push("Target email lacks structural @ identifier character."); }
-    if (!phone.value.trim()) { valid = false; phone.classList.add('field-error'); errorMessages.push("Phone structural code loop empty."); }
-    if (msg.value.trim().length < 5) { valid = false; msg.classList.add('field-error'); errorMessages.push("Message payload size is too small."); }
+    successUINode.classList.add('active');
+    document.getElementById('zentroForm').reset();
+    successUINode.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
-
-  if (!valid) {
-    errDiv.innerText = errorMessages.join(' | ');
-    errDiv.classList.add('active');
-    return false;
-  }
-
-  successDiv.classList.add('active');
-  event.target.reset();
-  return true;
 }
 
-// FAQ INTERACTION MECHANICS CONTROLLER
-function toggleFaq(button) {
-  const item = button.parentElement;
-  const isCurrentlyActive = item.classList.contains('active');
+/* ─── DYNAMIC SANDBOX DEMO VIEWER ENGINE ────────── */
+function openDemo(demoInstanceKey) {
+  // Turn off core application main view scrolling to isolate sandbox scope
+  document.body.style.overflow = 'hidden';
   
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-  
-  if (!isCurrentlyActive) {
-    item.classList.add('active');
+  const chosenDemoViewOverlay = document.getElementById(`demo-${demoInstanceKey}`);
+  if (chosenDemoViewOverlay) {
+    chosenDemoViewOverlay.classList.add('active');
+    // Ensure standard inner subpage visibility resolves to the default home screen
+    showDemoPage(demoInstanceKey, 'home');
   }
+}
+
+function closeDemo(demoInstanceKey) {
+  document.body.style.overflow = '';
+  const chosenDemoViewOverlay = document.getElementById(`demo-${demoInstanceKey}`);
+  if (chosenDemoViewOverlay) {
+    chosenDemoViewOverlay.classList.remove('active');
+  }
+}
+
+function showDemoPage(demoInstanceKey, targetedSubPageName) {
+  const contextDemoWrapperNode = document.getElementById(`demo-${demoInstanceKey}`);
+  if (!contextDemoWrapperNode) return;
+
+  // Track down all subpage elements nested under this specific sandbox instance
+  const genericSubpageNodes = contextDemoWrapperNode.querySelectorAll('.demo-subpage');
+  genericSubpageNodes.forEach(page => {
+    page.style.display = 'none';
+  });
+
+  // Calculate distinct target page pointer class signature
+  const classPointerSignature = `${demoInstanceKey}-${targetedSubPageName}`;
+  const isolatedTargetNode = contextDemoWrapperNode.querySelector(`.${classPointerSignature}`);
+  if (isolatedTargetNode) {
+    isolatedTargetNode.style.display = 'block';
+  }
+}
+
+/* Stateful E-Commerce Cart Handler Variable */
+let localDemoCartBuffer = [];
+function addToDemoCart(productLabel, costInteger) {
+  localDemoCartBuffer.push({ name: productLabel, price: costInteger });
+  const statusDisplayElement = document.getElementById('demo-cart-status');
+  if (statusDisplayElement) {
+    let compositionString = `<ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1rem;">`;
+    let calculatedSum = 0;
+    localDemoCartBuffer.forEach((itm, idx) => {
+      compositionString += `<li style="display:flex; justify-content:space-between; background:rgba(255,255,255,0.05); padding:0.5rem; border-radius:6px;"><span>${itm.name}</span><strong>$${itm.price}.00</strong></li>`;
+      calculatedSum += itm.price;
+    });
+    compositionString += `</ul><div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:0.75rem; display:flex; justify-content:space-between; font-weight:700;"><span>Total Cart Valuation:</span><span style="color:#ec4899;">$${calculatedSum}.00</span></div>`;
+    statusDisplayElement.innerHTML = compositionString;
+  }
+  alert(`${productLabel} linked to local dynamic simulation cart stack.`);
 }
 </script>
+
 </body>
 </html>
