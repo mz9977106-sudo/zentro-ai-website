@@ -1,1424 +1,4661 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zentro AI Agency — Intelligent Digital Solutions</title>
+
+<title>ZENTRO AI | Intelligent Digital Solutions</title>
+
+<meta name="description"
+content="Zentro AI delivers professional websites, AI automation, business systems, chatbots and digital growth solutions globally.">
+
+<meta name="keywords"
+content="AI Agency, Web Development, AI Chatbots, Business Automation, Digital Solutions">
+
+<meta name="author" content="Zentro AI">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
-:root {
-  --bg: #040810;
-  --bg2: #070d1a;
-  --bg3: #0c1525;
-  --accent: #0af;
-  --accent2: #6c63ff;
-  --accent3: #00e5c3;
-  --gold: #f0b429;
-  --text: #e8edf5;
-  --text2: #8a99b3;
-  --text3: #4a5a72;
-  --border: rgba(10,170,255,0.12);
-  --border2: rgba(255,255,255,0.06);
-  --glow: 0 0 40px rgba(10,170,255,0.15);
-  --card: rgba(12,21,37,0.85);
-  --radius: 16px;
-  --radius2: 24px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65;overflow-x:hidden}
-h1,h2,h3,h4,h5{font-family:'Syne',sans-serif;line-height:1.2}
 
-/* ─── SCROLLBAR ─────────────────────────────────── */
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
-
-/* ─── NOISE OVERLAY ─────────────────────────────── */
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4}
-
-/* ─── NAV ───────────────────────────────────────── */
-nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:72px;background:rgba(4,8,16,0.82);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);transition:all .3s}
-.nav-logo{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:800;color:#fff;text-decoration:none;letter-spacing:-.02em}
-.nav-logo span{color:var(--accent)}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;letter-spacing:.01em}
-.nav-links a:hover{color:var(--accent)}
-.nav-cta{background:var(--accent);color:#000;padding:.55rem 1.4rem;border-radius:50px;font-weight:700;font-size:.88rem;text-decoration:none;transition:all .2s;letter-spacing:.01em}
-.nav-cta:hover{background:#fff;color:#000;transform:translateY(-1px)}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.nav-hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
-.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(4,8,16,0.97);backdrop-filter:blur(20px);padding:2rem 5%;z-index:998;flex-direction:column;gap:1.2rem;border-bottom:1px solid var(--border2)}
-.mobile-menu a{color:var(--text2);text-decoration:none;font-size:1.05rem;font-weight:500;padding:.5rem 0;border-bottom:1px solid var(--border2)}
-.mobile-menu a:last-child{border:none}
-.mobile-menu.active{display:flex}
-
-/* ─── HERO ──────────────────────────────────────── */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 5% 80px;overflow:hidden}
-.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(10,170,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(10,170,255,0.04) 1px,transparent 1px);background-size:60px 60px;opacity:.6}
-.hero-orb1{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(10,170,255,0.12) 0%,transparent 70%);top:-100px;right:-100px;border-radius:50%;animation:float1 8s ease-in-out infinite}
-.hero-orb2{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(108,99,255,0.1) 0%,transparent 70%);bottom:-50px;left:10%;border-radius:50%;animation:float2 10s ease-in-out infinite}
-@keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,30px)}}
-@keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-20px)}}
-.hero-content{position:relative;z-index:1;max-width:820px}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.25);padding:.4rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.8rem;animation:fadeUp .8s .1s both}
-.hero-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-h1.hero-title{font-size:clamp(2.2rem,4.8vw,3.6rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.25;margin-bottom:1.6rem;word-wrap:break-word;overflow-wrap:break-word;animation:fadeUp .8s .2s both}
-h1.hero-title .line2{color:var(--accent)}
-.hero-sub{font-size:1.15rem;color:var(--text2);max-width:600px;line-height:1.75;margin-bottom:2.4rem;animation:fadeUp .8s .3s both;font-weight:300}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .8s .4s both}
-.btn-primary{background:var(--accent);color:#000;padding:.8rem 2rem;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .25s;letter-spacing:.01em;border:none;cursor:pointer}
-.btn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 30px rgba(10,170,255,0.3)}
-.btn-outline{background:transparent;color:var(--text);padding:.8rem 2rem;border-radius:50px;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .25s;letter-spacing:.01em;border:1px solid var(--border);cursor:pointer}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-
-/* ─── SECTION COMMONS ───────────────────────────── */
-section{padding:100px 5%}
-.section-label{font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
-.section-title{font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:1rem}
-.section-sub{font-size:1.05rem;color:var(--text2);max-width:540px;line-height:1.75;font-weight:300}
-.section-header{margin-bottom:4rem}
-.section-header.centered{text-align:center}
-.section-header.centered .section-sub{margin:0 auto}
-
-/* ─── SERVICES ──────────────────────────────────── */
-#services{background:var(--bg2)}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-.service-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.2rem;transition:all .3s;cursor:pointer;position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,170,255,0.04) 0%,transparent 60%);opacity:0;transition:opacity .3s}
-.service-card:hover{border-color:rgba(10,170,255,0.3);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(10,170,255,0.1)}
-.service-card:hover::before{opacity:1}
-.svc-icon{width:52px;height:52px;background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;font-size:1.4rem}
-.svc-title{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.7rem}
-.svc-desc{font-size:.9rem;color:var(--text2);line-height:1.7;margin-bottom:1.4rem;font-weight:300}
-.svc-btn{display:inline-flex;align-items:center;gap:.4rem;color:var(--accent);font-size:.85rem;font-weight:600;background:none;border:none;cursor:pointer;padding:0;transition:gap .2s;letter-spacing:.01em}
-.svc-btn:hover{gap:.7rem}
-.svc-btn::after{content:'→'}
-
-/* ─── PORTFOLIO ─────────────────────────────────── */
-#portfolio{background:var(--bg)}
-.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem}
-.port-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);overflow:hidden;transition:all .3s;display:flex;flex-direction:column;justify-content:between}
-.port-card:hover{transform:translateY(-6px);box-shadow:0 30px 80px rgba(0,0,0,0.5);border-color:rgba(10,170,255,0.25)}
-.port-img{height:220px;position:relative;overflow:hidden}
-.port-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.port-card:hover .port-img img{transform:scale(1.05)}
-.port-img-label{position:absolute;bottom:1rem;left:1rem;background:rgba(0,0,0,0.75);backdrop-filter:blur(10px);padding:.35rem .8rem;border-radius:50px;font-size:.75rem;font-weight:600;color:#fff;letter-spacing:.05em;border:1px solid rgba(255,255,255,0.1)}
-.port-body{padding:1.8rem;flex-grow:1;display:flex;flex-direction:column}
-.port-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
-.port-title{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:.6rem}
-.port-desc{font-size:.88rem;color:var(--text2);line-height:1.7;margin-bottom:1.2rem;font-weight:300;flex-grow:1}
-.port-features{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
-.port-feat{background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.15);padding:.25rem .7rem;border-radius:50px;font-size:.75rem;color:var(--accent);font-weight:500}
-.port-demo-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;padding:.7rem 1.6rem;border-radius:50px;font-weight:700;font-size:.85rem;border:none;cursor:pointer;transition:all .25s;letter-spacing:.01em;text-align:center;width:100%}
-.port-demo-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(10,170,255,0.35)}
-
-/* ─── PRICING ───────────────────────────────────── */
-#pricing{background:var(--bg2)}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5rem;align-items:stretch}
-.price-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.2rem;transition:all .3s;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:between;height:100%}
-.price-card:hover{transform:translateY(-4px);border-color:rgba(10,170,255,0.3)}
-.price-card.popular{border-color:rgba(10,170,255,0.5);background:rgba(10,170,255,0.04)}
-.price-card.popular::before{content:'Most Popular';position:absolute;top:1.2rem;right:1.2rem;background:var(--accent);color:#000;font-size:.65rem;font-weight:700;padding:.25rem .6rem;border-radius:50px;letter-spacing:.06em;text-transform:uppercase}
-.price-card.premium{background:linear-gradient(135deg,rgba(108,99,255,0.08) 0%,rgba(10,170,255,0.04) 100%);border-color:rgba(108,99,255,0.35)}
-.price-card.enterprise{background:linear-gradient(135deg,rgba(240,180,41,0.06) 0%,rgba(240,180,41,0.02) 100%);border-color:rgba(240,180,41,0.3);grid-column:1 / -1}
-@media (min-width:992px){.price-card.enterprise{grid-column:auto}}
-.price-top{margin-bottom:1.5rem}
-.price-plan{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem}
-.price-amount{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;color:#fff;margin-bottom:.3rem;line-height:1}
-.price-amount span{font-size:1rem;color:var(--text2);font-weight:400}
-.price-desc{font-size:.85rem;color:var(--text2);margin-bottom:1.5rem;line-height:1.6;font-weight:300;min-height:48px}
-.price-features{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem;flex-grow:1}
-.price-features li{font-size:.85rem;color:var(--text2);display:flex;align-items:flex-start;gap:.5rem;line-height:1.5}
-.price-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0;margin-top:.05rem}
-.price-card.enterprise .price-features li::before{color:var(--gold)}
-.price-cta{width:100%;background:rgba(10,170,255,0.1);border:1px solid rgba(10,170,255,0.25);color:var(--accent);padding:.8rem;border-radius:50px;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .25s;letter-spacing:.01em;margin-top:auto}
-.price-cta:hover{background:var(--accent);color:#000}
-.price-card.enterprise .price-cta{background:rgba(240,180,41,0.1);border-color:rgba(240,180,41,0.3);color:var(--gold)}
-.price-card.enterprise .price-cta:hover{background:var(--gold);color:#000}
-.premium-badge{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:.3rem}
-.enterprise-note{font-size:.8rem;color:var(--text3);line-height:1.5;margin-top:1rem;font-weight:400}
-
-/* ─── PROCESS ───────────────────────────────────── */
-#process{background:var(--bg)}
-.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem}
-.process-card{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.4rem 1.8rem;position:relative;overflow:hidden;transition:all .3s;min-height:240px;display:flex;flex-direction:column}
-.process-card:hover{border-color:rgba(10,170,255,0.25);transform:translateY(-3px)}
-.process-num{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:rgba(10,170,255,0.07);position:absolute;top:.5rem;right:1rem;line-height:1;letter-spacing:-.05em}
-.process-icon{font-size:1.6rem;margin-bottom:1rem}
-.process-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:.7rem}
-.process-desc{font-size:.85rem;color:var(--text2);line-height:1.75;font-weight:300;flex:1}
-
-/* ─── FAQ ───────────────────────────────────────── */
-#faq{background:var(--bg2)}
-.faq-wrap{max-width:760px;margin:0 auto}
-.faq-item{border:1px solid var(--border2);border-radius:var(--radius);margin-bottom:.8rem;overflow:hidden;transition:border-color .3s}
-.faq-item.active{border-color:rgba(10,170,255,0.3)}
-.faq-q{width:100%;background:none;border:none;color:#fff;padding:1.4rem 1.6rem;text-align:left;font-family:'Syne',sans-serif;font-size:.98rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:color .2s}
-.faq-q:hover{color:var(--accent)}
-.faq-item.active .faq-q{color:var(--accent)}
-.faq-arrow{font-size:1.1rem;transition:transform .3s;flex-shrink:0;color:var(--text3)}
-.faq-item.active .faq-arrow{transform:rotate(45deg);color:var(--accent)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
-.faq-item.active .faq-a{max-height:300px}
-.faq-a-inner{padding:0 1.6rem 1.4rem;color:var(--text2);font-size:.9rem;line-height:1.8;font-weight:300}
-
-/* ─── CONTACT ───────────────────────────────────── */
-#contact{background:var(--bg)}
-.contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start}
-@media (max-width: 768px){.contact-wrap{grid-template-columns:1fr;gap:2.5rem}}
-.contact-info{display:flex;flex-direction:column;gap:1.8rem}
-.contact-info-title{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;line-height:1.3}
-.contact-info-sub{color:var(--text2);font-size:.9rem;line-height:1.75;font-weight:300}
-.contact-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem;background:var(--card);border:1px solid var(--border2);border-radius:var(--radius)}
-.contact-item-icon{width:40px;height:40px;background:rgba(10,170,255,0.08);border:1px solid rgba(10,170,255,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.contact-item-label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:.2rem}
-.contact-item-val{font-size:.9rem;color:var(--text);font-weight:500}
-.contact-form{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius2);padding:2.5rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
-@media (max-width: 480px){.form-row{grid-template-columns:1fr}}
-.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
-.form-label{font-size:.78rem;font-weight:600;color:var(--text2);letter-spacing:.05em;text-transform:uppercase}
-.form-input,.form-select,.form-textarea{background:rgba(255,255,255,0.04);border:1px solid var(--border2);border-radius:10px;padding:.8rem 1rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;transition:border-color .2s,box-shadow .2s;width:100%;outline:none;-webkit-appearance:none;appearance:none}
-.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a99b3' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-size:12px;padding-right:2.5rem;cursor:pointer}
-.form-select option{background:#0c1525;color:#e8edf5}
-.form-textarea{resize:vertical;min-height:120px}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:rgba(10,170,255,0.5);box-shadow:0 0 0 3px rgba(10,170,255,0.08)}
-.form-input::placeholder,.form-textarea::placeholder{color:var(--text3)}
-.form-error{display:none;background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.25);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem}
-.form-error.active{display:block}
-.form-error-title{font-size:.82rem;font-weight:700;color:#ff6b6b;margin-bottom:.5rem}
-.form-error ul{list-style:none;display:flex;flex-direction:column;gap:.3rem}
-.form-error ul li{font-size:.82rem;color:#ff8a8a;display:flex;align-items:center;gap:.4rem}
-.form-error ul li::before{content:'!';width:16px;height:16px;background:rgba(255,80,80,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;flex-shrink:0}
-.form-success{display:none;background:rgba(10,170,255,0.06);border:1px solid rgba(10,170,255,0.25);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1rem;color:var(--accent);font-size:.88rem;font-weight:500}
-.form-success.active{display:block}
-.field-error{border-color:rgba(255,80,80,0.5)!important}
-
-/* ─── FOOTER ────────────────────────────────────── */
-footer{background:var(--bg2);border-top:1px solid var(--border2);padding:60px 5% 30px}
-.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-@media (max-width: 768px){.footer-top{grid-template-columns:1fr 1fr;gap:2rem}}
-@media (max-width: 480px){.footer-top{grid-template-columns:1fr}}
-.footer-brand{display:flex;flex-direction:column;gap:1rem}
-.footer-logo{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#fff}
-.footer-logo span{color:var(--accent)}
-.footer-tagline{font-size:.88rem;color:var(--text3);line-height:1.7;font-weight:300;max-width:260px}
-.footer-col-title{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.2rem}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
-.footer-links a{color:var(--text3);text-decoration:none;font-size:.88rem;transition:color .2s}
-.footer-links a:hover{color:var(--accent)}
-.footer-bottom{border-top:1px solid var(--border2);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:.82rem;color:var(--text3)}
-.footer-copy span{color:var(--accent)}
-
-/* ─── MODAL ─────────────────────────────────────── */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(12px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s}
-.modal-overlay.active{opacity:1;pointer-events:all}
-.modal-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius2);max-width:700px;width:100%;max-height:85vh;overflow-y:auto;transform:translateY(20px);transition:transform .3s;position:relative}
-.modal-overlay.active .modal-box{transform:translateY(0)}
-.modal-header{padding:2rem 2rem 1.2rem;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;position:sticky;top:0;background:var(--bg3);z-index:1}
-.modal-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;color:#fff}
-.modal-close{width:36px;height:36px;background:rgba(255,255,255,0.06);border:none;color:var(--text2);border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
-.modal-close:hover{background:rgba(255,80,80,0.15);color:#ff6b6b}
-.modal-body{padding:1.8rem 2rem}
-.modal-intro{font-size:.9rem;color:var(--text2);line-height:1.75;margin-bottom:1.6rem;font-weight:300}
-.modal-points{display:flex;flex-direction:column;gap:1rem}
-.modal-point{background:rgba(10,170,255,0.04);border:1px solid rgba(10,170,255,0.1);border-radius:12px;padding:1.2rem 1.4rem}
-.modal-point-title{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;color:var(--accent);margin-bottom:.4rem}
-.modal-point-desc{font-size:.86rem;color:var(--text2);line-height:1.75;font-weight:300}
-
-/* ─── DEMO PAGES OVERLAY LAYER ──────────────────── */
-.demo-page-view {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: #0f172a;
-  color: #f8fafc;
-  z-index: 3000;
-  overflow-y: auto;
-  font-family: 'DM Sans', sans-serif;
-}
-.demo-page-view.active {
-  display: block;
-}
-.demo-close-bar {
-  background: #020617;
-  padding: 0.75rem 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 3100;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-.demo-close-bar span {
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #94a3b8;
-}
-.demo-close-btn {
-  background: #ef4444;
-  color: white;
-  border: none;
-  padding: 0.4rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-.demo-close-btn:hover {
-  opacity: 0.9;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+scroll-behavior:smooth;
 }
 
-/* Base Internal Elements for Demos */
-.d-nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(15,23,42,0.9); backdrop-filter: blur(10px); position: sticky; top: 48px; z-index: 100; }
-.d-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; text-decoration: none; }
-.d-links { display: flex; gap: 1.5rem; list-style: none; }
-.d-links a { color: #94a3b8; text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; cursor: pointer; }
-.d-hero { padding: 80px 5%; text-align: center; position: relative; background-size: cover; background-position: center; background-repeat: no-repeat; }
-.d-hero::before { content: ''; position: absolute; inset: 0; background: rgba(15,23,42,0.75); }
-.d-hero-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
-.d-hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; color: #fff; }
-.d-hero p { color: #cbd5e1; margin-bottom: 1.5rem; font-size: 1rem; }
-.d-section { padding: 60px 5%; }
-.d-section-title { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 700; text-align: center; margin-bottom: 2.5rem; color: #fff; }
-.d-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-.d-card { background: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-.d-card img { width: 100%; height: 200px; object-fit: cover; }
-.d-card-body { padding: 1.25rem; }
-.d-form { max-width: 500px; margin: 0 auto; background: #1e293b; padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); }
-.d-form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; text-align: left; }
-.d-form-group label { font-size: 0.8rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; }
-.d-form-group input, .d-form-group select, .d-form-group textarea { background: #0f172a; border: 1px solid rgba(255,255,255,0.1); padding: 0.75rem; color: #fff; border-radius: 8px; font-size: 0.9rem; width: 100%; }
-.d-btn { background: var(--accent); color: #000; padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 700; border: none; cursor: pointer; transition: opacity 0.2s; width: 100%; text-align: center; }
-.d-btn:hover { opacity: 0.9; }
-.d-footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 2rem 5%; text-align: center; font-size: 0.85rem; color: #64748b; background: #020617; }
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .d-links { display: none; }
+body{
+background:#030814;
+color:white;
+overflow-x:hidden;
 }
+
+a{
+text-decoration:none;
+color:white;
+}
+
+ul{
+list-style:none;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:85px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 6%;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(12px);
+z-index:9999;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+font-size:34px;
+font-weight:900;
+letter-spacing:1px;
+}
+
+.logo span{
+color:#00aaff;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+}
+
+.nav-links a{
+color:#d8d8d8;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#00aaff;
+}
+
+.cta-btn{
+background:#00aaff;
+padding:14px 28px;
+border-radius:40px;
+font-weight:700;
+color:black;
+transition:.3s;
+}
+
+.cta-btn:hover{
+transform:translateY(-3px);
+}
+
+/* UTC CLOCK */
+
+.clock-wrapper{
+margin-top:85px;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:18px;
+background:#051122;
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+#utcClock{
+font-size:18px;
+font-weight:600;
+color:#00aaff;
+letter-spacing:1px;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 8%;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:700px;
+height:700px;
+background:#0099ff20;
+filter:blur(180px);
+top:-100px;
+right:-200px;
+}
+
+.hero-content{
+max-width:1200px;
+text-align:center;
+position:relative;
+z-index:2;
+}
+
+.hero-tag{
+display:inline-block;
+padding:12px 24px;
+border:1px solid rgba(0,170,255,.4);
+border-radius:50px;
+margin-bottom:30px;
+color:#00aaff;
+font-weight:600;
+}
+
+.hero h1{
+font-size:82px;
+line-height:1.05;
+font-weight:900;
+margin-bottom:30px;
+}
+
+.hero p{
+max-width:900px;
+margin:auto;
+font-size:22px;
+line-height:1.8;
+color:#b7c3d1;
+margin-bottom:50px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.primary-btn{
+padding:18px 38px;
+background:#00aaff;
+color:black;
+font-weight:700;
+border-radius:50px;
+}
+
+.secondary-btn{
+padding:18px 38px;
+border:1px solid #00aaff;
+border-radius:50px;
+color:#00aaff;
+}
+
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+padding:50px 8%;
+}
+
+.stat-card{
+background:#081426;
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.06);
+text-align:center;
+}
+
+.stat-card h2{
+font-size:42px;
+color:#00aaff;
+margin-bottom:10px;
+}
+
+.stat-card p{
+color:#b7c3d1;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+text-align:center;
+padding:80px 20px;
+}
+
+.section-title h2{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.section-title p{
+max-width:800px;
+margin:auto;
+color:#b7c3d1;
+line-height:1.8;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.hero h1{
+font-size:60px;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+.logo{
+font-size:26px;
+}
+
+}
+
 </style>
+
 </head>
 <body>
 
-<nav>
-  <a href="#" class="nav-logo">ZENTRO<span>.AI</span></a>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Demos</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Get Started</a>
-  <button class="nav-hamburger" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
-    <span></span><span></span><span></span>
-  </button>
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+ZENTRO<span>.AI</span>
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#services">Services</a></li>
+<li><a href="#demos">Demos</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#process">Process</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<a href="#pricing" class="cta-btn">
+Get Started
+</a>
+
 </nav>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#services" onclick="toggleMobileMenu()">Services</a>
-  <a href="#portfolio" onclick="toggleMobileMenu()">Demos</a>
-  <a href="#pricing" onclick="toggleMobileMenu()">Pricing</a>
-  <a href="#process" onclick="toggleMobileMenu()">Process</a>
-  <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
-  <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+<!-- UTC CLOCK -->
+
+<div class="clock-wrapper">
+
+<div id="utcClock">
+Loading UTC Time...
 </div>
 
-<section id="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-orb1"></div>
-  <div class="hero-orb2"></div>
-  <div class="hero-content">
-    <div class="hero-badge">Next-Gen Automation Agency</div>
-    <h1 class="hero-title">
-      We engineer highly autonomous architectures and production platforms for <span class="line2">Zentro Digital Solutions</span>
-    </h1>
-    <p class="hero-sub">
-      Empower your organization with pixel-perfect, hyper-scaled digital products driven by functional AI integrations, optimized logic pipelines, and robust layouts.
-    </p>
-    <div class="hero-actions">
-      <a href="#portfolio" class="btn-primary">Explore Live Demos</a>
-      <a href="#pricing" class="btn-outline">View Packages</a>
-    </div>
-  </div>
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-tag">
+NEXT-GEN DIGITAL AI AGENCY
+</div>
+
+<h1>
+We Build Powerful AI Systems & Business Websites
+</h1>
+
+<p>
+At Zentro AI our mission is simple:
+help businesses grow faster through professional web development,
+AI automation, digital systems, custom software,
+chatbots and enterprise-grade solutions delivered globally.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#pricing" class="primary-btn">
+Start Your Project
+</a>
+
+<a href="#services" class="secondary-btn">
+Explore Services
+</a>
+
+</div>
+
+</div>
+
 </section>
 
-<section id="services">
-  <div class="section-header centered">
-    <div class="section-label">Core Specializations</div>
-    <h2 class="section-title">Automated Digital Engineering</h2>
-    <p class="section-sub">We deploy production-grade software frameworks embedded with specialized business logic layers.</p>
-  </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="svc-icon">⚡</div>
-      <h3 class="svc-title">High-Scale Web Frameworks</h3>
-      <p class="svc-desc">Monolithic and distributed front-end micro-architectures engineered for speed, high conversion, and responsive modular components.</p>
-      <button class="svc-btn" onclick="openModal('web')">Learn More</button>
-    </div>
-    <div class="service-card">
-      <div class="svc-icon">🧠</div>
-      <h3 class="svc-title">Functional AI Integration</h3>
-      <p class="svc-desc">Plugging smart autonomous logic, automated dynamic content pipelines, and interactive search intelligence directly into your app layers.</p>
-      <button class="svc-btn" onclick="openModal('ai')">Learn More</button>
-    </div>
-    <div class="service-card">
-      <div class="svc-icon">💎</div>
-      <h3 class="svc-title">Custom Brand Implementations</h3>
-      <p class="svc-desc">Total strategic alignment. We systematically wrap our high-performance technical templates around your unified corporate ecosystem.</p>
-      <button class="svc-btn" onclick="openModal('brand')">Learn More</button>
-    </div>
-  </div>
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat-card">
+<h2>100%</h2>
+<p>Client Focused Development</p>
+</div>
+
+<div class="stat-card">
+<h2>24/7</h2>
+<p>Global Support</p>
+</div>
+
+<div class="stat-card">
+<h2>AI</h2>
+<p>Automation Solutions</p>
+</div>
+
+<div class="stat-card">
+<h2>2026</h2>
+<p>Digital Innovation Vision</p>
+</div>
+
 </section>
 
-<section id="portfolio">
-  <div class="section-header centered">
-    <div class="section-label">Interactive Portfolio Ecosystem</div>
-    <h2 class="section-title">6 Complete Enterprise Demos</h2>
-    <p class="section-sub">Explore our functional structural templates built for speed, real assets, and interactive configurations.</p>
-  </div>
-  <div class="portfolio-grid">
-    
-    <div class="port-card">
-      <div class="port-img">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Zentro Restaurant Interior" loading="lazy">
-        <div class="port-img-label">Fine Dining Platform</div>
-      </div>
-      <div class="port-body">
-        <div class="port-tag">Zentro Restaurant</div>
-        <h3 class="port-title">Premium Hospitality Portal</h3>
-        <p class="port-desc">Complete epicurean framework supporting integrated luxury reservation tools, dynamic menu groupings, and gourmet visual assets.</p>
-        <div class="port-features">
-          <span class="port-feat">Menu Display</span>
-          <span class="port-feat">Reservations</span>
-          <span class="port-feat">Gallery</span>
-        </div>
-        <button class="port-demo-btn" onclick="openDemo('restaurant')">Launch Project View</button>
-      </div>
-    </div>
+<!-- NEXT SECTION PLACEHOLDER -->
 
-    <div class="port-card">
-      <div class="port-img">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" alt="Zentro Real Estate Complex" loading="lazy">
-        <div class="port-img-label">Property Management</div>
-      </div>
-      <div class="port-body">
-        <div class="port-tag">Zentro Real Estate</div>
-        <h3 class="port-title">Corporate Brokerage Suite</h3>
-        <p class="port-desc">High-speed modular layout architected for multi-tier industrial real estate listings, agent metadata matrix, and dynamic inquiry fields.</p>
-        <div class="port-features">
-          <span class="port-feat">Listings Hub</span>
-          <span class="port-feat">Agent Directory</span>
-          <span class="port-feat">Inquiry Flow</span>
-        </div>
-        <button class="port-demo-btn" onclick="openDemo('realestate')">Launch Project View</button>
-      </div>
-    </div>
+<section class="section-title" id="services">
 
-    <div class="port-card">
-      <div class="port-img">
-        <img src="https://images.unsplash.com/photo-1584515933487-75982136b247?auto=format&fit=crop&w=600&q=80" alt="Zentro Clinic Medical Lab" loading="lazy">
-        <div class="port-img-label">Healthcare Solutions</div>
-      </div>
-      <div class="port-body">
-        <div class="port-tag">Zentro Clinic</div>
-        <h3 class="port-title">Clinical Care Hub</h3>
-        <p class="port-desc">HIPAA-ready architectural layouts emphasizing structured clinician listings, detailed specialty medical services, and clean scheduling forms.</p>
-        <div class="port-features">
-          <span class="port-feat">Doctor Profiles</span>
-          <span class="port-feat">Appointments</span>
-          <span class="port-feat">Medical Catalog</span>
-        </div>
-        <button class="port-demo-btn" onclick="openDemo('clinic')">Launch Project View</button>
-      </div>
-    </div>
+<h2>Our Services</h2>
 
-    <div class="port-card">
-      <div class="port-img">
-        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Zentro E-Commerce Store" loading="lazy">
-        <div class="port-img-label">Digital Retail</div>
-      </div>
-      <div class="port-body">
-        <div class="port-tag">Zentro E-Commerce</div>
-        <h3 class="port-title">Omnichannel Retail Architecture</h3>
-        <p class="port-desc">Lightning-fast store experience engineered with an interactive stateful shopping cart layout, high-performance product filters, and secure pricing grids.</p>
-        <div class="port-features">
-          <span class="port-feat">Cart Engine</span>
-          <span class="port-feat">Product Matrix</span>
-          <span class="port-feat">Checkout Flow</span>
-        </div>
-        <button class="port-demo-btn" onclick="openDemo('ecommerce')">Launch Project View</button>
-      </div>
-    </div>
+<p>
+Part 2 mein complete services cards,
+learn more modals,
+and service details add hongi.
+</p>
 
-    <div class="port-card">
-      <div class="port-img">
-        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" alt="Zentro Education Campus" loading="lazy">
-        <div class="port-img-label">Academic LMS</div>
-      </div>
-      <div class="port-body">
-        <div class="port-tag">Zentro Education</div>
-        <h3 class="port-title">Knowledge & Learning LMS</h3>
-        <p class="port-desc">A structured academic environment delivering comprehensive course navigation matrixes, professor tracking indices, and dynamic enrollment applications.</p>
-        <div class="port-features">
-          <span class="port-feat">Course Index</span>
-          <span class="port-feat">Faculty Directory</span>
-          <span class="port-feat">Enrollment Portal</span>
-        </div>
-        <button class="port-demo-btn" onclick="openDemo('education')">Launch Project View</button>
-      </div>
-    </div>
-
-    <div class="port-card">
-      <div class="port-img">
-        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Zentro Construction Site" loading="lazy">
-        <div class="port-img-label">Industrial Engineering</div>
-      </div>
-      <div class="port-body">
-        <div class="port-tag">Zentro Construction</div>
-        <h3 class="port-title">Infrastructure & Heavy Industry</h3>
-        <p class="port-desc">Heavy industrial framework displaying large-scale blueprint progress matrices, project capitalization parameters, and comprehensive safety crew listings.</p>
-        <div class="port-features">
-          <span class="port-feat">Project Matrices</span>
-          <span class="port-feat">Capital Analytics</span>
-          <span class="port-feat">Safety Crew Index</span>
-        </div>
-        <button class="port-demo-btn" onclick="openDemo('construction')">Launch Project View</button>
-      </div>
-    </div>
-
-  </div>
 </section>
-
-<section id="pricing">
-  <div class="section-header centered">
-    <div class="section-label">Transparent Commitments</div>
-    <h2 class="section-title">Production Tier Subscriptions</h2>
-    <p class="section-sub">Deploy production-ready framework builds packed with custom configurations and clean code logic.</p>
-  </div>
-  <div class="pricing-grid">
-    
-    <div class="price-card">
-      <div class="price-top">
-        <div class="price-plan">Plan 01</div>
-        <div class="price-amount">$80 <span>/ asset</span></div>
-        <p class="price-desc">Optimized core infrastructure setup for rapidly launching high-fidelity landing frameworks.</p>
-      </div>
-      <ul class="price-features">
-        <li>Standard Component Blueprint</li>
-        <li>Custom Brand Alignment Setup</li>
-        <li>Responsive Fluid Media Grid</li>
-        <li><strong>3-day express delivery</strong></li>
-      </ul>
-      <button class="price-cta" onclick="selectPlan('Plan 01 ($80)')">Subscribe Tier</button>
-    </div>
-
-    <div class="price-card popular">
-      <div class="price-top">
-        <div class="price-plan">Plan 02</div>
-        <div class="price-amount">$150 <span>/ asset</span></div>
-        <p class="price-desc">Comprehensive structural blueprint configured with secondary logical link pathways and content systems.</p>
-      </div>
-      <ul class="price-features">
-        <li>Extended System Pages (Up to 4)</li>
-        <li>Active Data Capture Endpoints</li>
-        <li>Comprehensive CSS Motion Profiles</li>
-        <li><strong>6-7 day delivery schedule</strong></li>
-      </ul>
-      <button class="price-cta" onclick="selectPlan('Plan 02 ($150)')">Subscribe Tier</button>
-    </div>
-
-    <div class="price-card premium">
-      <div class="price-top">
-        <div class="premium-badge">High Performance</div>
-        <div class="price-plan">Plan 03</div>
-        <div class="price-amount">$300 <span>/ asset</span></div>
-        <p class="price-desc">Advanced multi-tier system engineered with complex interaction parameters and structural blocks.</p>
-      </div>
-      <ul class="price-features">
-        <li>Full Structural Blueprint Setup</li>
-        <li>Advanced Component Architecture</li>
-        <li>Integrated Client Access Points</li>
-        <li><strong>Delivered within 14 days</strong></li>
-      </ul>
-      <button class="price-cta" onclick="selectPlan('Plan 03 ($300)')">Subscribe Tier</button>
-    </div>
-
-    <div class="price-card">
-      <div class="price-top">
-        <div class="price-plan">Plan 04</div>
-        <div class="price-amount">$550 <span>/ asset</span></div>
-        <p class="price-desc">Premium tier engineered for large scale portfolios and fully interactive data representation states.</p>
-      </div>
-      <ul class="price-features">
-        <li>Max Tier Page Configurations</li>
-        <li>Custom Logic State Matrices</li>
-        <li>Full Media Optimization Layers</li>
-        <li><strong>Delivered within 21 days</strong></li>
-      </ul>
-      <button class="price-cta" onclick="selectPlan('Plan 04 ($550)')">Subscribe Tier</button>
-    </div>
-
-    <div class="price-card enterprise">
-      <div class="price-top">
-        <div class="price-plan">Plan 05</div>
-        <div class="price-amount">Custom Enterprise <span>/ architecture</span></div>
-        <p class="price-desc">Complete systemic deployment built entirely around specialized corporate enterprise requirements, massive data volumes, and advanced autonomous pipelines.</p>
-      </div>
-      <ul class="price-features">
-        <li>Unlimited Scaled Structural Nodes</li>
-        <li>Deep Custom AI & Automation Core Orchestration</li>
-        <li>Dedicated Solutions Engineering Pipeline Support</li>
-        <li><strong>Delivery Timeline:</strong> Custom based on project definitions</li>
-      </ul>
-      <p class="enterprise-note">
-        * Delivery timeline varies because enterprise projects often require custom integrations, advanced automation, multiple revisions and client-specific requirements.
-      </p>
-      <button class="price-cta" onclick="selectPlan('Custom Enterprise (Plan 05)')">Initiate Consultation</button>
-    </div>
-
-  </div>
-</section>
-
-<section id="process">
-  <div class="section-header centered">
-    <div class="section-label">Operational Blueprint</div>
-    <h2 class="section-title">The Engineering Execution</h2>
-    <p class="section-sub">How Zentro transforms raw operational scope into high-performance web systems.</p>
-  </div>
-  <div class="process-grid">
-    <div class="process-card">
-      <div class="process-num">01</div>
-      <div class="process-icon">📋</div>
-      <h3 class="process-title">Scope Alignment</h3>
-      <p class="process-desc">We extract, analyze, and formalize structural code requirements and branding assets directly from your team.</p>
-    </div>
-    <div class="process-card">
-      <div class="process-num">02</div>
-      <div class="process-icon">⚙️</div>
-      <h3 class="process-title">Core Development</h3>
-      <p class="process-desc">Drafting the structural component layers, setting up CSS variables, and building clean anchor routing blocks.</p>
-    </div>
-    <div class="process-card">
-      <div class="process-num">03</div>
-      <div class="process-icon">🤖</div>
-      <h3 class="process-title">Logic Integration</h3>
-      <p class="process-desc">We load real assets, hook up form listeners, map custom brand details, and activate autonomous functions.</p>
-    </div>
-    <div class="process-card">
-      <div class="process-num">04</div>
-      <div class="process-icon">🚀</div>
-      <h3 class="process-title">Production Delivery</h3>
-      <p class="process-desc">Rigorous multi-point testing across various viewport ratios followed by a clean, production-ready source code deployment.</p>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="section-header centered">
-    <div class="section-label">Information Matrix</div>
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <p class="section-sub">Answering essential parameters regarding our development framework pipelines.</p>
-  </div>
-  <div class="faq-wrap">
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        What is included in the production-ready source code delivery?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a">
-        <div class="faq-a-inner">
-          You receive complete, highly organized HTML5 files, responsive modern CSS frameworks, and optimized modular vanilla JavaScript code scripts entirely configured for seamless hosting deployment.
-        </div>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        How does the Zentro rebranding implementation work?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a">
-        <div class="faq-a-inner">
-          We replace all placeholder branding assets, text, typography, color schemas, dynamic metadata setups, and vector graphics with your unique verified corporate branding elements across all view structures.
-        </div>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Are the structural design assets and images real and safe to use?
-        <span class="faq-arrow">+</span>
-      </button>
-      <div class="faq-a">
-        <div class="faq-a-inner">
-          Yes. All template graphics utilize real, fully optimized, and high-resolution media streams fetched from standard open-source production libraries, guaranteeing authentic appearance states.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="section-header">
-    <div class="section-label">Interface Portal</div>
-    <h2 class="section-title">Initiate Your System Build</h2>
-    <p class="section-sub">Submit your project requirements matrix directly to our automated processing pipeline below.</p>
-  </div>
-  <div class="contact-wrap">
-    <div class="contact-info">
-      <h3 class="contact-info-title">Let's coordinate high-performance engineering layouts.</h3>
-      <p class="contact-info-sub">Our internal system nodes process submissions in real time to match required pricing levels.</p>
-      
-      <div class="contact-item">
-        <div class="contact-item-icon">📬</div>
-        <div>
-          <div class="contact-item-label">Direct Endpoint</div>
-          <div class="contact-item-val">solutions@zentro.ai</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-item-icon">🌐</div>
-        <div>
-          <div class="contact-item-label">Corporate Network</div>
-          <div class="contact-item-val">Zentro Digital Solutions Labs</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="contact-form">
-      <div class="form-success" id="formSuccess">Submission secured. Our engineering pipeline has queued your project node.</div>
-      <div class="form-error" id="formError">
-        <div class="form-error-title">Validation Error Detected:</div>
-        <ul id="errorList"></ul>
-      </div>
-
-      <form id="zentroForm" onsubmit="handleFormSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="clientName">Identity Name</label>
-            <input type="text" id="clientName" class="form-input" placeholder="e.g. Alex Vance">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="clientEmail">Network Email</label>
-            <input type="email" id="clientEmail" class="form-input" placeholder="e.g. alex@network.com">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="projectTier">Target Configuration Subscription</label>
-          <select id="projectTier" class="form-select">
-            <option value="">-- Choose Subscription Tier --</option>
-            <option value="Plan 01 ($80)">Plan 01 ($80) — 3-Day Sprint Build</option>
-            <option value="Plan 02 ($150)">Plan 02 ($150) — 6-7 Day Enhanced Blueprint</option>
-            <option value="Plan 03 ($300)">Plan 03 ($300) — 14-Day Full Product Platform</option>
-            <option value="Plan 04 ($550)">Plan 04 ($550) — 21-Day High Matrix Framework</option>
-            <option value="Custom Enterprise (Plan 05)">Custom Enterprise (Plan 05) — Scope Dependent</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="projectScope">Functional Architecture Scope Documentation</label>
-          <textarea id="projectScope" class="form-textarea" placeholder="Detail any necessary dynamic UI logic, required pages matrix, or asset parameters..."></textarea>
-        </div>
-        <button type="submit" class="btn-primary" style="width: 100%;">Transmit Parameters</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="footer-logo">ZENTRO<span>.AI</span></div>
-      <p class="footer-tagline">Architecting bulletproof structural layouts and algorithmic workflow automation layers for next-generation platforms.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Framework Ecosystem</div>
-      <ul class="footer-links">
-        <li><a href="#services">Specializations</a></li>
-        <li><a href="#portfolio">Live Demos</a></li>
-        <li><a href="#pricing">Price Tiers</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Operational Core</div>
-      <ul class="footer-links">
-        <li><a href="#process">Development Process</a></li>
-        <li><a href="#faq">System FAQ Matrix</a></li>
-        <li><a href="#contact">Contact Support</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Zentro Branding Network</div>
-      <ul class="footer-links">
-        <li><a onclick="openDemo('restaurant')" style="cursor:pointer;">Zentro Restaurant</a></li>
-        <li><a onclick="openDemo('realestate')" style="cursor:pointer;">Zentro Real Estate</a></li>
-        <li><a onclick="openDemo('clinic')" style="cursor:pointer;">Zentro Clinic</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">&copy; 2026 <span>Zentro Digital Solutions</span>. All technical parameters reserved globally.</div>
-  </div>
-</footer>
-
-<div class="modal-overlay" id="infoModal" onclick="closeModal(event)">
-  <div class="modal-box" onclick="event.stopPropagation()">
-    <div class="modal-header">
-      <h3 class="modal-title" id="modalTitle">System Specs</h3>
-      <button class="modal-close" onclick="closeModal(null)">×</button>
-    </div>
-    <div class="modal-body">
-      <p class="modal-intro" id="modalIntro">Information profile loading...</p>
-      <div class="modal-points" id="modalPoints"></div>
-    </div>
-  </div>
-</div>
-
-<div class="demo-page-view" id="demo-restaurant">
-  <div class="demo-close-bar">
-    <span>Live Sandbox View — Zentro Restaurant Portal</span>
-    <button class="demo-close-btn" onclick="closeDemo('restaurant')">Exit Project View</button>
-  </div>
-  <nav class="d-nav">
-    <a class="d-logo" style="color: #f59e0b;">Zentro Restaurant</a>
-    <ul class="d-links">
-      <li><a onclick="showDemoPage('restaurant', 'home')">Home</a></li>
-      <li><a onclick="showDemoPage('restaurant', 'menu')">Menu</a></li>
-      <li><a onclick="showDemoPage('restaurant', 'gallery')">Gallery</a></li>
-      <li><a onclick="showDemoPage('restaurant', 'reservations')">Reservations</a></li>
-      <li><a onclick="showDemoPage('restaurant', 'about')">About</a></li>
-      <li><a onclick="showDemoPage('restaurant', 'contact')">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div class="demo-page-container">
-    <div class="demo-subpage restaurant-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80');">
-      <div class="d-hero-inner">
-        <h1>Zentro Culinary Experience</h1>
-        <p>Gourmet gastronomy designed for modern palates. Fresh organic inputs, exquisite combinations, and unforgettable fine hospitality environments.</p>
-        <button class="d-btn" style="background:#f59e0b;" onclick="showDemoPage('restaurant', 'reservations')">Reserve Fine Dining Table</button>
-      </div>
-    </div>
-
-    <div class="demo-subpage restaurant-menu d-section" style="display:none;">
-      <h2 class="d-section-title">The Culinary Catalog & Menu Prices</h2>
-      <div class="d-grid">
-        <div class="d-card"><div class="d-card-body"><h3>Zentro Reserve Steak</h3><p>Dry-aged wagyu beef ribeye served over custom truffle butter mash.</p><strong style="color:#f59e0b;">$110.00</strong></div></div>
-        <div class="d-card"><div class="d-card-body"><h3>Pacific Seared Salmon</h3><p>Wild-caught salmon accompanied by wild ginger reduction greens.</p><strong style="color:#f59e0b;">$46.00</strong></div></div>
-        <div class="d-card"><div class="d-card-body"><h3>Artisan Organic Rigatoni</h3><p>Fresh hand-rolled pasta tossed gently in heirloom slow-cooked tomato reduction.</p><strong style="color:#f59e0b;">$32.00</strong></div></div>
-      </div>
-    </div>
-
-    <div class="demo-subpage restaurant-gallery d-section" style="display:none;">
-      <h2 class="d-section-title">Interior Spaces & Plates Presentation</h2>
-      <div class="d-grid">
-        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=400&q=80" alt="Plates">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80" alt="Dining Room">
-        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=400&q=80" alt="Chef Work">
-      </div>
-    </div>
-
-    <div class="demo-subpage restaurant-reservations d-section" style="display:none;">
-      <h2 class="d-section-title">Luxury Dining Reservation Log</h2>
-      <div class="d-form">
-        <div class="d-form-group"><label>Party Count</label><input type="number" value="2"></div>
-        <div class="d-form-group"><label>Calendar Date</label><input type="date"></div>
-        <div class="d-form-group"><label>Target Seating Zone</label><select><option>Main Dining Hall</option><option>Panoramic Garden Lounge</option><option>Private Wine Cellar Room</option></select></div>
-        <button class="d-btn" style="background:#f59e0b;" onclick="alert('Table allocation holds secured.')">Lock Reservation Node</button>
-      </div>
-    </div>
-
-    <div class="demo-subpage restaurant-about d-section" style="display:none;">
-      <h2 class="d-section-title">Our Heritage & Culinary Values</h2>
-      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">Established under Zentro corporate design standards, our premium hospitality portals feature elite culinary artists, pristine farm networks, and clean operational architecture across all processing nodes.</p>
-    </div>
-
-    <div class="demo-subpage restaurant-contact d-section" style="display:none;">
-      <h2 class="d-section-title">Direct Maitre D' Communication</h2>
-      <div class="d-form">
-        <div class="d-form-group"><label>Message Matrix</label><textarea placeholder="Write message details..."></textarea></div>
-        <button class="d-btn" style="background:#f59e0b;" onclick="alert('Message passed to staff.')">Send Message</button>
-      </div>
-    </div>
-  </div>
-  <footer class="d-footer">&copy; 2026 Zentro Restaurant Group — Powered by Zentro Frameworks.</footer>
-</div>
-
-<div class="demo-page-view" id="demo-realestate">
-  <div class="demo-close-bar">
-    <span>Live Sandbox View — Zentro Real Estate Framework</span>
-    <button class="demo-close-btn" onclick="closeDemo('realestate')">Exit Project View</button>
-  </div>
-  <nav class="d-nav">
-    <a class="d-logo" style="color: #10b981;">Zentro Real Estate</a>
-    <ul class="d-links">
-      <li><a onclick="showDemoPage('realestate', 'home')">Home</a></li>
-      <li><a onclick="showDemoPage('realestate', 'properties')">Properties</a></li>
-      <li><a onclick="showDemoPage('realestate', 'details')">Property Details</a></li>
-      <li><a onclick="showDemoPage('realestate', 'agents')">Agents</a></li>
-      <li><a onclick="showDemoPage('realestate', 'about')">About</a></li>
-      <li><a onclick="showDemoPage('realestate', 'contact')">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div class="demo-page-container">
-    <div class="demo-subpage realestate-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80');">
-      <div class="d-hero-inner">
-        <h1>Premier Industrial & Corporate Realty</h1>
-        <p>Premium real estate brokerages, architectural smart apartments, high-capacity warehouses, and pristine development sites cataloged cleanly.</p>
-        <button class="d-btn" style="background:#10b981; color:white;" onclick="showDemoPage('realestate', 'properties')">Browse All Asset Logs</button>
-      </div>
-    </div>
-
-    <div class="demo-subpage realestate-properties d-section" style="display:none;">
-      <h2 class="d-section-title">Active Real Estate Portfolios</h2>
-      <div class="d-grid">
-        <div class="d-card"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80" alt="Luxury Villa"><div class="d-card-body"><h3>Zentro Penthouse Hub</h3><p>4-bedroom modular residential complex with private panoramic helipad.</p><strong style="color:#10b981;">$3,450,000</strong></div></div>
-        <div class="d-card"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=400&q=80" alt="Apartment Complex"><div class="d-card-body"><h3>Metropolitan Tech Loft</h3><p>Ultra-efficient workspace apartment with integrated smart home mesh.</p><strong style="color:#10b981;">$890,000</strong></div></div>
-        <div class="d-card"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=400&q=80" alt="Suburban Home"><div class="d-card-body"><h3>Industrial Assembly Complex</h3><p>Heavy duty automated manufacturing facility equipped with solar arrays.</p><strong style="color:#10b981;">$7,200,000</strong></div></div>
-      </div>
-    </div>
-
-    <div class="demo-subpage realestate-details d-section" style="display:none;">
-      <h2 class="d-section-title">Asset Specification Sheet: Node 401</h2>
-      <div class="d-form" style="max-width:700px;">
-        <h3>Zentro Penthouse Hub Parameters</h3>
-        <p style="margin: 1rem 0; color:#cbd5e1;">This pristine, architectural high-rise features carbon-fiber structures, independent microgrids, smart secure vaults, and dedicated hyper-speed server drops across all five private floors.</p>
-        <ul>
-          <li><strong>Internal Area:</strong> 8,450 square feet</li>
-          <li><strong>Energy Configuration:</strong> Net-Zero Solar Matrix</li>
-          <li><strong>Zoning Baseline:</strong> Mixed Commercial & Residential Executive</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="demo-subpage realestate-agents d-section" style="display:none;">
-      <h2 class="d-section-title">Elite Brokerage Deployment Staff</h2>
-      <div class="d-grid">
-        <div class="d-card" style="text-align:center; padding:1.5rem;"><h3 style="color:#10b981;">Marcus Vance</h3><p>Principal Industrial Broker</p><p style="font-size:0.8rem; color:#64748b;">mvance@zentro-realty.com</p></div>
-        <div class="d-card" style="text-align:center; padding:1.5rem;"><h3 style="color:#10b981;">Elena Rostova</h3><p>Luxury Residential Partner</p><p style="font-size:0.8rem; color:#64748b;">erostova@zentro-realty.com</p></div>
-      </div>
-    </div>
-
-    <div class="demo-subpage realestate-about d-section" style="display:none;">
-      <h2 class="d-section-title">About Zentro Brokerage Networks</h2>
-      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">We scale commercial real estate marketing portals through fluid design, rich interactive grid filtering, and automated customer qualification pipelines.</p>
-    </div>
-
-    <div class="demo-subpage realestate-contact d-section" style="display:none;">
-      <h2 class="d-section-title">Submit Structural Acquisition Inquiry</h2>
-      <div class="d-form">
-        <div class="d-form-group"><label>Target Listing</label><input type="text" value="Zentro Penthouse Hub"></div>
-        <div class="d-form-group"><label>Offer Capital ($)</label><input type="number" value="3450000"></div>
-        <button class="d-btn" style="background:#10b981; color:white;" onclick="alert('Financial intent submitted.')">Transmit Listing Inquiry</button>
-      </div>
-    </div>
-  </div>
-  <footer class="d-footer">&copy; 2026 Zentro Real Estate Conglomerate. All corporate profiles active.</footer>
-</div>
-
-<div class="demo-page-view" id="demo-clinic">
-  <div class="demo-close-bar">
-    <span>Live Sandbox View — Zentro Clinic Engine</span>
-    <button class="demo-close-btn" onclick="closeDemo('clinic')">Exit Project View</button>
-  </div>
-  <nav class="d-nav">
-    <a class="d-logo" style="color: #06b6d4;">Zentro Clinic</a>
-    <ul class="d-links">
-      <li><a onclick="showDemoPage('clinic', 'home')">Home</a></li>
-      <li><a onclick="showDemoPage('clinic', 'services')">Services</a></li>
-      <li><a onclick="showDemoPage('clinic', 'doctors')">Doctors</a></li>
-      <li><a onclick="showDemoPage('clinic', 'appointments')">Appointments</a></li>
-      <li><a onclick="showDemoPage('clinic', 'about')">About</a></li>
-      <li><a onclick="showDemoPage('clinic', 'contact')">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div class="demo-page-container">
-    <div class="demo-subpage clinic-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1584515933487-75982136b247?auto=format&fit=crop&w=1200&q=80');">
-      <div class="d-hero-inner">
-        <h1>Advanced Medical & Clinical Practice Suite</h1>
-        <p>Premium medical diagnostics, certified clinical laboratory hubs, and high-efficiency primary healthcare systems running cleanly.</p>
-        <button class="d-btn" style="background:#06b6d4; color:black;" onclick="showDemoPage('clinic', 'appointments')">Schedule Clinical Appointment</button>
-      </div>
-    </div>
-
-    <div class="demo-subpage clinic-services d-section" style="display:none;">
-      <h2 class="d-section-title">Medical Specializations Catalog</h2>
-      <div class="d-grid">
-        <div class="d-card"><div class="d-card-body"><h3>Molecular Diagnostics</h3><p>Comprehensive DNA screening matrices and detailed baseline biometric diagnostics mapping.</p></div></div>
-        <div class="d-card"><div class="d-card-body"><h3>Precision Cardiology</h3><p>Advanced cardiovascular testing workflows using premium dynamic imaging tools.</p></div></div>
-        <div class="d-card"><div class="d-card-body"><h3>Neuro-Systemic Health</h3><p>Functional neurological cognitive mapping profiles and modern restorative therapy.</p></div></div>
-      </div>
-    </div>
-
-    <div class="demo-subpage clinic-doctors d-section" style="display:none;">
-      <h2 class="d-section-title">Certified Attending Clinicians</h2>
-      <div class="d-grid">
-        <div class="d-card" style="padding:1.5rem; text-align:center;">
-          <h3 style="color:#06b6d4;">Dr. Sarah Jenkins, MD</h3>
-          <p>Chief Neurological Officer — 15+ Years Clinical Focus</p>
-        </div>
-        <div class="d-card" style="padding:1.5rem; text-align:center;">
-          <h3 style="color:#06b6d4;">Dr. Raymond Chen, PhD</h3>
-          <p>Lead Molecular Bio-Architect</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="demo-subpage clinic-appointments d-section" style="display:none;">
-      <h2 class="d-section-title">Secure Medical Appointment Form</h2>
-      <div class="d-form">
-        <div class="d-form-group"><label>Clinical Specialty</label><select><option>Molecular Diagnostics</option><option>Precision Cardiology</option><option>Neuro-Systemic Health</option></select></div>
-        <div class="d-form-group"><label>Biometric Patient ID</label><input type="text" placeholder="e.g. ZN-9948"></div>
-        <button class="d-btn" style="background:#06b6d4; color:black;" onclick="alert('Patient scheduling request logged.')">Queue Appointment Request</button>
-      </div>
-    </div>
-
-    <div class="demo-subpage clinic-about d-section" style="display:none;">
-      <h2 class="d-section-title">Institutional Healthcare Excellence</h2>
-      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">Zentro Clinic nodes run optimized digital front doors that minimize clinical scheduling drop-off while providing crystal clear informational layout profiles.</p>
-    </div>
-
-    <div class="demo-subpage clinic-contact d-section" style="display:none;">
-      <h2 class="d-section-title">Urgent Administrative Contact</h2>
-      <div class="d-form">
-        <div class="d-form-group"><label>Department Endpoint</label><select><option>General Clinical Inquiries</option><option>Medical Records Storage</option><option>Billing Logic Verification</option></select></div>
-        <button class="d-btn" style="background:#06b6d4; color:black;" onclick="alert('Administrative dispatch alert triggered.')">Signal Support Station</button>
-      </div>
-    </div>
-  </div>
-  <footer class="d-footer">&copy; 2026 Zentro Clinical Networks — HIPAA Compliant Interface Profile.</footer>
-</div>
-
-<div class="demo-page-view" id="demo-ecommerce">
-  <div class="demo-close-bar">
-    <span>Live Sandbox View — Zentro E-Commerce Infrastructure</span>
-    <button class="demo-close-btn" onclick="closeDemo('ecommerce')">Exit Project View</button>
-  </div>
-  <nav class="d-nav">
-    <a class="d-logo" style="color: #ec4899;">Zentro E-Commerce</a>
-    <ul class="d-links">
-      <li><a onclick="showDemoPage('ecommerce', 'home')">Home</a></li>
-      <li><a onclick="showDemoPage('ecommerce', 'shop')">Shop</a></li>
-      <li><a onclick="showDemoPage('ecommerce', 'details')">Product Details</a></li>
-      <li><a onclick="showDemoPage('ecommerce', 'cart')">Cart</a></li>
-      <li><a onclick="showDemoPage('ecommerce', 'about')">About</a></li>
-      <li><a onclick="showDemoPage('ecommerce', 'contact')">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div class="demo-page-container">
-    <div class="demo-subpage ecommerce-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80');">
-      <div class="d-hero-inner">
-        <h1>Omnichannel Retail Engine</h1>
-        <p>Ultra-responsive global store frameworks featuring modular inventories, client-side cart logic, and clean transaction blocks.</p>
-        <button class="d-btn" style="background:#ec4899; color:white;" onclick="showDemoPage('ecommerce', 'shop')">Enter Product Retail Grid</button>
-      </div>
-    </div>
-
-    <div class="demo-subpage ecommerce-shop d-section" style="display:none;">
-      <h2 class="d-section-title">Premium Product Catalog Grid</h2>
-      <div class="d-grid">
-        <div class="d-card"><div class="d-card-body"><h3>Zentro Node Core Smartwatch</h3><p>Titanium tracking matrix housing biometric arrays and ultra-low frequency Bluetooth grids.</p><strong style="color:#ec4899;">$299.00</strong><button class="d-btn" style="background:#ec4899; color:white; margin-top:1rem;" onclick="addToDemoCart('Zentro Node Core Smartwatch', 299)">Inject to Cart</button></div></div>
-        <div class="d-card"><div class="d-card-body"><h3>Acoustic ANC Enclosures</h3><p>Bespoke wireless over-ear auditory hardware supporting true spatial decoding logic.</p><strong style="color:#ec4899;">$450.00</strong><button class="d-btn" style="background:#ec4899; color:white; margin-top:1rem;" onclick="addToDemoCart('Acoustic ANC Enclosures', 450)">Inject to Cart</button></div></div>
-      </div>
-    </div>
-
-    <div class="demo-subpage ecommerce-details d-section" style="display:none;">
-      <h2 class="d-section-title">Deep Product Analysis: Node Core Smartwatch</h2>
-      <div class="d-form" style="max-width:650px;">
-        <h3>Zentro Node Core Hardware Parameters</h3>
-        <p style="color:#cbd5e1; margin:1rem 0;">Engineered using aerospace forged titanium alloy grids. Includes absolute hardware cryptography layers to keep peripheral health sync loops perfectly safe.</p>
-        <button class="d-btn" style="background:#ec4899; color:white;" onclick="addToDemoCart('Zentro Node Core Smartwatch', 299)">Add Single Item to Cart Block</button>
-      </div>
-    </div>
-
-    <div class="demo-subpage ecommerce-cart d-section" style="display:none;">
-      <h2 class="d-section-title">Stateful Client Shopping Cart</h2>
-      <div class="d-form" style="max-width:550px;">
-        <div id="demo-cart-status" style="color:#cbd5e1; margin-bottom:1.5rem;">Cart buffer currently unallocated. Try adding items from the store tab!</div>
-        <button class="d-btn" style="background:#ec4899; color:white;" onclick="alert('Cart payload transmitted to mock payment gateway node.')">Process Checkout Pipeline</button>
-      </div>
-    </div>
-
-    <div class="demo-subpage ecommerce-about d-section" style="display:none;">
-      <h2 class="d-section-title">High Conversion Architecture Frameworks</h2>
-      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">Zentro retail interfaces minimize payload size and script blockades to maximize programmatic checkout yields on mobile hardware layers.</p>
-    </div>
-
-    <div class="demo-subpage ecommerce-contact d-section" style="display:none;">
-      <h2 class="d-section-title">Global Merchant Matrix Contact</h2>
-      <div class="d-form">
-        <div class="d-form-group"><label>Order Tracking Hash Reference</label><input type="text" placeholder="e.g. #ZN-88391"></div>
-        <button class="d-btn" style="background:#ec4899; color:white;" onclick="alert('Ticket flagged for logistical review.')">Open Discrepancy Ticket</button>
-      </div>
-    </div>
-  </div>
-  <footer class="d-footer">&copy; 2026 Zentro Retail Networks — Production Cart Simulation Node.</footer>
-</div>
-
-<div class="demo-page-view" id="demo-education">
-  <div class="demo-close-bar">
-    <span>Live Sandbox View — Zentro Education Platform</span>
-    <button class="demo-close-btn" onclick="closeDemo('education')">Exit Project View</button>
-  </div>
-  <nav class="d-nav">
-    <a class="d-logo" style="color: #3b82f6;">Zentro Education</a>
-    <ul class="d-links">
-      <li><a onclick="showDemoPage('education', 'home')">Home</a></li>
-      <li><a onclick="showDemoPage('education', 'courses')">Courses</a></li>
-      <li><a onclick="showDemoPage('education', 'teachers')">Teachers</a></li>
-      <li><a onclick="showDemoPage('education', 'admissions')">Admissions</a></li>
-      <li><a onclick="showDemoPage('education', 'about')">About</a></li>
-      <li><a onclick="showDemoPage('education', 'contact')">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div class="demo-page-container">
-    <div class="demo-subpage education-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80');">
-      <div class="d-hero-inner">
-        <h1>Advanced Learning Management Systems</h1>
-        <p>Comprehensive pedagogical indices, automated remote grading matrices, and responsive lecture asset modules.</p>
-        <button class="d-btn" style="background:#3b82f6; color:white;" onclick="showDemoPage('education', 'admissions')">Apply for Active Cohort Enrollment</button>
-      </div>
-    </div>
-
-    <div class="demo-subpage education-courses d-section" style="display:none;">
-      <h2 class="d-section-title">Curriculum Learning Paths Matrix</h2>
-      <div class="d-grid">
-        <div class="d-card"><div class="d-card-body"><h3>Advanced Logic Systems</h3><p>Comprehensive algorithmic parsing, state machine configurations, and mathematical parsing frameworks.</p><strong style="color:#3b82f6;">Tuition Fee: $1,200 / term</strong></div></div>
-        <div class="d-card"><div class="d-card-body"><h3>Applied Systems Automation</h3><p>Deep implementation methodologies mapping distributed cloud components and webhook processing structures.</p><strong style="color:#3b82f6;">Tuition Fee: $1,550 / term</strong></div></div>
-      </div>
-    </div>
-
-    <div class="demo-subpage education-teachers d-section" style="display:none;">
-      <h2 class="d-section-title">Distinguished Tenured Faculty</h2>
-      <div class="d-grid">
-        <div class="d-card" style="padding:1.5rem; text-align:center;"><h3 style="color:#3b82f6;">Prof. Arthur Pendelton</h3><p>Department of Discrete Engineering Logic</p></div>
-        <div class="d-card" style="padding:1.5rem; text-align:center;"><h3 style="color:#3b82f6;">Dr. Miranda Thorne</h3><p>Chairperson of Cloud Architecture Research</p></div>
-      </div>
-    </div>
-
-    <div class="demo-subpage education-admissions d-section" style="display:none;">
-      <h2 class="d-section-title">Cohort Matriculation Application Form</h2>
-      <div class="d-form">
-        <div class="d-form-group"><label>Candidate Educational Background</label><input type="text" placeholder="Degree/Certifications Profile"></div>
-        <div class="d-form-group"><label>Target Specialized Learning Track</label><select><option>Advanced Logic Systems</option><option>Applied Systems Automation</option></select></div>
-        <button class="d-btn" style="background:#3b82f6; color:white;" onclick="alert('Academic records queued for internal evaluation.')">Transmit Admissions Node</button>
-      </div>
-    </div>
-
-    <div class="demo-subpage education-about d-section" style="display:none;">
-      <h2 class="d-section-title">Next-Generation Academic Portals</h2>
-      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">Zentro Education architectures unify high data-density tracking setups with hyper-legible components for optimal information ingestion logs.</p>
-    </div>
-
-    <div class="demo-subpage education-contact d-section" style="display:none;">
-      <h2 class="d-section-title">Academic Registrar Communication Link</h2>
-      <div class="d-form">
-        <div class="d-form-group"><label>Inquiry Description Parameters</label><textarea placeholder="State your programmatic administrative questions cleanly..."></textarea></div>
-        <button class="d-btn" style="background:#3b82f6; color:white;" onclick="alert('Registrar inquiry link confirmed.')">Submit Inquiry Node</button>
-      </div>
-    </div>
-  </div>
-  <footer class="d-footer">&copy; 2026 Zentro Learning Academies — Global Knowledge Base Hub.</footer>
-</div>
-
-<div class="demo-page-view" id="demo-construction">
-  <div class="demo-close-bar">
-    <span>Live Sandbox View — Zentro Construction Portfolio</span>
-    <button class="demo-close-btn" onclick="closeDemo('construction')">Exit Project View</button>
-  </div>
-  <nav class="d-nav">
-    <a class="d-logo" style="color: #f59e0b;">Zentro Construction</a>
-    <ul class="d-links">
-      <li><a onclick="showDemoPage('construction', 'home')">Home</a></li>
-      <li><a onclick="showDemoPage('construction', 'projects')">Projects</a></li>
-      <li><a onclick="showDemoPage('construction', 'services')">Services</a></li>
-      <li><a onclick="showDemoPage('construction', 'team')">Team</a></li>
-      <li><a onclick="showDemoPage('construction', 'about')">About</a></li>
-      <li><a onclick="showDemoPage('construction', 'contact')">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div class="demo-page-container">
-    <div class="demo-subpage construction-home d-hero" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80');">
-      <div class="d-hero-inner">
-        <h1>Heavy Industry & Civil Engineering Operations</h1>
-        <p>Large-scale site build workflows, precise structural modeling, architectural infrastructure coordination platforms.</p>
-        <button class="d-btn" style="background:#f59e0b; color:black;" onclick="showDemoPage('construction', 'projects')">Examine Blueprint Project Index</button>
-      </div>
-    </div>
-
-    <div class="demo-subpage construction-projects d-section" style="display:none;">
-      <h2 class="d-section-title">Active Civil Infrastructure Deployments</h2>
-      <div class="d-grid">
-        <div class="d-card"><div class="d-card-body"><h3>Apex Mega-Logistics Vault</h3><p>Reinforced concrete high-capacity logistical shipping nexus configured with complete autonomous sorting grids.</p><strong style="color:#f59e0b;">Capitalization Cost: $14.5M</strong></div></div>
-        <div class="d-card"><div class="d-card-body"><h3>Zentro High-Rise Complex B</h3><p>42-story high-density structural residential tower deploying reinforced core isolation blocks.</p><strong style="color:#f59e0b;">Capitalization Cost: $38.2M</strong></div></div>
-      </div>
-    </div>
-
-    <div class="demo-subpage construction-services d-section" style="display:none;">
-      <h2 class="d-section-title">Industrial Project Capabilities</h2>
-      <div class="d-grid">
-        <div class="d-card"><div class="d-card-body"><h3>BIM Parametric Structural Modeling</h3><p>Complete pre-construction digital execution blueprint rendering guaranteeing absolute material tolerance calculations.</p></div></div>
-        <div class="d-card"><div class="d-card-body"><h3>Sustainable Eco-Grid Foundations</h3><p>Deep geothermic foundation pinning configurations built safely using carbon-negative concrete matrices.</p></div></div>
-      </div>
-    </div>
-
-    <div class="demo-subpage construction-team d-section" style="display:none;">
-      <h2 class="d-section-title">Lead Infrastructure Engineers</h2>
-      <div class="d-grid">
-        <div class="d-card" style="padding:1.5rem; text-align:center;"><h3 style="color:#f59e0b;">Garrick Stone, P.E.</h3><p>Chief Civil Infrastructure Director</p></div>
-        <div class="d-card" style="padding:1.5rem; text-align:center;"><h3 style="color:#f59e0b;">Lina Morgenstern, AIA</h3><p>Lead Modular Systems Architect</p></div>
-      </div>
-    </div>
-
-    <div class="demo-subpage construction-about d-section" style="display:none;">
-      <h2 class="d-section-title">Absolute Engineering Integrity</h2>
-      <p style="max-width:600px;margin:0 auto;text-align:center;color:#cbd5e1;">Our heavy industry site portals combine crystal clear programmatic project timeline graphs with rigid safety documentation management logic layers.</p>
-    </div>
-
-    <div class="demo-subpage construction-contact d-section" style="display:none;">
-      <h2 class="d-section-title">Request Formal Contract Tender</h2>
-      <div class="d-form">
-        <div class="d-form-group"><label>Estimated Allocation Pool Budget</label><input type="text" value="$5,000,000+"></div>
-        <button class="d-btn" style="background:#f59e0b; color:black;" onclick="alert('RFQ tracking token generated.')">Transmit Project RFQ Packet</button>
-      </div>
-    </div>
-  </div>
-  <footer class="d-footer">&copy; 2026 Zentro Heavy Industries Engineering Matrix. All operations OSHA compliant.</footer>
-</div>
-
 
 <script>
-/* ─── SCROLL MANAGEMENT FOR MAIN PORTAL LINKS ───── */
-document.querySelectorAll('nav a[href^="#"], .mobile-menu a[href^="#"], .hero-actions a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    if (targetId === '#') return;
-    const targetNode = document.querySelector(targetId);
-    if (targetNode) {
-      targetNode.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+
+function updateUTCClock(){
+
+const now = new Date();
+
+document.getElementById("utcClock").innerHTML =
+"UTC TIME : " + now.toUTCString();
+
+}
+
+updateUTCClock();
+
+setInterval(updateUTCClock,1000);
+
+</script>
+
+</body>
+</html>
+<section id="services" class="services-section">
+
+<div class="section-header">
+
+<span class="small-title">
+OUR SERVICES
+</span>
+
+<h2>
+Premium AI & Digital Solutions
+</h2>
+
+<p>
+We help businesses grow through AI automation,
+modern websites, software systems,
+business optimization and digital transformation.
+</p>
+
+</div>
+
+<div class="services-grid">
+
+<!-- CARD 1 -->
+
+<div class="service-card">
+
+<div class="service-icon">
+🌐
+</div>
+
+<h3>
+Professional Websites
+</h3>
+
+<p>
+Business websites, landing pages,
+eCommerce stores and premium UI/UX.
+</p>
+
+<button onclick="openModal('webModal')">
+Learn More
+</button>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="service-card">
+
+<div class="service-icon">
+🤖
+</div>
+
+<h3>
+AI Automation
+</h3>
+
+<p>
+Reduce manual work using smart AI systems.
+</p>
+
+<button onclick="openModal('aiModal')">
+Learn More
+</button>
+
+</div>
+
+<!-- CARD 3 -->
+
+<div class="service-card">
+
+<div class="service-icon">
+💬
+</div>
+
+<h3>
+AI Chatbots
+</h3>
+
+<p>
+Customer support chatbots available 24/7.
+</p>
+
+<button onclick="openModal('chatbotModal')">
+Learn More
+</button>
+
+</div>
+
+<!-- CARD 4 -->
+
+<div class="service-card">
+
+<div class="service-icon">
+📊
+</div>
+
+<h3>
+Business Systems
+</h3>
+
+<p>
+CRM, dashboards and workflow management.
+</p>
+
+<button onclick="openModal('crmModal')">
+Learn More
+</button>
+
+</div>
+
+<!-- CARD 5 -->
+
+<div class="service-card">
+
+<div class="service-icon">
+📱
+</div>
+
+<h3>
+Mobile Applications
+</h3>
+
+<p>
+Android and iOS business applications.
+</p>
+
+<button onclick="openModal('appModal')">
+Learn More
+</button>
+
+</div>
+
+<!-- CARD 6 -->
+
+<div class="service-card">
+
+<div class="service-icon">
+🚀
+</div>
+
+<h3>
+Digital Growth
+</h3>
+
+<p>
+SEO, branding and online business expansion.
+</p>
+
+<button onclick="openModal('growthModal')">
+Learn More
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WEBSITE MODAL -->
+
+<div class="modal" id="webModal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal('webModal')">
+×
+</span>
+
+<h2>Professional Website Development</h2>
+
+<p>
+Custom designed websites built specifically
+for business growth.
+</p>
+
+<ul>
+
+<li>Premium UI/UX Design</li>
+
+<li>Responsive Mobile Layout</li>
+
+<li>SEO Optimization</li>
+
+<li>Fast Loading Pages</li>
+
+<li>Contact Forms</li>
+
+<li>WhatsApp Integration</li>
+
+<li>Portfolio Pages</li>
+
+<li>Pricing Pages</li>
+
+<li>Landing Pages</li>
+
+<li>Security Optimization</li>
+
+</ul>
+
+<h3>Process</h3>
+
+<p>
+Planning → Design → Development → Testing → Delivery
+</p>
+
+<h3>Delivery</h3>
+
+<p>
+3–15 Days depending on requirements.
+</p>
+
+</div>
+
+</div>
+
+<!-- AI MODAL -->
+
+<div class="modal" id="aiModal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal('aiModal')">
+×
+</span>
+
+<h2>AI Automation</h2>
+
+<p>
+Automate repetitive tasks and save time.
+</p>
+
+<ul>
+
+<li>Lead Automation</li>
+
+<li>Customer Automation</li>
+
+<li>Email Automation</li>
+
+<li>Workflow Automation</li>
+
+<li>Business AI Agents</li>
+
+<li>Custom AI Systems</li>
+
+</ul>
+
+<h3>Benefits</h3>
+
+<p>
+Lower costs, faster operations and better efficiency.
+</p>
+
+</div>
+
+</div>
+
+<!-- CHATBOT MODAL -->
+
+<div class="modal" id="chatbotModal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal('chatbotModal')">
+×
+</span>
+
+<h2>AI Chatbots</h2>
+
+<p>
+Smart assistants that communicate with customers.
+</p>
+
+<ul>
+
+<li>24/7 Availability</li>
+
+<li>WhatsApp Chatbots</li>
+
+<li>Website Chatbots</li>
+
+<li>Lead Collection</li>
+
+<li>Appointment Booking</li>
+
+<li>FAQ Handling</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- CRM MODAL -->
+
+<div class="modal" id="crmModal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal('crmModal')">
+×
+</span>
+
+<h2>Business Systems</h2>
+
+<ul>
+
+<li>CRM Systems</li>
+
+<li>Admin Panels</li>
+
+<li>Analytics Dashboards</li>
+
+<li>Inventory Management</li>
+
+<li>Employee Systems</li>
+
+<li>Client Portals</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- APP MODAL -->
+
+<div class="modal" id="appModal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal('appModal')">
+×
+</span>
+
+<h2>Mobile Applications</h2>
+
+<ul>
+
+<li>Android Apps</li>
+
+<li>iOS Apps</li>
+
+<li>Business Apps</li>
+
+<li>Booking Apps</li>
+
+<li>Delivery Apps</li>
+
+<li>Custom Features</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- GROWTH MODAL -->
+
+<div class="modal" id="growthModal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal('growthModal')">
+×
+</span>
+
+<h2>Digital Growth Solutions</h2>
+
+<ul>
+
+<li>SEO Optimization</li>
+
+<li>Brand Development</li>
+
+<li>Marketing Systems</li>
+
+<li>Lead Generation</li>
+
+<li>Business Strategy</li>
+
+<li>Online Presence Growth</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<style>
+
+.services-section{
+padding:120px 8%;
+background:#050d1c;
+}
+
+.section-header{
+text-align:center;
+margin-bottom:80px;
+}
+
+.small-title{
+color:#00aaff;
+font-weight:700;
+letter-spacing:2px;
+}
+
+.section-header h2{
+font-size:60px;
+margin:20px 0;
+}
+
+.section-header p{
+max-width:800px;
+margin:auto;
+line-height:1.8;
+color:#b9c6d5;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.service-card{
+background:#081426;
+padding:35px;
+border-radius:24px;
+border:1px solid rgba(255,255,255,.05);
+transition:.4s;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+border-color:#00aaff;
+}
+
+.service-icon{
+font-size:50px;
+margin-bottom:25px;
+}
+
+.service-card h3{
+font-size:28px;
+margin-bottom:15px;
+}
+
+.service-card p{
+color:#b9c6d5;
+line-height:1.7;
+margin-bottom:25px;
+}
+
+.service-card button{
+background:#00aaff;
+border:none;
+padding:14px 24px;
+border-radius:40px;
+font-weight:700;
+cursor:pointer;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+z-index:99999;
+}
+
+.modal-content{
+background:#091423;
+width:90%;
+max-width:900px;
+margin:5% auto;
+padding:40px;
+border-radius:25px;
+position:relative;
+overflow-y:auto;
+max-height:85vh;
+}
+
+.modal-content h2{
+margin-bottom:20px;
+font-size:38px;
+}
+
+.modal-content h3{
+margin-top:30px;
+margin-bottom:15px;
+color:#00aaff;
+}
+
+.modal-content p{
+line-height:1.8;
+margin-bottom:15px;
+}
+
+.modal-content ul{
+padding-left:20px;
+}
+
+.modal-content li{
+margin-bottom:10px;
+}
+
+.close{
+position:absolute;
+right:25px;
+top:15px;
+font-size:40px;
+cursor:pointer;
+}
+
+@media(max-width:1000px){
+
+.services-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.services-grid{
+grid-template-columns:1fr;
+}
+
+.section-header h2{
+font-size:40px;
+}
+
+}
+
+</style>
+
+<script>
+
+function openModal(id){
+
+document.getElementById(id).style.display="block";
+
+}
+
+function closeModal(id){
+
+document.getElementById(id).style.display="none";
+
+}
+
+window.onclick=function(e){
+
+const modals=document.querySelectorAll(".modal");
+
+modals.forEach(function(modal){
+
+if(e.target===modal){
+
+modal.style.display="none";
+
+}
+
 });
 
-/* ─── HAMBURGER RESPONSE CONTROL ────────────────── */
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('active');
 }
 
-/* ─── FAQ INTERACTIVE DISPATCHER ────────────────── */
-function toggleFaq(btnElement) {
-  const parentItem = btnElement.parentElement;
-  const standardState = parentItem.classList.contains('active');
-  
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.classList.remove('active');
-    item.querySelector('.faq-arrow').textContent = '+';
-  });
+</script>
+<section id="demos" class="demo-section">
 
-  if (!standardState) {
-    parentItem.classList.add('active');
-    parentItem.querySelector('.faq-arrow').textContent = '×';
-  }
+<div class="demo-header">
+
+<span>LIVE BUSINESS DEMOS</span>
+
+<h2>
+Explore Our Premium Demo Websites
+</h2>
+
+<p>
+Experience professional business websites before ordering.
+Every demo is designed to showcase real-world business solutions.
+</p>
+
+</div>
+
+<div class="demo-grid">
+
+<!-- DEMO 1 -->
+
+<div class="demo-card">
+
+<div class="demo-image">
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200" alt="">
+</div>
+
+<div class="demo-content">
+
+<h3>Zentro Restaurant</h3>
+
+<p>
+Premium restaurant website with reservation system,
+menu management and food gallery.
+</p>
+
+<div class="demo-features">
+
+<span>Menu</span>
+<span>Reservation</span>
+<span>Gallery</span>
+<span>Contact</span>
+
+</div>
+
+<button onclick="openDemo('restaurantDemo')">
+View Demo
+</button>
+
+</div>
+
+</div>
+
+<!-- DEMO 2 -->
+
+<div class="demo-card">
+
+<div class="demo-image">
+<img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1200" alt="">
+</div>
+
+<div class="demo-content">
+
+<h3>Zentro Clinic</h3>
+
+<p>
+Professional clinic website with doctors,
+appointments and healthcare services.
+</p>
+
+<div class="demo-features">
+
+<span>Doctors</span>
+<span>Appointments</span>
+<span>Services</span>
+<span>Contact</span>
+
+</div>
+
+<button onclick="openDemo('clinicDemo')">
+View Demo
+</button>
+
+</div>
+
+</div>
+
+<!-- DEMO 3 -->
+
+<div class="demo-card">
+
+<div class="demo-image">
+<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200" alt="">
+</div>
+
+<div class="demo-content">
+
+<h3>Zentro Real Estate</h3>
+
+<p>
+Modern real estate website with listings,
+pricing and property details.
+</p>
+
+<div class="demo-features">
+
+<span>Houses</span>
+<span>Plots</span>
+<span>Rentals</span>
+<span>Farm House</span>
+
+</div>
+
+<button onclick="openDemo('realestateDemo')">
+View Demo
+</button>
+
+</div>
+
+</div>
+
+<!-- DEMO 4 -->
+
+<div class="demo-card">
+
+<div class="demo-image">
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200" alt="">
+</div>
+
+<div class="demo-content">
+
+<h3>Zentro Construction</h3>
+
+<p>
+Construction company website showcasing
+projects and services.
+</p>
+
+<div class="demo-features">
+
+<span>Projects</span>
+<span>Services</span>
+<span>Gallery</span>
+<span>Team</span>
+
+</div>
+
+<button onclick="openDemo('constructionDemo')">
+View Demo
+</button>
+
+</div>
+
+</div>
+
+<!-- DEMO 5 -->
+
+<div class="demo-card">
+
+<div class="demo-image">
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200" alt="">
+</div>
+
+<div class="demo-content">
+
+<h3>Zentro E-Commerce</h3>
+
+<p>
+Online shopping platform with products,
+cart and checkout system.
+</p>
+
+<div class="demo-features">
+
+<span>Products</span>
+<span>Cart</span>
+<span>Orders</span>
+<span>Checkout</span>
+
+</div>
+
+<button onclick="openDemo('ecommerceDemo')">
+View Demo
+</button>
+
+</div>
+
+</div>
+
+<!-- DEMO 6 -->
+
+<div class="demo-card">
+
+<div class="demo-image">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200" alt="">
+</div>
+
+<div class="demo-content">
+
+<h3>Zentro Corporate</h3>
+
+<p>
+Corporate business website for agencies,
+companies and enterprises.
+</p>
+
+<div class="demo-features">
+
+<span>About</span>
+<span>Services</span>
+<span>Portfolio</span>
+<span>Contact</span>
+
+</div>
+
+<button onclick="openDemo('corporateDemo')">
+View Demo
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RESTAURANT DEMO -->
+
+<div class="demo-modal" id="restaurantDemo">
+
+<div class="demo-modal-content">
+
+<span class="demo-close"
+onclick="closeDemo('restaurantDemo')">
+×
+</span>
+
+<h2>Zentro Restaurant Demo</h2>
+
+<div class="demo-pages">
+
+<div class="page-card">
+Home Page
+</div>
+
+<div class="page-card">
+Food Menu
+</div>
+
+<div class="page-card">
+Reservation System
+</div>
+
+<div class="page-card">
+Food Gallery
+</div>
+
+<div class="page-card">
+About Restaurant
+</div>
+
+<div class="page-card">
+Contact Page
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CLINIC DEMO -->
+
+<div class="demo-modal" id="clinicDemo">
+
+<div class="demo-modal-content">
+
+<span class="demo-close"
+onclick="closeDemo('clinicDemo')">
+×
+</span>
+
+<h2>Zentro Clinic Demo</h2>
+
+<div class="demo-pages">
+
+<div class="page-card">Home</div>
+<div class="page-card">Doctors</div>
+<div class="page-card">Appointments</div>
+<div class="page-card">Services</div>
+<div class="page-card">Emergency Care</div>
+<div class="page-card">Contact</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- REAL ESTATE DEMO -->
+
+<div class="demo-modal" id="realestateDemo">
+
+<div class="demo-modal-content">
+
+<span class="demo-close"
+onclick="closeDemo('realestateDemo')">
+×
+</span>
+
+<h2>Zentro Real Estate Demo</h2>
+
+<div class="demo-pages">
+
+<div class="page-card">Luxury Houses</div>
+<div class="page-card">Residential Plots</div>
+<div class="page-card">Commercial Shops</div>
+<div class="page-card">Farm Houses</div>
+<div class="page-card">Factories</div>
+<div class="page-card">Property Contact</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CONSTRUCTION DEMO -->
+
+<div class="demo-modal" id="constructionDemo">
+
+<div class="demo-modal-content">
+
+<span class="demo-close"
+onclick="closeDemo('constructionDemo')">
+×
+</span>
+
+<h2>Zentro Construction Demo</h2>
+
+<div class="demo-pages">
+
+<div class="page-card">Home</div>
+<div class="page-card">Projects</div>
+<div class="page-card">Services</div>
+<div class="page-card">Materials</div>
+<div class="page-card">Team</div>
+<div class="page-card">Contact</div>
+
+</div>
+
+</div>
+
+</div>
+
+<style>
+
+.demo-section{
+padding:120px 8%;
+background:#07111f;
 }
 
-/* ─── PRICING BUTTON COUPLING FLOW ──────────────── */
-function selectPlan(planSpecificationString) {
-  const selectDropdownNode = document.getElementById('projectTier');
-  const contextFormWrapper = document.getElementById('contact');
-  
-  if (selectDropdownNode) {
-    selectDropdownNode.value = planSpecificationString;
-  }
-  if (contextFormWrapper) {
-    contextFormWrapper.scrollIntoView({ behavior: 'smooth' });
-  }
+.demo-header{
+text-align:center;
+margin-bottom:80px;
 }
 
-/* ─── MAIN MODAL SYSTEM SPECIALIZATIONS ─────────── */
-const specDatabase = {
-  web: {
-    title: "High-Scale Web Framework Specifications",
-    intro: "Deep dive specifications for deploying scalable monolithic and distributed client side application frames.",
-    points: [
-      { t: "Componentization Isolation", d: "Strictly isolated interface modules engineered to prevent performance degradation cascades." },
-      { t: "Fluid Viewport Recalculation", d: "Dynamic layouts matching multi-screen configurations without relying on heavy scripting cycles." },
-      { t: "Asset Lazy Evaluation", d: "Media resources execute initialization routines only when breaching the user viewport threshold." }
-    ]
-  },
-  ai: {
-    title: "Functional AI Integrations Core Blueprint",
-    intro: "System operational logic maps detailing exact execution boundaries of artificial intelligence software adapters.",
-    points: [
-      { t: "Dynamic Retrieval Context", d: "Feeding application states to real-time processors to deliver customized structural experiences." },
-      { t: "Input Sanitization Layers", d: "Rigid multi-layer parameter evaluation sequences protecting internal processing nodes from invalid injection parameters." },
-      { t: "Asynchronous Process Pipelines", d: "Heavy predictive evaluations run purely inside non-blocking background threads to eliminate display layout stuttering." }
-    ]
-  },
-  brand: {
-    title: "Systemic Brand Alignment Protocols",
-    intro: "The programmatic workflow framework deployed to systematically translate corporate guidelines into clean code structures.",
-    points: [
-      { t: "Global Design Properties Matrix", d: "Centralized configuration layer running semantic variables across layout color spaces, borders, and margins." },
-      { t: "Omnipresent Asset Uniformity", d: "Dynamic injection scripts mapping localized textual identities and structural signatures uniformly." },
-      { t: "Accessibility Compliance Layers", d: "Rigid parsing matrices confirming high relative contrast states to pass universal accessible application verification tests." }
-    ]
-  }
+.demo-header span{
+color:#00aaff;
+font-weight:700;
+}
+
+.demo-header h2{
+font-size:60px;
+margin:20px 0;
+}
+
+.demo-header p{
+max-width:800px;
+margin:auto;
+line-height:1.8;
+color:#b8c5d3;
+}
+
+.demo-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.demo-card{
+background:#081426;
+border-radius:24px;
+overflow:hidden;
+transition:.4s;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.demo-card:hover{
+transform:translateY(-10px);
+}
+
+.demo-image img{
+width:100%;
+height:240px;
+object-fit:cover;
+}
+
+.demo-content{
+padding:25px;
+}
+
+.demo-content h3{
+font-size:28px;
+margin-bottom:15px;
+}
+
+.demo-content p{
+line-height:1.7;
+color:#b8c5d3;
+margin-bottom:20px;
+}
+
+.demo-features{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:20px;
+}
+
+.demo-features span{
+background:#102036;
+padding:8px 14px;
+border-radius:30px;
+font-size:13px;
+}
+
+.demo-content button{
+background:#00aaff;
+border:none;
+padding:14px 25px;
+font-weight:700;
+border-radius:40px;
+cursor:pointer;
+}
+
+.demo-modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+z-index:999999;
+}
+
+.demo-modal-content{
+background:#081426;
+width:90%;
+max-width:1000px;
+margin:4% auto;
+padding:40px;
+border-radius:20px;
+}
+
+.demo-close{
+font-size:40px;
+cursor:pointer;
+float:right;
+}
+
+.demo-pages{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:40px;
+}
+
+.page-card{
+background:#102036;
+padding:40px;
+border-radius:18px;
+text-align:center;
+font-weight:700;
+transition:.3s;
+}
+
+.page-card:hover{
+background:#00aaff;
+color:black;
+}
+
+@media(max-width:1000px){
+
+.demo-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.demo-pages{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.demo-grid{
+grid-template-columns:1fr;
+}
+
+.demo-pages{
+grid-template-columns:1fr;
+}
+
+.demo-header h2{
+font-size:42px;
+}
+
+}
+
+</style>
+
+<script>
+
+function openDemo(id){
+
+document.getElementById(id).style.display="block";
+
+}
+
+function closeDemo(id){
+
+document.getElementById(id).style.display="none";
+
+}
+
+window.addEventListener("click",function(e){
+
+document.querySelectorAll(".demo-modal")
+.forEach(function(modal){
+
+if(e.target===modal){
+
+modal.style.display="none";
+
+}
+
+});
+
+});
+
+</script>
+<!-- ===================================================== -->
+<!-- ZENTRO RESTAURANT DEMO WEBSITE - PART 4 -->
+<!-- PASTE BELOW PART 3 -->
+<!-- ===================================================== -->
+
+<section id="zentro-restaurant-demo" class="restaurant-demo">
+
+<div class="restaurant-hero">
+
+<div class="restaurant-overlay"></div>
+
+<div class="restaurant-content">
+
+<span class="restaurant-badge">
+ZENTRO RESTAURANT DEMO
+</span>
+
+<h1>
+Fine Dining Experience
+</h1>
+
+<p>
+Premium restaurant demo website showcasing menu,
+reservations, gallery, opening hours and customer experience.
+</p>
+
+<a href="#reservation-section" class="restaurant-btn">
+Reserve Table
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.restaurant-demo{
+width:100%;
+background:#050d18;
+}
+
+.restaurant-hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600') center center/cover;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.restaurant-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.72);
+}
+
+.restaurant-content{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:20px;
+}
+
+.restaurant-badge{
+display:inline-block;
+padding:12px 22px;
+border-radius:50px;
+background:#00aaff;
+color:black;
+font-weight:700;
+margin-bottom:25px;
+}
+
+.restaurant-content h1{
+font-size:90px;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.restaurant-content p{
+font-size:22px;
+line-height:1.8;
+color:#d7d7d7;
+margin-bottom:40px;
+}
+
+.restaurant-btn{
+display:inline-block;
+padding:18px 35px;
+background:#00aaff;
+color:black;
+font-weight:800;
+border-radius:50px;
+}
+
+</style>
+
+<!-- ABOUT -->
+
+<section class="restaurant-about">
+
+<div class="restaurant-container">
+
+<div class="about-left">
+
+<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1200">
+
+</div>
+
+<div class="about-right">
+
+<h2>
+About Zentro Restaurant
+</h2>
+
+<p>
+
+Zentro Restaurant is a premium demo restaurant website.
+
+This demo showcases how professional restaurant websites can include reservations, menus, image galleries, opening hours and customer engagement systems.
+
+</p>
+
+<p>
+
+Location: XYZ
+
+Phone: 0000-0000000
+
+Email: info@zentrodemo.com
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.restaurant-about{
+padding:120px 8%;
+background:#07111f;
+}
+
+.restaurant-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about-left img{
+width:100%;
+border-radius:20px;
+}
+
+.about-right h2{
+font-size:55px;
+margin-bottom:25px;
+}
+
+.about-right p{
+line-height:1.9;
+color:#b8c5d3;
+margin-bottom:20px;
+}
+
+</style>
+
+<!-- MENU -->
+
+<section class="food-menu-section">
+
+<div class="section-heading">
+
+<h2>
+Signature Menu
+</h2>
+
+<p>
+Our most popular dishes.
+</p>
+
+</div>
+
+<div class="food-grid">
+
+<div class="food-card">
+
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200">
+
+<h3>Italian Pizza</h3>
+
+<p>$18</p>
+
+</div>
+
+<div class="food-card">
+
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200">
+
+<h3>Premium Burger</h3>
+
+<p>$15</p>
+
+</div>
+
+<div class="food-card">
+
+<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=1200">
+
+<h3>Steak Special</h3>
+
+<p>$30</p>
+
+</div>
+
+<div class="food-card">
+
+<img src="https://images.unsplash.com/photo-1628294895950-9805252327bc?w=1200">
+
+<h3>Chicken Pasta</h3>
+
+<p>$20</p>
+
+</div>
+
+<div class="food-card">
+
+<img src="https://images.unsplash.com/photo-1563379091339-03246963d51a?w=1200">
+
+<h3>Sea Food Platter</h3>
+
+<p>$35</p>
+
+</div>
+
+<div class="food-card">
+
+<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=1200">
+
+<h3>Fresh Salad</h3>
+
+<p>$10</p>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.food-menu-section{
+padding:120px 8%;
+background:#050d18;
+}
+
+.section-heading{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-heading h2{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.food-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.food-card{
+background:#081426;
+border-radius:20px;
+overflow:hidden;
+}
+
+.food-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.food-card h3{
+padding:20px 20px 10px;
+}
+
+.food-card p{
+padding:0 20px 25px;
+color:#00aaff;
+font-weight:700;
+}
+
+</style>
+
+<!-- RESERVATION -->
+
+<section id="reservation-section" class="reservation-section">
+
+<div class="reservation-box">
+
+<h2>
+Reserve Your Table
+</h2>
+
+<form id="reservationForm">
+
+<input type="text"
+placeholder="Full Name"
+required>
+
+<input type="email"
+placeholder="Email Address"
+required>
+
+<input type="tel"
+placeholder="Phone Number"
+required>
+
+<input type="date"
+required>
+
+<input type="time"
+required>
+
+<select required>
+
+<option value="">
+Guests
+</option>
+
+<option>
+2 Guests
+</option>
+
+<option>
+4 Guests
+</option>
+
+<option>
+6 Guests
+</option>
+
+<option>
+8 Guests
+</option>
+
+</select>
+
+<button type="submit">
+Reserve Now
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<style>
+
+.reservation-section{
+padding:120px 8%;
+background:#07111f;
+}
+
+.reservation-box{
+max-width:800px;
+margin:auto;
+background:#081426;
+padding:50px;
+border-radius:25px;
+}
+
+.reservation-box h2{
+text-align:center;
+margin-bottom:40px;
+font-size:50px;
+}
+
+#reservationForm{
+display:grid;
+gap:20px;
+}
+
+#reservationForm input,
+#reservationForm select{
+padding:18px;
+border:none;
+border-radius:12px;
+}
+
+#reservationForm button{
+padding:18px;
+background:#00aaff;
+font-weight:800;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+
+</style>
+
+<!-- GALLERY -->
+
+<section class="gallery-section">
+
+<h2>
+Food Gallery
+</h2>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200">
+<img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=1200">
+<img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200">
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200">
+<img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?w=1200">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200">
+
+</div>
+
+</section>
+
+<style>
+
+.gallery-section{
+padding:120px 8%;
+background:#050d18;
+}
+
+.gallery-section h2{
+text-align:center;
+font-size:60px;
+margin-bottom:60px;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.gallery-grid img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:18px;
+}
+
+</style>
+
+<!-- OPENING HOURS -->
+
+<section class="hours-section">
+
+<div class="hours-box">
+
+<h2>
+Opening Hours
+</h2>
+
+<p>Monday - Friday : 10:00 AM - 11:00 PM</p>
+
+<p>Saturday : 11:00 AM - 12:00 AM</p>
+
+<p>Sunday : 12:00 PM - 10:00 PM</p>
+
+</div>
+
+</section>
+
+<style>
+
+.hours-section{
+padding:120px 8%;
+background:#07111f;
+}
+
+.hours-box{
+max-width:700px;
+margin:auto;
+text-align:center;
+background:#081426;
+padding:50px;
+border-radius:25px;
+}
+
+.hours-box h2{
+font-size:50px;
+margin-bottom:30px;
+}
+
+.hours-box p{
+margin:15px 0;
+font-size:20px;
+color:#b8c5d3;
+}
+
+</style>
+
+<!-- CONTACT -->
+
+<section class="restaurant-contact">
+
+<h2>
+Contact Restaurant
+</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>Location</h3>
+
+<p>XYZ Location</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Phone</h3>
+
+<p>0000-0000000</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Email</h3>
+
+<p>info@zentrodemo.com</p>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.restaurant-contact{
+padding:120px 8%;
+background:#050d18;
+text-align:center;
+}
+
+.restaurant-contact h2{
+font-size:60px;
+margin-bottom:60px;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.contact-card{
+background:#081426;
+padding:40px;
+border-radius:20px;
+}
+
+.contact-card h3{
+margin-bottom:15px;
+color:#00aaff;
+}
+
+.contact-card p{
+color:#b8c5d3;
+}
+
+@media(max-width:900px){
+
+.food-grid,
+.gallery-grid,
+.contact-grid,
+.restaurant-container{
+grid-template-columns:1fr;
+}
+
+.restaurant-content h1{
+font-size:50px;
+}
+
+.section-heading h2,
+.gallery-section h2,
+.restaurant-contact h2,
+.hours-box h2,
+.reservation-box h2,
+.about-right h2{
+font-size:38px;
+}
+
+}
+
+</style>
+
+<script>
+
+document
+.getElementById("reservationForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert(
+"Demo Reservation Submitted Successfully!"
+);
+
+});
+
+</script>
+
+<!-- ====================================== -->
+<!-- ZENTRO CLINIC DEMO WEBSITE -->
+<!-- PART 5 -->
+<!-- ====================================== -->
+
+<section id="zentro-clinic-demo" class="clinic-demo">
+
+<div class="clinic-hero">
+
+<div class="clinic-overlay"></div>
+
+<div class="clinic-content">
+
+<span class="clinic-badge">
+ZENTRO CLINIC DEMO
+</span>
+
+<h1>
+Advanced Healthcare Solutions
+</h1>
+
+<p>
+
+Professional clinic demo website with
+appointments, doctors, emergency care
+and healthcare services.
+
+</p>
+
+<a href="#appointment-section" class="clinic-btn">
+Book Appointment
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.clinic-demo{
+background:#040b16;
+}
+
+.clinic-hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600') center center/cover;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.clinic-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.72);
+}
+
+.clinic-content{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:20px;
+}
+
+.clinic-badge{
+background:#00aaff;
+padding:12px 24px;
+border-radius:50px;
+color:black;
+font-weight:800;
+display:inline-block;
+margin-bottom:25px;
+}
+
+.clinic-content h1{
+font-size:85px;
+font-weight:900;
+margin-bottom:25px;
+}
+
+.clinic-content p{
+font-size:22px;
+line-height:1.8;
+margin-bottom:35px;
+color:#d7d7d7;
+}
+
+.clinic-btn{
+background:#00aaff;
+padding:18px 35px;
+border-radius:50px;
+font-weight:800;
+color:black;
+display:inline-block;
+}
+
+</style>
+
+<!-- ABOUT CLINIC -->
+
+<section class="clinic-about">
+
+<div class="clinic-about-grid">
+
+<div>
+
+<img
+src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1200"
+class="clinic-about-img">
+
+</div>
+
+<div>
+
+<h2>
+About Zentro Clinic
+</h2>
+
+<p>
+
+Zentro Clinic is a healthcare demo website.
+
+Designed to demonstrate appointment systems,
+doctor management, patient engagement and
+modern healthcare experiences.
+
+</p>
+
+<p>
+
+Location : XYZ
+
+Phone : 0000-0000000
+
+Email : clinic@zentrodemo.com
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.clinic-about{
+padding:120px 8%;
+background:#07111f;
+}
+
+.clinic-about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.clinic-about-img{
+width:100%;
+border-radius:20px;
+}
+
+.clinic-about h2{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.clinic-about p{
+line-height:1.9;
+color:#b7c5d3;
+margin-bottom:20px;
+}
+
+</style>
+
+<!-- DOCTORS -->
+
+<section class="doctors-section">
+
+<div class="section-heading">
+
+<h2>
+Our Specialists
+</h2>
+
+<p>
+Meet our healthcare experts.
+</p>
+
+</div>
+
+<div class="doctor-grid">
+
+<div class="doctor-card">
+
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800">
+
+<h3>Dr. ABC</h3>
+
+<p>Cardiology Specialist</p>
+
+</div>
+
+<div class="doctor-card">
+
+<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800">
+
+<h3>Dr. ABC</h3>
+
+<p>Neurology Specialist</p>
+
+</div>
+
+<div class="doctor-card">
+
+<img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=800">
+
+<h3>Dr. ABC</h3>
+
+<p>Orthopedic Specialist</p>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.doctors-section{
+padding:120px 8%;
+background:#050d18;
+}
+
+.doctor-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.doctor-card{
+background:#081426;
+border-radius:20px;
+overflow:hidden;
+text-align:center;
+}
+
+.doctor-card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.doctor-card h3{
+margin-top:20px;
+}
+
+.doctor-card p{
+padding:10px 0 25px;
+color:#00aaff;
+}
+
+</style>
+
+<!-- SERVICES -->
+
+<section class="medical-services">
+
+<div class="section-heading">
+
+<h2>
+Medical Services
+</h2>
+
+</div>
+
+<div class="service-grid-clinic">
+
+<div class="medical-card">
+Emergency Care
+</div>
+
+<div class="medical-card">
+Heart Care
+</div>
+
+<div class="medical-card">
+Neurology
+</div>
+
+<div class="medical-card">
+Orthopedics
+</div>
+
+<div class="medical-card">
+Dental Care
+</div>
+
+<div class="medical-card">
+General Medicine
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.medical-services{
+padding:120px 8%;
+background:#07111f;
+}
+
+.service-grid-clinic{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.medical-card{
+background:#081426;
+padding:40px;
+border-radius:20px;
+text-align:center;
+font-weight:700;
+}
+
+</style>
+
+<!-- APPOINTMENT -->
+
+<section id="appointment-section"
+class="appointment-section">
+
+<div class="appointment-box">
+
+<h2>
+Book Appointment
+</h2>
+
+<form id="appointmentForm">
+
+<input
+type="text"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+placeholder="Email"
+required>
+
+<input
+type="tel"
+placeholder="Phone Number"
+required>
+
+<input
+type="date"
+required>
+
+<select required>
+
+<option value="">
+Select Department
+</option>
+
+<option>
+Cardiology
+</option>
+
+<option>
+Neurology
+</option>
+
+<option>
+Orthopedics
+</option>
+
+<option>
+General Medicine
+</option>
+
+</select>
+
+<textarea
+placeholder="Describe your issue"
+required>
+</textarea>
+
+<button type="submit">
+Book Appointment
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<style>
+
+.appointment-section{
+padding:120px 8%;
+background:#050d18;
+}
+
+.appointment-box{
+max-width:900px;
+margin:auto;
+background:#081426;
+padding:50px;
+border-radius:25px;
+}
+
+.appointment-box h2{
+text-align:center;
+font-size:50px;
+margin-bottom:35px;
+}
+
+#appointmentForm{
+display:grid;
+gap:20px;
+}
+
+#appointmentForm input,
+#appointmentForm textarea,
+#appointmentForm select{
+padding:18px;
+border:none;
+border-radius:12px;
+}
+
+#appointmentForm textarea{
+height:150px;
+resize:none;
+}
+
+#appointmentForm button{
+background:#00aaff;
+padding:18px;
+border:none;
+font-weight:800;
+border-radius:12px;
+cursor:pointer;
+}
+
+</style>
+
+<!-- EMERGENCY -->
+
+<section class="emergency-section">
+
+<div class="emergency-box">
+
+<h2>
+24/7 Emergency Care
+</h2>
+
+<p>
+
+Our emergency healthcare services
+remain available for urgent patient needs.
+
+</p>
+
+<h3>
+Emergency Number:
+0000-0000000
+</h3>
+
+</div>
+
+</section>
+
+<style>
+
+.emergency-section{
+padding:120px 8%;
+background:#07111f;
+}
+
+.emergency-box{
+max-width:900px;
+margin:auto;
+background:#081426;
+padding:60px;
+border-radius:25px;
+text-align:center;
+}
+
+.emergency-box h2{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.emergency-box p{
+color:#b7c5d3;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.emergency-box h3{
+color:#00aaff;
+}
+
+</style>
+
+<!-- HEALTH GALLERY -->
+
+<section class="clinic-gallery">
+
+<h2>
+Clinic Gallery
+</h2>
+
+<div class="clinic-gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=1200">
+<img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1200">
+<img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200">
+<img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1200">
+<img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200">
+<img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=1200">
+
+</div>
+
+</section>
+
+<style>
+
+.clinic-gallery{
+padding:120px 8%;
+background:#050d18;
+}
+
+.clinic-gallery h2{
+text-align:center;
+font-size:55px;
+margin-bottom:60px;
+}
+
+.clinic-gallery-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.clinic-gallery-grid img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+}
+
+</style>
+
+<!-- CONTACT -->
+
+<section class="clinic-contact">
+
+<h2>
+Contact Clinic
+</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>Location</h3>
+
+<p>XYZ Location</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Phone</h3>
+
+<p>0000-0000000</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Email</h3>
+
+<p>clinic@zentrodemo.com</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Response Time</h3>
+
+<p>Within 24 Hours</p>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+document
+.getElementById("appointmentForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert(
+"Appointment Request Submitted Successfully!"
+);
+
+});
+
+</script>
+
+<style>
+
+@media(max-width:900px){
+
+.clinic-content h1{
+font-size:50px;
+}
+
+.clinic-about-grid,
+.doctor-grid,
+.service-grid-clinic,
+.clinic-gallery-grid,
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<!-- ====================================== -->
+<!-- ZENTRO REAL ESTATE DEMO -->
+<!-- PART 6 -->
+<!-- ====================================== -->
+
+<section id="zentro-realestate-demo" class="realestate-demo">
+
+<div class="realestate-hero">
+
+<div class="realestate-overlay"></div>
+
+<div class="realestate-content">
+
+<span class="estate-badge">
+ZENTRO REAL ESTATE DEMO
+</span>
+
+<h1>
+Find Your Perfect Property
+</h1>
+
+<p>
+
+Explore houses, plots, commercial shops,
+farm houses and industrial properties.
+
+</p>
+
+<a href="#property-listings" class="estate-btn">
+Browse Properties
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.realestate-demo{
+background:#050d18;
+}
+
+.realestate-hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600') center center/cover;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.realestate-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.72);
+}
+
+.realestate-content{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:20px;
+}
+
+.estate-badge{
+background:#00aaff;
+padding:12px 24px;
+border-radius:50px;
+color:black;
+font-weight:800;
+display:inline-block;
+margin-bottom:25px;
+}
+
+.realestate-content h1{
+font-size:85px;
+font-weight:900;
+margin-bottom:25px;
+}
+
+.realestate-content p{
+font-size:22px;
+line-height:1.8;
+color:#d7d7d7;
+margin-bottom:35px;
+}
+
+.estate-btn{
+background:#00aaff;
+padding:18px 35px;
+border-radius:50px;
+font-weight:800;
+color:black;
+display:inline-block;
+}
+
+</style>
+
+<!-- ABOUT -->
+
+<section class="estate-about">
+
+<div class="estate-about-grid">
+
+<div>
+
+<img
+src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200"
+class="estate-about-img">
+
+</div>
+
+<div>
+
+<h2>
+About Zentro Real Estate
+</h2>
+
+<p>
+
+Professional property management and
+real estate solutions demo website.
+
+This demo showcases property listings,
+pricing structures and investment opportunities.
+
+</p>
+
+<p>
+
+Location: XYZ
+
+Phone: 0000-0000000
+
+Email: property@zentrodemo.com
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.estate-about{
+padding:120px 8%;
+background:#07111f;
+}
+
+.estate-about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.estate-about-img{
+width:100%;
+border-radius:20px;
+}
+
+.estate-about h2{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.estate-about p{
+line-height:1.9;
+color:#b8c5d3;
+margin-bottom:20px;
+}
+
+</style>
+
+<!-- PROPERTY LISTINGS -->
+
+<section id="property-listings" class="property-section">
+
+<div class="section-heading">
+
+<h2>
+Featured Properties
+</h2>
+
+<p>
+Premium listings available for sale and rent.
+</p>
+
+</div>
+
+<div class="property-grid">
+
+<!-- HOUSE -->
+
+<div class="property-card">
+
+<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200">
+
+<div class="property-content">
+
+<h3>Luxury House</h3>
+
+<p>5 Bedrooms • 6 Bathrooms</p>
+
+<p>Area: 1 Kanal</p>
+
+<p class="price">$450,000</p>
+
+<p class="rent">Rent: $2,500/month</p>
+
+</div>
+
+</div>
+
+<!-- PLOT -->
+
+<div class="property-card">
+
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200">
+
+<div class="property-content">
+
+<h3>Residential Plot</h3>
+
+<p>10 Marla Plot</p>
+
+<p>Prime Location</p>
+
+<p class="price">$85,000</p>
+
+<p class="rent">Investment Opportunity</p>
+
+</div>
+
+</div>
+
+<!-- FARM HOUSE -->
+
+<div class="property-card">
+
+<img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200">
+
+<div class="property-content">
+
+<h3>Farm House</h3>
+
+<p>Luxury Farm Property</p>
+
+<p>Large Green Area</p>
+
+<p class="price">$650,000</p>
+
+<p class="rent">Rent: $4,000/month</p>
+
+</div>
+
+</div>
+
+<!-- FACTORY -->
+
+<div class="property-card">
+
+<img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1200">
+
+<div class="property-content">
+
+<h3>Industrial Factory</h3>
+
+<p>Production Facility</p>
+
+<p>Commercial Zone</p>
+
+<p class="price">$1,200,000</p>
+
+<p class="rent">Lease Available</p>
+
+</div>
+
+</div>
+
+<!-- PLAZA -->
+
+<div class="property-card">
+
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200">
+
+<div class="property-content">
+
+<h3>Commercial Plaza</h3>
+
+<p>Retail Shops Available</p>
+
+<p>Business Hub</p>
+
+<p class="price">$700,000</p>
+
+<p class="rent">Rent: $1,500/shop</p>
+
+</div>
+
+</div>
+
+<!-- APARTMENT -->
+
+<div class="property-card">
+
+<img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1200">
+
+<div class="property-content">
+
+<h3>Modern Apartment</h3>
+
+<p>3 Bedrooms</p>
+
+<p>City Center</p>
+
+<p class="price">$180,000</p>
+
+<p class="rent">Rent: $1,100/month</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.property-section{
+padding:120px 8%;
+background:#050d18;
+}
+
+.property-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.property-card{
+background:#081426;
+border-radius:20px;
+overflow:hidden;
+}
+
+.property-card img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.property-content{
+padding:25px;
+}
+
+.property-content h3{
+margin-bottom:12px;
+}
+
+.property-content p{
+margin-bottom:10px;
+color:#b8c5d3;
+}
+
+.price{
+color:#00aaff !important;
+font-size:24px;
+font-weight:800;
+}
+
+.rent{
+color:#00ffaa !important;
+font-weight:700;
+}
+
+</style>
+
+<!-- SPECIFICATIONS -->
+
+<section class="specification-section">
+
+<div class="section-heading">
+
+<h2>
+Property Specifications
+</h2>
+
+</div>
+
+<div class="spec-grid">
+
+<div class="spec-card">
+Verified Ownership Documents
+</div>
+
+<div class="spec-card">
+Investment Analysis
+</div>
+
+<div class="spec-card">
+Commercial Opportunities
+</div>
+
+<div class="spec-card">
+Residential Properties
+</div>
+
+<div class="spec-card">
+Industrial Assets
+</div>
+
+<div class="spec-card">
+Property Valuation
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.specification-section{
+padding:120px 8%;
+background:#07111f;
+}
+
+.spec-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.spec-card{
+background:#081426;
+padding:40px;
+border-radius:20px;
+text-align:center;
+font-weight:700;
+}
+
+</style>
+
+<!-- PROPERTY INQUIRY -->
+
+<section class="estate-form-section">
+
+<div class="estate-form-box">
+
+<h2>
+Property Inquiry Form
+</h2>
+
+<form id="propertyForm">
+
+<input
+type="text"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+placeholder="Email Address"
+required>
+
+<input
+type="tel"
+placeholder="Phone Number"
+required>
+
+<select required>
+
+<option value="">
+Property Type
+</option>
+
+<option>
+Luxury House
+</option>
+
+<option>
+Residential Plot
+</option>
+
+<option>
+Farm House
+</option>
+
+<option>
+Factory
+</option>
+
+<option>
+Commercial Plaza
+</option>
+
+</select>
+
+<textarea
+placeholder="Property Requirements"
+required>
+</textarea>
+
+<button type="submit">
+Submit Inquiry
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<style>
+
+.estate-form-section{
+padding:120px 8%;
+background:#050d18;
+}
+
+.estate-form-box{
+max-width:900px;
+margin:auto;
+background:#081426;
+padding:50px;
+border-radius:25px;
+}
+
+.estate-form-box h2{
+text-align:center;
+font-size:50px;
+margin-bottom:35px;
+}
+
+#propertyForm{
+display:grid;
+gap:20px;
+}
+
+#propertyForm input,
+#propertyForm textarea,
+#propertyForm select{
+padding:18px;
+border:none;
+border-radius:12px;
+}
+
+#propertyForm textarea{
+height:160px;
+resize:none;
+}
+
+#propertyForm button{
+background:#00aaff;
+padding:18px;
+border:none;
+border-radius:12px;
+font-weight:800;
+cursor:pointer;
+}
+
+</style>
+
+<!-- CONTACT -->
+
+<section class="estate-contact">
+
+<h2>
+Contact Real Estate Team
+</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>Location</h3>
+
+<p>XYZ Location</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Phone</h3>
+
+<p>0000-0000000</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Email</h3>
+
+<p>property@zentrodemo.com</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Response Time</h3>
+
+<p>Within 24 Hours</p>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+document
+.getElementById("propertyForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert(
+"Property Inquiry Submitted Successfully!"
+);
+
+});
+
+</script>
+
+<style>
+
+@media(max-width:900px){
+
+.realestate-content h1{
+font-size:50px;
+}
+
+.estate-about-grid,
+.property-grid,
+.spec-grid,
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<!-- END PART 6 -->
+
+<!-- ====================================== -->
+<!-- ZENTRO CONSTRUCTION DEMO -->
+<!-- PART 7 -->
+<!-- ====================================== -->
+
+<section id="zentro-construction-demo" class="construction-demo">
+
+<div class="construction-hero">
+
+<div class="construction-overlay"></div>
+
+<div class="construction-content">
+
+<span class="construction-badge">
+ZENTRO CONSTRUCTION DEMO
+</span>
+
+<h1>
+Building The Future
+</h1>
+
+<p>
+
+Professional construction company demo
+for residential, commercial and industrial projects.
+
+</p>
+
+<a href="#pricing" class="construction-btn">
+Get Started
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.construction-hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600') center center/cover;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.construction-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.72);
+}
+
+.construction-content{
+position:relative;
+z-index:2;
+max-width:900px;
+}
+
+.construction-badge{
+background:#00aaff;
+padding:12px 24px;
+border-radius:50px;
+color:black;
+font-weight:800;
+}
+
+.construction-content h1{
+font-size:85px;
+margin:25px 0;
+}
+
+.construction-content p{
+font-size:22px;
+line-height:1.8;
+color:#d7d7d7;
+margin-bottom:35px;
+}
+
+.construction-btn{
+background:#00aaff;
+padding:18px 35px;
+border-radius:50px;
+font-weight:800;
+color:black;
+}
+
+</style>
+
+<!-- ====================================== -->
+<!-- PRICING -->
+<!-- ====================================== -->
+
+<section id="pricing" class="pricing-section">
+
+<div class="section-heading">
+
+<h2>Pricing Plans</h2>
+
+<p>
+Transparent pricing for every business size.
+</p>
+
+</div>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<h4>PLAN 1</h4>
+
+<h2>$100 - $150</h2>
+
+<p>Professional Landing Page</p>
+<p>Responsive Design</p>
+<p>Contact Form</p>
+<p>Basic SEO</p>
+
+<h3>Delivery: 3 Days</h3>
+
+<a href="#requirement-form">
+Choose Plan
+</a>
+
+</div>
+
+<div class="price-card popular">
+
+<div class="popular-badge">
+POPULAR
+</div>
+
+<h4>PLAN 2</h4>
+
+<h2>$150 - $300</h2>
+
+<p>Business Website</p>
+<p>Premium Design</p>
+<p>WhatsApp Integration</p>
+<p>SEO Setup</p>
+
+<h3>Delivery: 7 Days</h3>
+
+<a href="#requirement-form">
+Choose Plan
+</a>
+
+</div>
+
+<div class="price-card">
+
+<div class="popular-badge">
+HIGH PERFORMANCE
+</div>
+
+<h4>PLAN 3</h4>
+
+<h2>$300 - $500</h2>
+
+<p>Advanced Website</p>
+<p>Automation Setup</p>
+<p>Custom Features</p>
+<p>Business System</p>
+
+<h3>Delivery: 10 Days</h3>
+
+<a href="#requirement-form">
+Choose Plan
+</a>
+
+</div>
+
+<div class="price-card">
+
+<div class="popular-badge">
+PREMIUM
+</div>
+
+<h4>PLAN 4</h4>
+
+<h2>$600+</h2>
+
+<p>Custom Enterprise Solution</p>
+<p>AI Integration</p>
+<p>Unlimited Requirements</p>
+<p>Premium Support</p>
+
+<h3>Delivery: 15 Days</h3>
+
+<a href="#requirement-form">
+Choose Plan
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- REQUIREMENT FORM -->
+<!-- ====================================== -->
+
+<section id="requirement-form" class="requirement-section">
+
+<div class="requirement-box">
+
+<h2>
+Submit Requirement
+</h2>
+
+<form id="clientRequirementForm">
+
+<input
+type="text"
+id="fullname"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+id="email"
+placeholder="Email Address"
+required>
+
+<input
+type="number"
+id="budget"
+placeholder="Project Budget"
+required>
+
+<input
+type="tel"
+id="phone"
+placeholder="Phone Number"
+required>
+
+<input
+type="tel"
+placeholder="Other Phone Number (Optional)">
+
+<textarea
+id="requirement"
+placeholder="Describe Your Requirement"
+required>
+</textarea>
+
+<button type="submit">
+Submit Requirement
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- PROCESS -->
+<!-- ====================================== -->
+
+<section id="process" class="process-section">
+
+<div class="section-heading">
+
+<h2>
+Our Process
+</h2>
+
+</div>
+
+<div class="process-grid">
+
+<div class="process-card">
+
+<h3>01</h3>
+
+<h4>Discovery</h4>
+
+<p>
+Understanding client requirements.
+</p>
+
+</div>
+
+<div class="process-card">
+
+<h3>02</h3>
+
+<h4>Planning</h4>
+
+<p>
+Creating roadmap and strategy.
+</p>
+
+</div>
+
+<div class="process-card">
+
+<h3>03</h3>
+
+<h4>Development</h4>
+
+<p>
+Building the project professionally.
+</p>
+
+</div>
+
+<div class="process-card">
+
+<h3>04</h3>
+
+<h4>Testing</h4>
+
+<p>
+Quality assurance before delivery.
+</p>
+
+</div>
+
+<div class="process-card">
+
+<h3>05</h3>
+
+<h4>Final Payment & Delivery</h4>
+
+<p>
+Final review and project handover.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- FAQ -->
+<!-- ====================================== -->
+
+<section id="faq" class="faq-section">
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+<div class="faq-item">
+<details>
+<summary>How long does it take to build a website?</summary>
+<p>Usually between 3 and 15 days.</p>
+</details>
+</div>
+
+<div class="faq-item">
+<details>
+<summary>Do you offer AI automation?</summary>
+<p>Yes, AI solutions are available.</p>
+</details>
+</div>
+
+<div class="faq-item">
+<details>
+<summary>Can you redesign existing websites?</summary>
+<p>Yes, complete redesign services available.</p>
+</details>
+</div>
+
+<div class="faq-item">
+<details>
+<summary>Do you provide support?</summary>
+<p>Yes, ongoing support is available.</p>
+</details>
+</div>
+
+<div class="faq-item">
+<details>
+<summary>Can you build custom systems?</summary>
+<p>Yes, according to requirements.</p>
+</details>
+</div>
+
+<div class="faq-item">
+<details>
+<summary>Do you work internationally?</summary>
+<p>Yes, globally.</p>
+</details>
+</div>
+
+<div class="faq-item">
+<details>
+<summary>How can I start?</summary>
+<p>Submit the requirement form.</p>
+</details>
+</div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- CONTACT -->
+<!-- ====================================== -->
+
+<section id="contact" class="contact-section">
+
+<h2>
+Contact Us
+</h2>
+
+<p>
+
+Helping businesses grow through
+professional digital solutions.
+
+</p>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<h3>WhatsApp</h3>
+
+<a
+href="https://wa.me/923238194763"
+target="_blank">
++92 323 8194763
+</a>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Email</h3>
+
+<p>
+info@zentroai.com
+</p>
+
+</div>
+
+<div class="contact-card">
+
+<h3>Response Time</h3>
+
+<p>
+Within 24 Hours
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+href="https://wa.me/923238194763"
+target="_blank"
+class="floating-whatsapp">
+
+WhatsApp
+
+</a>
+
+<!-- ====================================== -->
+<!-- FOOTER -->
+<!-- ====================================== -->
+
+<footer class="footer">
+
+<p>
+
+© 2026
+<span>ZENTRO DIGITAL SOLUTIONS</span>
+
+All Technical Rights Reserved Globally
+
+</p>
+
+</footer>
+
+<script>
+
+document
+.getElementById("clientRequirementForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const fullname =
+document.getElementById("fullname").value;
+
+const email =
+document.getElementById("email").value;
+
+const budget =
+document.getElementById("budget").value;
+
+const phone =
+document.getElementById("phone").value;
+
+const requirement =
+document.getElementById("requirement").value;
+
+if(
+fullname==="" ||
+email==="" ||
+budget==="" ||
+phone==="" ||
+requirement==="")
+{
+
+alert(
+"Please complete all required fields."
+);
+
+return;
+
+}
+
+alert(
+"Requirement Submitted Successfully!"
+);
+
+});
+
+</script>
+
+<style>
+
+.pricing-section,
+.requirement-section,
+.process-section,
+.faq-section,
+.contact-section{
+padding:120px 8%;
+background:#050d18;
+}
+
+.pricing-grid,
+.process-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.price-card,
+.process-card{
+background:#081426;
+padding:35px;
+border-radius:20px;
+position:relative;
+}
+
+.price-card a{
+display:inline-block;
+margin-top:20px;
+background:#00aaff;
+padding:12px 20px;
+border-radius:40px;
+color:black;
+font-weight:700;
+}
+
+.popular-badge{
+position:absolute;
+top:15px;
+right:15px;
+background:#00aaff;
+color:black;
+padding:8px 12px;
+border-radius:30px;
+font-size:12px;
+font-weight:800;
+}
+
+.requirement-box{
+max-width:900px;
+margin:auto;
+background:#081426;
+padding:50px;
+border-radius:25px;
+}
+
+#clientRequirementForm{
+display:grid;
+gap:20px;
+}
+
+#clientRequirementForm input,
+#clientRequirementForm textarea{
+padding:18px;
+border:none;
+border-radius:12px;
+}
+
+#clientRequirementForm textarea{
+height:160px;
+}
+
+#clientRequirementForm button{
+background:#00aaff;
+padding:18px;
+font-weight:800;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+
+.faq-item{
+max-width:900px;
+margin:15px auto;
+background:#081426;
+padding:20px;
+border-radius:15px;
+}
+
+details summary{
+cursor:pointer;
+font-weight:700;
+}
+
+.floating-whatsapp{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#25D366;
+padding:18px 24px;
+border-radius:50px;
+font-weight:800;
+color:black;
+z-index:999999;
+}
+
+.footer{
+padding:35px;
+text-align:center;
+background:black;
+}
+
+.footer span{
+color:#00aaff;
+font-weight:800;
+}
+
+@media(max-width:900px){
+
+.pricing-grid,
+.process-grid,
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.construction-content h1{
+font-size:50px;
+}
+
+}
+
+</style>
+
+<!-- END OF PROJECT -->
+<!-- ========================================= -->
+<!-- PART 8 - PREMIUM FEATURES + FINAL CLOSE -->
+<!-- PASTE BEFORE </body> -->
+<!-- ========================================= -->
+
+<!-- PRELOADER -->
+
+<div id="preloader">
+
+<div class="loader-ring"></div>
+
+<div class="loader-text">
+
+ZENTRO AI
+
+</div>
+
+</div>
+
+<!-- SCROLL PROGRESS -->
+
+<div id="scroll-progress"></div>
+
+<!-- BACK TO TOP -->
+
+<button id="backToTop">
+
+↑
+
+</button>
+
+<!-- STATS SECTION -->
+
+<section class="stats-section">
+
+<div class="section-heading">
+
+<h2>
+Global Growth Statistics
+</h2>
+
+<p>
+Helping businesses scale worldwide.
+</p>
+
+</div>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<h3 class="counter" data-target="500">
+0
+</h3>
+
+<p>
+Projects Completed
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 class="counter" data-target="250">
+0
+</h3>
+
+<p>
+Happy Clients
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 class="counter" data-target="35">
+0
+</h3>
+
+<p>
+Countries Served
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3 class="counter" data-target="98">
+0
+</h3>
+
+<p>
+Client Satisfaction %
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonial-section">
+
+<div class="section-heading">
+
+<h2>
+Client Reviews
+</h2>
+
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+
+★★★★★
+
+<p>
+
+Excellent service.
+Professional communication
+and outstanding results.
+
+</p>
+
+<h4>
+Business Owner
+</h4>
+
+</div>
+
+<div class="testimonial-card">
+
+★★★★★
+
+<p>
+
+Website exceeded expectations.
+Very clean design and fast delivery.
+
+</p>
+
+<h4>
+Startup Founder
+</h4>
+
+</div>
+
+<div class="testimonial-card">
+
+★★★★★
+
+<p>
+
+Professional team.
+Highly recommended.
+
+</p>
+
+<h4>
+Agency Client
+</h4>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter-section">
+
+<h2>
+Stay Updated
+</h2>
+
+<p>
+
+Get updates about services,
+automation and AI solutions.
+
+</p>
+
+<form id="newsletterForm">
+
+<input
+type="email"
+placeholder="Enter Email"
+required>
+
+<button type="submit">
+
+Subscribe
+
+</button>
+
+</form>
+
+</section>
+
+<!-- TOAST -->
+
+<div id="toast">
+
+Action Completed Successfully
+
+</div>
+
+<style>
+
+/* PRELOADER */
+
+#preloader{
+position:fixed;
+inset:0;
+background:#020811;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+z-index:99999999;
+}
+
+.loader-ring{
+width:80px;
+height:80px;
+border:5px solid rgba(255,255,255,.1);
+border-top:5px solid #00aaff;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+.loader-text{
+margin-top:20px;
+font-size:22px;
+font-weight:800;
+letter-spacing:2px;
+}
+
+@keyframes spin{
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+/* SCROLL BAR */
+
+#scroll-progress{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+width:0%;
+background:#00aaff;
+z-index:999999;
+}
+
+/* BACK TO TOP */
+
+#backToTop{
+position:fixed;
+bottom:100px;
+right:30px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#00aaff;
+font-size:25px;
+font-weight:900;
+cursor:pointer;
+display:none;
+z-index:99999;
+}
+
+/* STATS */
+
+.stats-section{
+padding:120px 8%;
+background:#07111f;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.stat-card{
+background:#081426;
+padding:40px;
+border-radius:20px;
+text-align:center;
+}
+
+.stat-card h3{
+font-size:55px;
+color:#00aaff;
+margin-bottom:10px;
+}
+
+/* TESTIMONIALS */
+
+.testimonial-section{
+padding:120px 8%;
+background:#050d18;
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.testimonial-card{
+background:#081426;
+padding:35px;
+border-radius:20px;
+line-height:1.8;
+}
+
+/* NEWSLETTER */
+
+.newsletter-section{
+padding:120px 8%;
+text-align:center;
+background:#07111f;
+}
+
+.newsletter-section h2{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.newsletter-section p{
+max-width:700px;
+margin:auto;
+margin-bottom:35px;
+}
+
+#newsletterForm{
+max-width:700px;
+margin:auto;
+display:flex;
+gap:15px;
+}
+
+#newsletterForm input{
+flex:1;
+padding:18px;
+border:none;
+border-radius:12px;
+}
+
+#newsletterForm button{
+padding:18px 35px;
+border:none;
+background:#00aaff;
+font-weight:800;
+border-radius:12px;
+cursor:pointer;
+}
+
+/* TOAST */
+
+#toast{
+position:fixed;
+top:30px;
+right:30px;
+background:#00aaff;
+color:black;
+padding:18px 25px;
+border-radius:10px;
+font-weight:700;
+display:none;
+z-index:999999;
+}
+
+@media(max-width:900px){
+
+.stats-grid,
+.testimonial-grid{
+grid-template-columns:1fr;
+}
+
+#newsletterForm{
+flex-direction:column;
+}
+
+}
+
+</style>
+
+<script>
+
+/* PRELOADER */
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("preloader")
+.style.display="none";
+
+},1200);
+
+});
+
+/* SCROLL BAR */
+
+window.addEventListener("scroll",()=>{
+
+const winScroll=
+document.body.scrollTop ||
+document.documentElement.scrollTop;
+
+const height=
+document.documentElement.scrollHeight -
+document.documentElement.clientHeight;
+
+const scrolled=
+(winScroll/height)*100;
+
+document.getElementById(
+"scroll-progress"
+).style.width=scrolled+"%";
+
+});
+
+/* BACK TO TOP */
+
+const topBtn=
+document.getElementById("backToTop");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
 };
 
-function openModal(specificationKey) {
-  const dataset = specDatabase[specificationKey];
-  if (!dataset) return;
+/* COUNTER */
 
-  document.getElementById('modalTitle').textContent = dataset.title;
-  document.getElementById('modalIntro').textContent = dataset.intro;
+const counters=
+document.querySelectorAll(".counter");
 
-  const dynamicPointWrapper = document.getElementById('modalPoints');
-  dynamicPointWrapper.innerHTML = '';
+counters.forEach(counter=>{
 
-  dataset.points.forEach(p => {
-    const block = document.createElement('div');
-    block.className = 'modal-point';
-    block.innerHTML = `<div class="modal-point-title">${p.t}</div><div class="modal-point-desc">${p.d}</div>`;
-    dynamicPointWrapper.appendChild(block);
-  });
+const updateCounter=()=>{
 
-  document.getElementById('infoModal').classList.add('active');
+const target=
++counter.getAttribute("data-target");
+
+const count=
++counter.innerText;
+
+const increment=
+target/100;
+
+if(count<target){
+
+counter.innerText=
+Math.ceil(count+increment);
+
+setTimeout(updateCounter,20);
+
+}else{
+
+counter.innerText=target;
+
 }
 
-function closeModal(clickEvent) {
-  document.getElementById('infoModal').classList.remove('active');
-}
+};
 
-/* ─── PRODUCTION CONTACT FORM PIPELINE ──────────── */
-function handleFormSubmit(submitEvent) {
-  submitEvent.preventDefault();
-  
-  const clientNameInput = document.getElementById('clientName');
-  const clientEmailInput = document.getElementById('clientEmail');
-  const projectTierSelect = document.getElementById('projectTier');
-  const projectScopeTextarea = document.getElementById('projectScope');
-  
-  const successUINode = document.getElementById('formSuccess');
-  const errorUINode = document.getElementById('formError');
-  const errorListUINode = document.getElementById('errorList');
+updateCounter();
 
-  // Reset standard state indicators
-  successUINode.classList.remove('active');
-  errorUINode.classList.remove('active');
-  errorListUINode.innerHTML = '';
-  
-  const activeInputElements = [clientNameInput, clientEmailInput, projectTierSelect, projectScopeTextarea];
-  activeInputElements.forEach(elem => { if(elem) elem.classList.remove('field-error'); });
+});
 
-  let capturedValidationErrors = [];
+/* NEWSLETTER */
 
-  if (!clientNameInput.value.trim()) {
-    capturedValidationErrors.push("Identity Name string cannot remain blank.");
-    clientNameInput.classList.add('field-error');
-  }
-  if (!clientEmailInput.value.trim() || !clientEmailInput.value.includes('@')) {
-    capturedValidationErrors.push("A valid Network Email pointer structure must be submitted.");
-    clientEmailInput.classList.add('field-error');
-  }
-  if (!projectTierSelect.value) {
-    capturedValidationErrors.push("A target framework Subscription Tier selection is required.");
-    projectTierSelect.classList.add('field-error');
-  }
-  if (!projectScopeTextarea.value.trim() || projectScopeTextarea.value.trim().length < 15) {
-    capturedValidationErrors.push("Architecture Scope Documentation must register at least 15 clear description characters.");
-    projectScopeTextarea.classList.add('field-error');
-  }
+document
+.getElementById("newsletterForm")
+.addEventListener("submit",function(e){
 
-  if (capturedValidationErrors.length > 0) {
-    capturedValidationErrors.forEach(errString => {
-      const listItem = document.createElement('li');
-      listItem.textContent = errString;
-      errorListUINode.appendChild(listItem);
-    });
-    errorUINode.classList.add('active');
-    errorUINode.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  } else {
-    successUINode.classList.add('active');
-    document.getElementById('zentroForm').reset();
-    successUINode.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-}
+e.preventDefault();
 
-/* ─── DYNAMIC SANDBOX DEMO VIEWER ENGINE ────────── */
-function openDemo(demoInstanceKey) {
-  // Turn off core application main view scrolling to isolate sandbox scope
-  document.body.style.overflow = 'hidden';
-  
-  const chosenDemoViewOverlay = document.getElementById(`demo-${demoInstanceKey}`);
-  if (chosenDemoViewOverlay) {
-    chosenDemoViewOverlay.classList.add('active');
-    // Ensure standard inner subpage visibility resolves to the default home screen
-    showDemoPage(demoInstanceKey, 'home');
-  }
-}
+const toast=
+document.getElementById("toast");
 
-function closeDemo(demoInstanceKey) {
-  document.body.style.overflow = '';
-  const chosenDemoViewOverlay = document.getElementById(`demo-${demoInstanceKey}`);
-  if (chosenDemoViewOverlay) {
-    chosenDemoViewOverlay.classList.remove('active');
-  }
-}
+toast.style.display="block";
 
-function showDemoPage(demoInstanceKey, targetedSubPageName) {
-  const contextDemoWrapperNode = document.getElementById(`demo-${demoInstanceKey}`);
-  if (!contextDemoWrapperNode) return;
+setTimeout(()=>{
 
-  // Track down all subpage elements nested under this specific sandbox instance
-  const genericSubpageNodes = contextDemoWrapperNode.querySelectorAll('.demo-subpage');
-  genericSubpageNodes.forEach(page => {
-    page.style.display = 'none';
-  });
+toast.style.display="none";
 
-  // Calculate distinct target page pointer class signature
-  const classPointerSignature = `${demoInstanceKey}-${targetedSubPageName}`;
-  const isolatedTargetNode = contextDemoWrapperNode.querySelector(`.${classPointerSignature}`);
-  if (isolatedTargetNode) {
-    isolatedTargetNode.style.display = 'block';
-  }
-}
+},3000);
 
-/* Stateful E-Commerce Cart Handler Variable */
-let localDemoCartBuffer = [];
-function addToDemoCart(productLabel, costInteger) {
-  localDemoCartBuffer.push({ name: productLabel, price: costInteger });
-  const statusDisplayElement = document.getElementById('demo-cart-status');
-  if (statusDisplayElement) {
-    let compositionString = `<ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1rem;">`;
-    let calculatedSum = 0;
-    localDemoCartBuffer.forEach((itm, idx) => {
-      compositionString += `<li style="display:flex; justify-content:space-between; background:rgba(255,255,255,0.05); padding:0.5rem; border-radius:6px;"><span>${itm.name}</span><strong>$${itm.price}.00</strong></li>`;
-      calculatedSum += itm.price;
-    });
-    compositionString += `</ul><div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:0.75rem; display:flex; justify-content:space-between; font-weight:700;"><span>Total Cart Valuation:</span><span style="color:#ec4899;">$${calculatedSum}.00</span></div>`;
-    statusDisplayElement.innerHTML = compositionString;
-  }
-  alert(`${productLabel} linked to local dynamic simulation cart stack.`);
-}
+this.reset();
+
+});
+
 </script>
+
+<!-- ========================================= -->
+<!-- FINAL PROJECT END -->
+<!-- ========================================= -->
 
 </body>
 </html>
